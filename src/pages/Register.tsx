@@ -7,7 +7,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { EyeIcon, EyeOffIcon, Loader2, AlertCircle, CheckCircle } from "lucide-react";
 import { useAuth } from "@/providers/AuthProvider";
 import { toast } from "sonner";
-import { validateEmail, normalizeEmail, getEmailSuggestion, SUGGESTED_DOMAINS } from "@/utils/emailValidation";
+import { validateEmail, normalizeEmail } from "@/utils/emailValidation";
 import BottomNavigation from "@/components/ui/BottomNavigation";
 
 const Register = () => {
@@ -29,10 +29,9 @@ const Register = () => {
     const newEmail = e.target.value;
     setEmail(newEmail);
     
-    // Don't show validation errors immediately for empty fields
-    if (newEmail) {
-      const validation = validateEmail(newEmail);
-      setEmailError(validation.message);
+    // Simples validação de formato de email
+    if (newEmail && !newEmail.includes('@')) {
+      setEmailError("Por favor insira um email válido");
     } else {
       setEmailError("");
     }
@@ -40,17 +39,14 @@ const Register = () => {
 
   const handleEmailBlur = () => {
     setEmailFocused(false);
-    if (email) {
-      const validation = validateEmail(email);
-      setEmailError(validation.message);
+    if (email && !email.includes('@')) {
+      setEmailError("Por favor insira um email válido");
     }
   };
 
-  // Check if email domain is one of the suggested domains
-  const isValidDomain = () => {
-    if (!email || !email.includes('@')) return false;
-    const domain = email.split('@')[1].toLowerCase();
-    return SUGGESTED_DOMAINS.includes(domain);
+  // Remover a validação de domínios específicos
+  const isValidEmail = () => {
+    return email && email.includes('@') && email.includes('.');
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -143,7 +139,7 @@ const Register = () => {
       </div>
       
       {/* Main Content */}
-      <div className="flex-1 flex flex-col items-center justify-center p-4 mt-2 mb-20">
+      <div className="flex-1 flex flex-col items-center justify-center p-4 mt-6 mb-16">
         <Card className="w-full max-w-md shadow-lg border-0 overflow-hidden">
           <div className="h-2 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-600"></div>
           <CardHeader className="space-y-1">
@@ -180,7 +176,7 @@ const Register = () => {
                     className={`transition-all pl-4 ${
                       emailError 
                         ? "border-red-300 pr-10 focus-visible:ring-red-300 focus-visible:border-red-400" 
-                        : isValidDomain() 
+                        : isValidEmail() 
                           ? "border-green-300 pr-10 focus-visible:ring-green-300 focus-visible:border-green-400" 
                           : "focus-visible:ring-blue-300 focus-visible:border-blue-400"
                     }`}
@@ -190,15 +186,15 @@ const Register = () => {
                       <AlertCircle className="h-5 w-5 text-red-500" />
                     </div>
                   )}
-                  {!emailError && isValidDomain() && (
+                  {!emailError && isValidEmail() && (
                     <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
                       <CheckCircle className="h-5 w-5 text-green-500" />
                     </div>
                   )}
                 </div>
-                {emailError ? (
+                {emailError && (
                   <p className="text-xs text-red-500 mt-1">{emailError}</p>
-                ) : null}
+                )}
               </div>
               <div className="space-y-2">
                 <Label htmlFor="password">Senha</Label>
@@ -235,24 +231,15 @@ const Register = () => {
                   className="focus-visible:ring-blue-300 focus-visible:border-blue-400"
                 />
               </div>
-              <div className="flex items-center space-x-2">
-                <input
-                  type="checkbox"
-                  id="terms"
-                  className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
-                  checked={acceptTerms}
-                  onChange={(e) => setAcceptTerms(e.target.checked)}
-                />
-                <label htmlFor="terms" className="text-sm text-gray-600">
-                  Ao criar uma conta, você concorda com nossos{" "}
-                  <a href="#" className="text-blue-600 hover:text-blue-700">
-                    Termos de Serviço
-                  </a>
-                  {" "}e{" "}
-                  <a href="#" className="text-blue-600 hover:text-blue-700">
-                    Política de Privacidade
-                  </a>
-                </label>
+              <div className="text-xs text-gray-500 mt-2">
+                Ao criar conta, você concorda com nossos{" "}
+                <a href="#" className="text-blue-600 hover:text-blue-700">
+                  Termos de Serviço
+                </a>
+                {" "}e{" "}
+                <a href="#" className="text-blue-600 hover:text-blue-700">
+                  Política de Privacidade
+                </a>
               </div>
               <Button 
                 type="submit" 
