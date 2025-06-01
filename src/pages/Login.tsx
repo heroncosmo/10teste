@@ -117,7 +117,7 @@ const Login = () => {
       </div>
       
       {/* Main Content */}
-      <div className="flex-1 flex flex-col items-center justify-center p-4 mt-6">
+      <div className="flex-1 flex flex-col items-center justify-center p-4 mt-2 mb-20">
         <Card className="w-full max-w-md shadow-lg border-0 overflow-hidden">
           <div className="h-2 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-600"></div>
           <CardHeader className="space-y-1 pb-2">
@@ -161,9 +161,7 @@ const Login = () => {
                 </div>
                 {emailError ? (
                   <p className="text-xs text-red-500 mt-1">{emailError}</p>
-                ) : (
-                  <p className="text-xs text-gray-500">{getEmailSuggestion()}</p>
-                )}
+                ) : null}
               </div>
               <div className="space-y-2">
                 <div className="flex justify-between items-center">

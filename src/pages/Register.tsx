@@ -18,7 +18,7 @@ const Register = () => {
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [acceptTerms, setAcceptTerms] = useState(false);
+  const [acceptTerms, setAcceptTerms] = useState(true);
   const [emailFocused, setEmailFocused] = useState(false);
   const [activeTab, setActiveTab] = useState("register");
   
@@ -143,7 +143,7 @@ const Register = () => {
       </div>
       
       {/* Main Content */}
-      <div className="flex-1 flex flex-col items-center justify-center p-4 mt-6">
+      <div className="flex-1 flex flex-col items-center justify-center p-4 mt-2 mb-20">
         <Card className="w-full max-w-md shadow-lg border-0 overflow-hidden">
           <div className="h-2 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-600"></div>
           <CardHeader className="space-y-1">
@@ -198,9 +198,7 @@ const Register = () => {
                 </div>
                 {emailError ? (
                   <p className="text-xs text-red-500 mt-1">{emailError}</p>
-                ) : (
-                  <p className="text-xs text-gray-500">{getEmailSuggestion()}</p>
-                )}
+                ) : null}
               </div>
               <div className="space-y-2">
                 <Label htmlFor="password">Senha</Label>
@@ -246,7 +244,7 @@ const Register = () => {
                   onChange={(e) => setAcceptTerms(e.target.checked)}
                 />
                 <label htmlFor="terms" className="text-sm text-gray-600">
-                  Eu aceito os{" "}
+                  Ao criar uma conta, você concorda com nossos{" "}
                   <a href="#" className="text-blue-600 hover:text-blue-700">
                     Termos de Serviço
                   </a>
