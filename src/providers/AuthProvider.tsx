@@ -86,20 +86,44 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
               
               console.log('Creating profile after signup with whatsapp:', whatsapp);
               
-              // Criar/atualizar perfil com whatsapp
-              const profileData = {
-                id: session.user.id,
-                user_id: session.user.id,
-                full_name: fullName || null,
-                whatsapp: whatsapp || null
-              };
-              
-              const { error: profileError } = await supabase
+              // Verificar se já existe um perfil
+              const { data: existingProfile, error: fetchError } = await supabase
                 .from('profiles')
-                .upsert(profileData, { onConflict: 'user_id' });
+                .select('*')
+                .eq('user_id', session.user.id)
+                .single();
                 
-              if (profileError) {
-                console.error('Error creating profile after signup:', profileError);
+              if (fetchError && fetchError.code !== 'PGRST116') {
+                console.error('Error checking existing profile:', fetchError);
+              }
+              
+              if (existingProfile) {
+                // Atualizar perfil existente
+                const { error: updateError } = await supabase
+                  .from('profiles')
+                  .update({
+                    full_name: fullName || null,
+                    whatsapp: whatsapp || null
+                  })
+                  .eq('user_id', session.user.id);
+                  
+                if (updateError) {
+                  console.error('Error updating profile after signup:', updateError);
+                }
+              } else {
+                // Criar novo perfil
+                const { error: insertError } = await supabase
+                  .from('profiles')
+                  .insert({
+                    id: session.user.id,
+                    user_id: session.user.id,
+                    full_name: fullName || null,
+                    whatsapp: whatsapp || null
+                  });
+                  
+                if (insertError) {
+                  console.error('Error inserting profile after signup:', insertError);
+                }
               }
             } catch (profileError) {
               console.error('Error creating profile after signup:', profileError);
@@ -154,19 +178,44 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       try {
         console.log('Creating profile immediately with whatsapp:', userData?.whatsapp);
         
-        const profileData = {
-          id: data.user.id,
-          user_id: data.user.id,
-          full_name: userData?.full_name || null,
-          whatsapp: userData?.whatsapp || null
-        };
-        
-        const { error: profileError } = await supabase
+        // Primeiro verificar se já existe um perfil
+        const { data: existingProfile, error: fetchError } = await supabase
           .from('profiles')
-          .upsert(profileData, { onConflict: 'id' });
+          .select('*')
+          .eq('user_id', data.user.id)
+          .single();
           
-        if (profileError) {
-          console.error('Error creating profile during signup:', profileError);
+        if (fetchError && fetchError.code !== 'PGRST116') {
+          console.error('Error checking existing profile:', fetchError);
+        }
+        
+        if (existingProfile) {
+          // Se já existe, atualizar
+          const { error: updateError } = await supabase
+            .from('profiles')
+            .update({
+              full_name: userData?.full_name || null,
+              whatsapp: userData?.whatsapp || null
+            })
+            .eq('user_id', data.user.id);
+            
+          if (updateError) {
+            console.error('Error updating profile during signup:', updateError);
+          }
+        } else {
+          // Se não existe, inserir novo
+          const { error: insertError } = await supabase
+            .from('profiles')
+            .insert({
+              id: data.user.id,
+              user_id: data.user.id,
+              full_name: userData?.full_name || null,
+              whatsapp: userData?.whatsapp || null
+            });
+            
+          if (insertError) {
+            console.error('Error inserting profile during signup:', insertError);
+          }
         }
       } catch (profileError) {
         console.error('Error creating profile during signup:', profileError);
