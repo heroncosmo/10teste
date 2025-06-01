@@ -1,4 +1,3 @@
-
 export interface Profile {
   id: string;
   user_id: string;
@@ -8,6 +7,7 @@ export interface Profile {
   is_admin: boolean;
   is_superadmin: boolean;
   whatsapp_connections_limit?: number;
+  whatsapp?: string | null;
   created_at: string;
   updated_at: string;
 }

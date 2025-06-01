@@ -1,4 +1,3 @@
-
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import type { User, Session } from '@supabase/supabase-js';
@@ -110,14 +109,36 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   };
 
   const signUp = async (email: string, password: string, userData?: any) => {
-    const { error } = await supabase.auth.signUp({
+    const { error, data } = await supabase.auth.signUp({
       email,
       password,
       options: {
         data: userData,
       },
     });
+    
     if (error) throw error;
+    
+    // Create or update the user profile with whatsapp info if provided
+    if (data?.user) {
+      try {
+        const profileData = {
+          user_id: data.user.id,
+          full_name: userData?.full_name || null,
+          whatsapp: userData?.whatsapp || null
+        };
+        
+        const { error: profileError } = await supabase
+          .from('profiles')
+          .upsert(profileData, { onConflict: 'user_id' });
+          
+        if (profileError) {
+          console.error('Error creating profile:', profileError);
+        }
+      } catch (profileError) {
+        console.error('Error creating profile:', profileError);
+      }
+    }
   };
 
   const signOut = async () => {

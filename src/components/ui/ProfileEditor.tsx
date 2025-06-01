@@ -18,6 +18,7 @@ const ProfileEditor: React.FC<ProfileEditorProps> = ({ onClose }) => {
     fullName: '',
     email: '',
     phone: '',
+    whatsapp: '',
     currentPassword: '',
     newPassword: '',
     confirmPassword: ''
@@ -29,7 +30,8 @@ const ProfileEditor: React.FC<ProfileEditorProps> = ({ onClose }) => {
         ...prev,
         fullName: profile.full_name || '',
         email: user.email || '',
-        phone: user.phone || ''
+        phone: user.phone || '',
+        whatsapp: profile.whatsapp || ''
       }));
     }
   }, [user, profile]);
@@ -42,6 +44,27 @@ const ProfileEditor: React.FC<ProfileEditorProps> = ({ onClose }) => {
     }));
   };
   
+  const formatWhatsapp = (value: string) => {
+    if (!value) return '';
+    const numbers = value.replace(/\D/g, '');
+    
+    if (numbers.length <= 2) {
+      return numbers;
+    } else if (numbers.length <= 7) {
+      return `(${numbers.slice(0, 2)}) ${numbers.slice(2)}`;
+    } else {
+      return `(${numbers.slice(0, 2)}) ${numbers.slice(2, 7)}-${numbers.slice(7, 11)}`;
+    }
+  };
+  
+  const handleWhatsappChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const formattedValue = formatWhatsapp(e.target.value);
+    setFormData(prev => ({
+      ...prev,
+      whatsapp: formattedValue
+    }));
+  };
+  
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
@@ -49,7 +72,8 @@ const ProfileEditor: React.FC<ProfileEditorProps> = ({ onClose }) => {
     try {
       // Update profile data
       await updateProfile({ 
-        full_name: formData.fullName 
+        full_name: formData.fullName,
+        whatsapp: formData.whatsapp
       });
       
       // Update email if changed
@@ -134,7 +158,7 @@ const ProfileEditor: React.FC<ProfileEditorProps> = ({ onClose }) => {
           </div>
           
           <div>
-            <Label htmlFor="phone">Telefone/WhatsApp</Label>
+            <Label htmlFor="phone">Telefone</Label>
             <div className="relative">
               <Phone className="absolute left-2 top-2.5 h-4 w-4 text-gray-500" />
               <Input
@@ -143,6 +167,21 @@ const ProfileEditor: React.FC<ProfileEditorProps> = ({ onClose }) => {
                 placeholder="(99) 99999-9999"
                 value={formData.phone}
                 onChange={handleChange}
+                className="pl-8"
+              />
+            </div>
+          </div>
+          
+          <div>
+            <Label htmlFor="whatsapp">WhatsApp</Label>
+            <div className="relative">
+              <Phone className="absolute left-2 top-2.5 h-4 w-4 text-gray-500" />
+              <Input
+                id="whatsapp"
+                name="whatsapp"
+                placeholder="(99) 99999-9999"
+                value={formData.whatsapp}
+                onChange={handleWhatsappChange}
                 className="pl-8"
               />
             </div>
