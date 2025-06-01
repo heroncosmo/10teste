@@ -13,9 +13,10 @@ import BottomNavigation from "@/components/ui/BottomNavigation";
 const Register = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [whatsapp, setWhatsapp] = useState("");
   const [emailError, setEmailError] = useState("");
+  const [whatsappError, setWhatsappError] = useState("");
   const [password, setPassword] = useState("");
-  const [passwordConfirmation, setPasswordConfirmation] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [acceptTerms, setAcceptTerms] = useState(true);
@@ -44,11 +45,23 @@ const Register = () => {
     }
   };
 
+  // Validação do WhatsApp
+  const handleWhatsappChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value.replace(/\D/g, ''); // Remove tudo que não for número
+    setWhatsapp(value);
+    
+    if (value && value.length < 10) {
+      setWhatsappError("Número de WhatsApp inválido");
+    } else {
+      setWhatsappError("");
+    }
+  };
+
   // Remover a validação de domínios específicos
   const isValidEmail = () => {
     return email && email.includes('@') && email.includes('.');
   };
-
+  
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
@@ -60,25 +73,21 @@ const Register = () => {
       return;
     }
     
-    if (password !== passwordConfirmation) {
-      toast.error("Senhas não correspondem", {
-        description: "Por favor, verifique se as senhas são iguais."
+    if (!whatsapp || whatsapp.length < 10) {
+      toast.error("WhatsApp inválido", {
+        description: "Por favor, forneça um número de WhatsApp válido."
       });
       return;
     }
     
-    if (!acceptTerms) {
-      toast.error("Termos e Condições", {
-        description: "Você precisa aceitar os termos e condições para continuar."
-      });
-      return;
-    }
-
     setIsLoading(true);
 
     try {
       const trimmedEmail = normalizeEmail(email);
-      await signUp(trimmedEmail, password, { full_name: name });
+      await signUp(trimmedEmail, password, { 
+        full_name: name,
+        whatsapp: whatsapp
+      });
       
       // Redireciona para o feed após registro bem-sucedido
       toast.success("Cadastro realizado com sucesso!");
@@ -103,6 +112,20 @@ const Register = () => {
 
   const toggleShowPassword = () => {
     setShowPassword(!showPassword);
+  };
+
+  // Formatar WhatsApp para exibição
+  const formatWhatsapp = (value: string) => {
+    if (!value) return '';
+    value = value.replace(/\D/g, '');
+    
+    if (value.length <= 2) {
+      return value;
+    } else if (value.length <= 7) {
+      return `(${value.slice(0, 2)}) ${value.slice(2)}`;
+    } else {
+      return `(${value.slice(0, 2)}) ${value.slice(2, 7)}-${value.slice(7, 11)}`;
+    }
   };
 
   return (
@@ -145,13 +168,13 @@ const Register = () => {
           <CardHeader className="space-y-1">
             <CardTitle className="text-2xl text-center">Criar uma conta</CardTitle>
             <CardDescription className="text-center">
-              Preencha os campos abaixo para começar a usar a plataforma
+              Preencha os campos abaixo para começar
             </CardDescription>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="name">Nome Completo</Label>
+                <Label htmlFor="name">Nome</Label>
                 <Input 
                   id="name"
                   placeholder="Digite seu nome"
@@ -161,6 +184,26 @@ const Register = () => {
                   className="focus-visible:ring-blue-300 focus-visible:border-blue-400"
                 />
               </div>
+              
+              <div className="space-y-2">
+                <Label htmlFor="whatsapp">WhatsApp</Label>
+                <Input 
+                  id="whatsapp"
+                  placeholder="(XX) XXXXX-XXXX"
+                  value={formatWhatsapp(whatsapp)}
+                  onChange={handleWhatsappChange}
+                  required
+                  className={`transition-all pl-4 ${
+                    whatsappError 
+                      ? "border-red-300 focus-visible:ring-red-300 focus-visible:border-red-400" 
+                      : "focus-visible:ring-blue-300 focus-visible:border-blue-400"
+                  }`}
+                />
+                {whatsappError && (
+                  <p className="text-xs text-red-500 mt-1">{whatsappError}</p>
+                )}
+              </div>
+              
               <div className="space-y-2">
                 <Label htmlFor="email" className={emailError ? "text-red-500" : ""}>E-mail</Label>
                 <div className="relative">
@@ -196,6 +239,7 @@ const Register = () => {
                   <p className="text-xs text-red-500 mt-1">{emailError}</p>
                 )}
               </div>
+              
               <div className="space-y-2">
                 <Label htmlFor="password">Senha</Label>
                 <div className="relative">
@@ -219,18 +263,7 @@ const Register = () => {
                   </Button>
                 </div>
               </div>
-              <div className="space-y-2">
-                <Label htmlFor="passwordConfirmation">Confirmar Senha</Label>
-                <Input 
-                  id="passwordConfirmation"
-                  type={showPassword ? "text" : "password"} 
-                  placeholder="••••••••"
-                  value={passwordConfirmation}
-                  onChange={(e) => setPasswordConfirmation(e.target.value)}
-                  required
-                  className="focus-visible:ring-blue-300 focus-visible:border-blue-400"
-                />
-              </div>
+              
               <div className="text-xs text-gray-500 mt-2">
                 Ao criar conta, você concorda com nossos{" "}
                 <a href="#" className="text-blue-600 hover:text-blue-700">
@@ -244,7 +277,7 @@ const Register = () => {
               <Button 
                 type="submit" 
                 className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 transition-all duration-300 font-medium" 
-                disabled={isLoading || !!emailError}
+                disabled={isLoading || !!emailError || !!whatsappError}
               >
                 {isLoading ? (
                   <>
