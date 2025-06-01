@@ -1,0 +1,2649 @@
+Consegue deixar otimizado igual o print este feed
+veja o print e o codigo ve se ajuda
+<div class=" useView_view__C2mnv PlanVisualPreview_modalContent__in6Hi"><div class=" useView_view__C2mnv" style="--useView--grow: 1;"><iframe title="visual-preview" sandbox="allow-same-origin allow-presentation allow-pointer-lock allow-scripts" allow="accelerometer; ambient-light-sensor; autoplay; battery; camera; display-capture; encrypted-media; execution-while-not-rendered; execution-while-out-of-viewport; fullscreen; gamepad; geolocation; gyroscope; layout-animations; legacy-image-formats; magnetometer; microphone; midi; navigation-override; oversized-images; payment; picture-in-picture; publickey-credentials; speaker-selection; sync-xhr; unoptimized-images; unsized-media; usb; screen-wake-lock; web-share; xr-spatial-tracking; clipboard-read; clipboard-write; pointer-lock" class="AgentHtmlPreviewFromDisk_iframe___vd38" srcdoc="&lt;html lang=&quot;pt-BR&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Lead Pilot - Networking Empresarial&lt;/title&gt;
+    &lt;script src=&quot;https://cdn.tailwindcss.com&quot;&gt;&lt;/script&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css&quot;&gt;
+    &lt;script&gt;
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'facebook-blue': '#1877F2',
+                        'facebook-light-blue': '#42A5F5',
+                        'facebook-green': '#42A047',
+                        'facebook-bg': '#F0F2F5',
+                        'facebook-border': '#DADDE1'
+                    },
+                    fontFamily: {
+                        'facebook': ['Segoe UI', 'Helvetica Neue', 'Arial', 'sans-serif']
+                    }
+                }
+            }
+        };
+    &lt;/script&gt;
+    &lt;style&gt;
+        .story-circle {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        }
+        
+        .chat-bubble-sent {
+            background: #1877F2;
+            color: white;
+        }
+        
+        .chat-bubble-received {
+            background: #F0F0F0;
+            color: #000;
+        }
+        
+        .selection-overlay {
+            background: rgba(24, 119, 242, 0.1);
+            border: 2px solid #1877F2;
+        }
+        
+        .post-hover:hover {
+            box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+            transform: translateY(-1px);
+            transition: all 0.2s ease;
+        }
+    &lt;/style&gt;
+&lt;style&gt;body { pointer-events: none; }&lt;/style&gt;&lt;/head&gt;
+&lt;body class=&quot;bg-facebook-bg font-facebook&quot;&gt;
+    &lt;!-- @COMPONENT: FacebookHeader --&gt;
+    &lt;header class=&quot;bg-white shadow-sm border-b border-facebook-border fixed top-0 w-full z-50&quot;&gt;
+        &lt;div class=&quot;max-w-7xl mx-auto px-4&quot;&gt;
+            &lt;div class=&quot;flex items-center justify-between h-14&quot;&gt;
+                &lt;!-- Logo e Search --&gt;
+                &lt;div class=&quot;flex items-center space-x-4 flex-1&quot;&gt;
+                    &lt;div class=&quot;text-facebook-blue font-bold text-xl&quot;&gt;
+                        &lt;i class=&quot;fas fa-rocket mr-2&quot;&gt;&lt;/i&gt;Lead Pilot
+                    &lt;/div&gt;
+                    &lt;div class=&quot;hidden md:block flex-1 max-w-lg&quot;&gt;
+                        &lt;div class=&quot;relative&quot;&gt;
+                            &lt;input type=&quot;text&quot; placeholder=&quot;Buscar empresas, segmentos...&quot; 
+                                   class=&quot;w-full bg-facebook-bg rounded-full py-2 px-4 pl-10 text-sm focus:outline-none focus:ring-2 focus:ring-facebook-blue&quot;&gt;
+                            &lt;i class=&quot;fas fa-search absolute left-3 top-3 text-gray-500 text-sm&quot;&gt;&lt;/i&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;!-- Navigation Icons --&gt;
+                &lt;div class=&quot;flex items-center space-x-2&quot;&gt;
+                    &lt;button class=&quot;p-2 rounded-full hover:bg-gray-100 relative&quot;&gt;
+                        &lt;i class=&quot;fas fa-home text-facebook-blue text-xl&quot;&gt;&lt;/i&gt;
+                    &lt;/button&gt;
+                    &lt;button class=&quot;p-2 rounded-full hover:bg-gray-100 relative&quot;&gt;
+                        &lt;i class=&quot;fas fa-users text-gray-600 text-xl&quot;&gt;&lt;/i&gt;
+                    &lt;/button&gt;
+                    &lt;button class=&quot;p-2 rounded-full hover:bg-gray-100 relative&quot;&gt;
+                        &lt;i class=&quot;fas fa-bell text-gray-600 text-xl&quot;&gt;&lt;/i&gt;
+                        &lt;span class=&quot;absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center&quot; data-bind=&quot;notifications.count&quot;&gt;3&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;button class=&quot;p-2 rounded-full hover:bg-gray-100 relative&quot;&gt;
+                        &lt;i class=&quot;fas fa-envelope text-gray-600 text-xl&quot;&gt;&lt;/i&gt;
+                        &lt;span class=&quot;absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center&quot;&gt;7&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;div class=&quot;flex items-center space-x-2&quot;&gt;
+                        &lt;span class=&quot;text-sm font-semibold&quot; data-bind=&quot;user.credits&quot;&gt;10 créditos&lt;/span&gt;
+                        &lt;button class=&quot;bg-facebook-blue text-white px-3 py-1 rounded text-sm hover:bg-blue-600&quot;&gt;
+                            Upgrade Pro
+                        &lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/header&gt;
+    &lt;!-- @END_COMPONENT: FacebookHeader --&gt;
+
+    &lt;!-- Mobile Search (Hidden on Desktop) --&gt;
+    &lt;div class=&quot;md:hidden bg-white px-4 py-2 mt-14 border-b border-facebook-border&quot;&gt;
+        &lt;div class=&quot;relative&quot;&gt;
+            &lt;input type=&quot;text&quot; placeholder=&quot;Buscar empresas...&quot; 
+                   class=&quot;w-full bg-facebook-bg rounded-full py-2 px-4 pl-10 text-sm focus:outline-none focus:ring-2 focus:ring-facebook-blue&quot;&gt;
+            &lt;i class=&quot;fas fa-search absolute left-3 top-3 text-gray-500 text-sm&quot;&gt;&lt;/i&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;pt-14 md:pt-16 flex&quot;&gt;
+        &lt;!-- @COMPONENT: Sidebar [navigation menu] --&gt;
+        &lt;aside class=&quot;hidden lg:block w-80 bg-white h-screen overflow-y-auto border-r border-facebook-border fixed left-0 top-14&quot;&gt;
+            &lt;div class=&quot;p-4&quot;&gt;
+                &lt;!-- User Profile --&gt;
+                &lt;div class=&quot;flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-100 cursor-pointer&quot;&gt;
+                    &lt;div class=&quot;w-10 h-10 bg-facebook-blue rounded-full flex items-center justify-center text-white font-semibold&quot;&gt;
+                        &lt;i class=&quot;fas fa-user&quot;&gt;&lt;/i&gt;
+                    &lt;/div&gt;
+                    &lt;span class=&quot;font-semibold&quot; data-bind=&quot;user.name&quot;&gt;João Silva&lt;/span&gt;
+                &lt;/div&gt;
+
+                &lt;!-- Quick Stats --&gt;
+                &lt;div class=&quot;bg-facebook-bg rounded-lg p-4 mb-4&quot;&gt;
+                    &lt;h3 class=&quot;font-semibold text-sm text-gray-800 mb-2&quot;&gt;Hoje&lt;/h3&gt;
+                    &lt;div class=&quot;space-y-2&quot;&gt;
+                        &lt;div class=&quot;flex justify-between text-sm&quot;&gt;
+                            &lt;span&gt;Leads visualizados&lt;/span&gt;
+                            &lt;span class=&quot;font-semibold text-facebook-blue&quot; data-bind=&quot;stats.viewsToday&quot;&gt;23&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;flex justify-between text-sm&quot;&gt;
+                            &lt;span&gt;Mensagens enviadas&lt;/span&gt;
+                            &lt;span class=&quot;font-semibold text-facebook-green&quot; data-bind=&quot;stats.messagesSent&quot;&gt;5&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;flex justify-between text-sm&quot;&gt;
+                            &lt;span&gt;Conexões feitas&lt;/span&gt;
+                            &lt;span class=&quot;font-semibold text-orange-500&quot; data-bind=&quot;stats.connections&quot;&gt;2&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;!-- Navigation Menu --&gt;
+                &lt;nav class=&quot;space-y-1&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;flex items-center space-x-3 p-3 rounded-lg bg-facebook-blue bg-opacity-10 text-facebook-blue&quot;&gt;
+                        &lt;i class=&quot;fas fa-home w-5&quot;&gt;&lt;/i&gt;
+                        &lt;span class=&quot;font-semibold&quot;&gt;Feed Principal&lt;/span&gt;
+                    &lt;/a&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-100&quot;&gt;
+                        &lt;i class=&quot;fas fa-star w-5 text-yellow-500&quot;&gt;&lt;/i&gt;
+                        &lt;span&gt;Favoritos&lt;/span&gt;
+                        &lt;span class=&quot;ml-auto bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full&quot; data-bind=&quot;favorites.count&quot;&gt;12&lt;/span&gt;
+                    &lt;/a&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-100&quot;&gt;
+                        &lt;i class=&quot;fas fa-clock w-5 text-orange-500&quot;&gt;&lt;/i&gt;
+                        &lt;span&gt;Recentes&lt;/span&gt;
+                    &lt;/a&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-100&quot;&gt;
+                        &lt;i class=&quot;fas fa-chart-line w-5 text-purple-500&quot;&gt;&lt;/i&gt;
+                        &lt;span&gt;Analytics&lt;/span&gt;
+                    &lt;/a&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-100&quot;&gt;
+                        &lt;i class=&quot;fas fa-cog w-5 text-gray-500&quot;&gt;&lt;/i&gt;
+                        &lt;span&gt;Configurações&lt;/span&gt;
+                    &lt;/a&gt;
+                &lt;/nav&gt;
+
+                &lt;!-- Filters --&gt;
+                &lt;div class=&quot;mt-6&quot;&gt;
+                    &lt;h3 class=&quot;text-sm font-semibold text-gray-800 mb-3&quot;&gt;Filtros Rápidos&lt;/h3&gt;
+                    &lt;div class=&quot;space-y-2&quot;&gt;
+                        &lt;button class=&quot;w-full text-left p-2 rounded hover:bg-gray-100 text-sm&quot;&gt;
+                            🔥 Leads Quentes
+                        &lt;/button&gt;
+                        &lt;button class=&quot;w-full text-left p-2 rounded hover:bg-gray-100 text-sm&quot;&gt;
+                            💎 Premium
+                        &lt;/button&gt;
+                        &lt;button class=&quot;w-full text-left p-2 rounded hover:bg-gray-100 text-sm&quot;&gt;
+                            ⏰ Urgentes
+                        &lt;/button&gt;
+                        &lt;button class=&quot;w-full text-left p-2 rounded hover:bg-gray-100 text-sm&quot;&gt;
+                            📱 Com WhatsApp
+                        &lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/aside&gt;
+        &lt;!-- @END_COMPONENT: Sidebar --&gt;
+
+        &lt;!-- @COMPONENT: MainFeed [central content area] --&gt;
+        &lt;main class=&quot;flex-1 lg:ml-80 lg:mr-80 min-h-screen&quot;&gt;
+            &lt;!-- Stories Section --&gt;
+            &lt;div class=&quot;bg-white p-4 mb-4 rounded-lg shadow-sm border border-facebook-border&quot;&gt;
+                &lt;div class=&quot;flex space-x-4 overflow-x-auto pb-2&quot;&gt;
+                    &lt;!-- Create Story --&gt;
+                    &lt;div class=&quot;flex-shrink-0 text-center&quot;&gt;
+                        &lt;div class=&quot;w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center border-2 border-dashed border-gray-300 cursor-pointer hover:border-facebook-blue&quot;&gt;
+                            &lt;i class=&quot;fas fa-plus text-facebook-blue text-xl&quot;&gt;&lt;/i&gt;
+                        &lt;/div&gt;
+                        &lt;span class=&quot;text-xs mt-1 block&quot;&gt;Sua História&lt;/span&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;!-- @MAP: stories.map(story =&gt; ( --&gt;
+                    &lt;div class=&quot;flex-shrink-0 text-center cursor-pointer&quot;&gt;
+                        &lt;div class=&quot;w-16 h-16 story-circle rounded-full p-0.5&quot;&gt;
+                            &lt;div class=&quot;w-full h-full bg-white rounded-full flex items-center justify-center&quot;&gt;
+                                &lt;!-- Empresa de tecnologia com inovação em IA --&gt;
+                                &lt;img src=&quot;https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=64&amp;h=64&quot; 
+                                     alt=&quot;TechCorp&quot; class=&quot;w-14 h-14 rounded-full object-cover&quot;&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;span class=&quot;text-xs mt-1 block&quot;&gt;TechCorp&lt;/span&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class=&quot;flex-shrink-0 text-center cursor-pointer&quot;&gt;
+                        &lt;div class=&quot;w-16 h-16 story-circle rounded-full p-0.5&quot;&gt;
+                            &lt;div class=&quot;w-full h-full bg-white rounded-full flex items-center justify-center&quot;&gt;
+                                &lt;!-- Restaurante moderno com ambiente aconchegante --&gt;
+                                &lt;img src=&quot;https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=64&amp;h=64&quot; 
+                                     alt=&quot;Bistrô Gourmet&quot; class=&quot;w-14 h-14 rounded-full object-cover&quot;&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;span class=&quot;text-xs mt-1 block&quot;&gt;Bistrô&lt;/span&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div class=&quot;flex-shrink-0 text-center cursor-pointer&quot;&gt;
+                        &lt;div class=&quot;w-16 h-16 story-circle rounded-full p-0.5&quot;&gt;
+                            &lt;div class=&quot;w-full h-full bg-white rounded-full flex items-center justify-center&quot;&gt;
+                                &lt;!-- Clínica médica moderna com equipamentos avançados --&gt;
+                                &lt;img src=&quot;https://images.unsplash.com/photo-1551076805-e1869033e561?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=64&amp;h=64&quot; 
+                                     alt=&quot;Clínica Saúde+&quot; class=&quot;w-14 h-14 rounded-full object-cover&quot;&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;span class=&quot;text-xs mt-1 block&quot;&gt;Saúde+&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;!-- @END_MAP )) --&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;!-- Bulk Selection Bar (Hidden by default) --&gt;
+            &lt;div id=&quot;bulkActionBar&quot; class=&quot;bg-facebook-blue text-white p-4 rounded-lg mb-4 shadow-lg hidden&quot;&gt;
+                &lt;div class=&quot;flex items-center justify-between&quot;&gt;
+                    &lt;div class=&quot;flex items-center space-x-3&quot;&gt;
+                        &lt;span class=&quot;font-semibold&quot; id=&quot;selectedCount&quot;&gt;3 leads selecionados&lt;/span&gt;
+                        &lt;button class=&quot;text-blue-100 hover:text-white&quot; onclick=&quot;clearSelection()&quot;&gt;
+                            &lt;i class=&quot;fas fa-times&quot;&gt;&lt;/i&gt; Limpar
+                        &lt;/button&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;flex space-x-2&quot;&gt;
+                        &lt;button class=&quot;bg-white text-facebook-blue px-4 py-2 rounded-lg font-semibold hover:bg-gray-100&quot; data-event=&quot;click:bulkWhatsApp&quot;&gt;
+                            &lt;i class=&quot;fab fa-whatsapp mr-2&quot;&gt;&lt;/i&gt;WhatsApp
+                        &lt;/button&gt;
+                        &lt;button class=&quot;bg-white text-facebook-blue px-4 py-2 rounded-lg font-semibold hover:bg-gray-100&quot; data-event=&quot;click:bulkEmail&quot;&gt;
+                            &lt;i class=&quot;fas fa-envelope mr-2&quot;&gt;&lt;/i&gt;Email
+                        &lt;/button&gt;
+                        &lt;button class=&quot;bg-white text-facebook-blue px-4 py-2 rounded-lg font-semibold hover:bg-gray-100&quot; data-event=&quot;click:bulkSave&quot;&gt;
+                            &lt;i class=&quot;fas fa-star mr-2&quot;&gt;&lt;/i&gt;Salvar
+                        &lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;!-- Feed Posts --&gt;
+            &lt;div class=&quot;space-y-4&quot; id=&quot;leadsFeed&quot;&gt;
+                &lt;!-- @MAP: leads.map(lead =&gt; ( --&gt;
+                &lt;!-- Lead Post 1 --&gt;
+                &lt;div class=&quot;bg-white rounded-lg shadow-sm border border-facebook-border post-hover cursor-pointer&quot; data-lead-id=&quot;1&quot;&gt;
+                    &lt;div class=&quot;p-4&quot;&gt;
+                        &lt;!-- Post Header --&gt;
+                        &lt;div class=&quot;flex items-start justify-between mb-3&quot;&gt;
+                            &lt;div class=&quot;flex items-center space-x-3&quot;&gt;
+                                &lt;div class=&quot;relative&quot;&gt;
+                                    &lt;input type=&quot;checkbox&quot; class=&quot;lead-checkbox absolute top-0 left-0 w-4 h-4 opacity-0 cursor-pointer&quot; onchange=&quot;toggleSelection(this)&quot;&gt;
+                                    &lt;!-- Empresa de desenvolvimento de software com foco em e-commerce --&gt;
+                                    &lt;img src=&quot;https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=48&amp;h=48&quot; 
+                                         alt=&quot;PROCEDER LTDA&quot; class=&quot;w-12 h-12 rounded-full object-cover border-2 border-transparent hover:border-facebook-blue&quot;&gt;
+                                &lt;/div&gt;
+                                &lt;div&gt;
+                                    &lt;h3 class=&quot;font-semibold text-gray-900&quot; data-bind=&quot;lead.companyName&quot;&gt;PROCEDER LTDA&lt;/h3&gt;
+                                    &lt;p class=&quot;text-sm text-gray-600&quot; data-bind=&quot;lead.segment&quot;&gt;Desenvolvimento de Software&lt;/p&gt;
+                                    &lt;p class=&quot;text-xs text-gray-500 flex items-center&quot;&gt;
+                                        &lt;i class=&quot;fas fa-clock mr-1&quot;&gt;&lt;/i&gt;
+                                        &lt;span data-bind=&quot;lead.timeAgo&quot;&gt;2 horas atrás&lt;/span&gt;
+                                        &lt;span class=&quot;mx-2&quot;&gt;•&lt;/span&gt;
+                                        &lt;i class=&quot;fas fa-fire text-orange-500 mr-1&quot;&gt;&lt;/i&gt;
+                                        &lt;span class=&quot;text-orange-600 font-semibold&quot;&gt;Lead Quente&lt;/span&gt;
+                                    &lt;/p&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;flex items-center space-x-2&quot;&gt;
+                                &lt;span class=&quot;bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full&quot;&gt;94% Match&lt;/span&gt;
+                                &lt;button class=&quot;text-gray-400 hover:text-gray-600&quot;&gt;
+                                    &lt;i class=&quot;fas fa-ellipsis-h&quot;&gt;&lt;/i&gt;
+                                &lt;/button&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;!-- Post Content --&gt;
+                        &lt;div class=&quot;mb-4&quot;&gt;
+                            &lt;p class=&quot;text-gray-800 mb-3&quot;&gt;Empresa especializada em e-commerce com 50+ funcionários. Potencial para soluções de marketing digital e automação.&lt;/p&gt;
+                            
+                            &lt;!-- Lead Preview Card --&gt;
+                            &lt;div class=&quot;bg-gray-50 rounded-lg p-4 border border-gray-200&quot;&gt;
+                                &lt;div class=&quot;grid grid-cols-2 gap-4 text-sm&quot;&gt;
+                                    &lt;div&gt;
+                                        &lt;span class=&quot;text-gray-600&quot;&gt;Localização:&lt;/span&gt;
+                                        &lt;span class=&quot;font-semibold ml-1&quot; data-bind=&quot;lead.location&quot;&gt;São Paulo, SP&lt;/span&gt;
+                                    &lt;/div&gt;
+                                    &lt;div&gt;
+                                        &lt;span class=&quot;text-gray-600&quot;&gt;Funcionários:&lt;/span&gt;
+                                        &lt;span class=&quot;font-semibold ml-1&quot; data-bind=&quot;lead.employees&quot;&gt;50-100&lt;/span&gt;
+                                    &lt;/div&gt;
+                                    &lt;div&gt;
+                                        &lt;span class=&quot;text-gray-600&quot;&gt;Faturamento:&lt;/span&gt;
+                                        &lt;span class=&quot;font-semibold ml-1&quot; data-bind=&quot;lead.revenue&quot;&gt;R$ 2-5M&lt;/span&gt;
+                                    &lt;/div&gt;
+                                    &lt;div&gt;
+                                        &lt;span class=&quot;text-gray-600&quot;&gt;Contato:&lt;/span&gt;
+                                        &lt;span class=&quot;text-facebook-blue font-semibold ml-1&quot;&gt;🔒 Desbloqueie&lt;/span&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;!-- Engagement Stats --&gt;
+                        &lt;div class=&quot;flex items-center text-sm text-gray-500 mb-3&quot;&gt;
+                            &lt;span class=&quot;flex items-center mr-4&quot;&gt;
+                                &lt;i class=&quot;fas fa-eye mr-1&quot;&gt;&lt;/i&gt;
+                                &lt;span data-bind=&quot;lead.views&quot;&gt;127 visualizações&lt;/span&gt;
+                            &lt;/span&gt;
+                            &lt;span class=&quot;flex items-center mr-4&quot;&gt;
+                                &lt;i class=&quot;fas fa-handshake mr-1&quot;&gt;&lt;/i&gt;
+                                &lt;span data-bind=&quot;lead.connections&quot;&gt;23 conexões&lt;/span&gt;
+                            &lt;/span&gt;
+                            &lt;span class=&quot;flex items-center&quot;&gt;
+                                &lt;i class=&quot;fas fa-clock mr-1&quot;&gt;&lt;/i&gt;
+                                &lt;span&gt;Melhor horário: 14h-16h&lt;/span&gt;
+                            &lt;/span&gt;
+                        &lt;/div&gt;
+
+                        &lt;!-- Action Buttons --&gt;
+                        &lt;div class=&quot;flex items-center justify-between pt-3 border-t border-gray-200&quot;&gt;
+                            &lt;button class=&quot;flex-1 flex items-center justify-center py-2 text-gray-600 hover:bg-gray-50 rounded-lg mx-1&quot; data-event=&quot;click:connectLead&quot;&gt;
+                                &lt;i class=&quot;fas fa-handshake mr-2 text-facebook-blue&quot;&gt;&lt;/i&gt;
+                                &lt;span class=&quot;font-semibold&quot;&gt;Conectar&lt;/span&gt;
+                            &lt;/button&gt;
+                            &lt;button class=&quot;flex-1 flex items-center justify-center py-2 text-gray-600 hover:bg-gray-50 rounded-lg mx-1&quot; data-event=&quot;click:openWhatsApp&quot;&gt;
+                                &lt;i class=&quot;fab fa-whatsapp mr-2 text-green-500&quot;&gt;&lt;/i&gt;
+                                &lt;span class=&quot;font-semibold&quot;&gt;WhatsApp&lt;/span&gt;
+                            &lt;/button&gt;
+                            &lt;button class=&quot;flex-1 flex items-center justify-center py-2 text-gray-600 hover:bg-gray-50 rounded-lg mx-1&quot; data-event=&quot;click:sendEmail&quot;&gt;
+                                &lt;i class=&quot;fas fa-envelope mr-2 text-blue-500&quot;&gt;&lt;/i&gt;
+                                &lt;span class=&quot;font-semibold&quot;&gt;Email&lt;/span&gt;
+                            &lt;/button&gt;
+                            &lt;button class=&quot;flex-1 flex items-center justify-center py-2 text-gray-600 hover:bg-gray-50 rounded-lg mx-1&quot; data-event=&quot;click:saveLead&quot;&gt;
+                                &lt;i class=&quot;fas fa-star mr-2 text-yellow-500&quot;&gt;&lt;/i&gt;
+                                &lt;span class=&quot;font-semibold&quot;&gt;Salvar&lt;/span&gt;
+                            &lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;!-- Lead Post 2 --&gt;
+                &lt;div class=&quot;bg-white rounded-lg shadow-sm border border-facebook-border post-hover cursor-pointer&quot; data-lead-id=&quot;2&quot;&gt;
+                    &lt;div class=&quot;p-4&quot;&gt;
+                        &lt;div class=&quot;flex items-start justify-between mb-3&quot;&gt;
+                            &lt;div class=&quot;flex items-center space-x-3&quot;&gt;
+                                &lt;div class=&quot;relative&quot;&gt;
+                                    &lt;input type=&quot;checkbox&quot; class=&quot;lead-checkbox absolute top-0 left-0 w-4 h-4 opacity-0 cursor-pointer&quot; onchange=&quot;toggleSelection(this)&quot;&gt;
+                                    &lt;!-- Clínica médica especializada em cardiologia --&gt;
+                                    &lt;img src=&quot;https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=48&amp;h=48&quot; 
+                                         alt=&quot;CLÍNICA SAÚDE+&quot; class=&quot;w-12 h-12 rounded-full object-cover border-2 border-transparent hover:border-facebook-blue&quot;&gt;
+                                &lt;/div&gt;
+                                &lt;div&gt;
+                                    &lt;h3 class=&quot;font-semibold text-gray-900&quot;&gt;CLÍNICA SAÚDE+&lt;/h3&gt;
+                                    &lt;p class=&quot;text-sm text-gray-600&quot;&gt;Clínica especializada em cardiologia&lt;/p&gt;
+                                    &lt;p class=&quot;text-xs text-gray-500 flex items-center&quot;&gt;
+                                        &lt;i class=&quot;fas fa-clock mr-1&quot;&gt;&lt;/i&gt;
+                                        &lt;span&gt;3 horas atrás&lt;/span&gt;
+                                        &lt;span class=&quot;mx-2&quot;&gt;•&lt;/span&gt;
+                                        &lt;i class=&quot;fas fa-gem text-purple-500 mr-1&quot;&gt;&lt;/i&gt;
+                                        &lt;span class=&quot;text-purple-600 font-semibold&quot;&gt;Premium&lt;/span&gt;
+                                    &lt;/p&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;flex items-center space-x-2&quot;&gt;
+                                &lt;span class=&quot;bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full&quot;&gt;87% Match&lt;/span&gt;
+                                &lt;button class=&quot;text-gray-400 hover:text-gray-600&quot;&gt;
+                                    &lt;i class=&quot;fas fa-ellipsis-h&quot;&gt;&lt;/i&gt;
+                                &lt;/button&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class=&quot;mb-4&quot;&gt;
+                            &lt;p class=&quot;text-gray-800 mb-3&quot;&gt;Clínica com alta demanda procura soluções para agendamento online e marketing médico.&lt;/p&gt;
+                            
+                            &lt;div class=&quot;bg-gray-50 rounded-lg p-4 border border-gray-200&quot;&gt;
+                                &lt;div class=&quot;grid grid-cols-2 gap-4 text-sm&quot;&gt;
+                                    &lt;div&gt;
+                                        &lt;span class=&quot;text-gray-600&quot;&gt;Localização:&lt;/span&gt;
+                                        &lt;span class=&quot;font-semibold ml-1&quot;&gt;Rio de Janeiro, RJ&lt;/span&gt;
+                                    &lt;/div&gt;
+                                    &lt;div&gt;
+                                        &lt;span class=&quot;text-gray-600&quot;&gt;Especialidade:&lt;/span&gt;
+                                        &lt;span class=&quot;font-semibold ml-1&quot;&gt;Cardiologia&lt;/span&gt;
+                                    &lt;/div&gt;
+                                    &lt;div&gt;
+                                        &lt;span class=&quot;text-gray-600&quot;&gt;Atendimentos/mês:&lt;/span&gt;
+                                        &lt;span class=&quot;font-semibold ml-1&quot;&gt;500+&lt;/span&gt;
+                                    &lt;/div&gt;
+                                    &lt;div&gt;
+                                        &lt;span class=&quot;text-gray-600&quot;&gt;WhatsApp:&lt;/span&gt;
+                                        &lt;span class=&quot;text-green-600 font-semibold ml-1&quot;&gt;✓ Disponível&lt;/span&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class=&quot;flex items-center text-sm text-gray-500 mb-3&quot;&gt;
+                            &lt;span class=&quot;flex items-center mr-4&quot;&gt;
+                                &lt;i class=&quot;fas fa-eye mr-1&quot;&gt;&lt;/i&gt;
+                                &lt;span&gt;89 visualizações&lt;/span&gt;
+                            &lt;/span&gt;
+                            &lt;span class=&quot;flex items-center mr-4&quot;&gt;
+                                &lt;i class=&quot;fas fa-handshake mr-1&quot;&gt;&lt;/i&gt;
+                                &lt;span&gt;15 conexões&lt;/span&gt;
+                            &lt;/span&gt;
+                            &lt;span class=&quot;flex items-center&quot;&gt;
+                                &lt;i class=&quot;fas fa-clock mr-1&quot;&gt;&lt;/i&gt;
+                                &lt;span&gt;Melhor horário: 9h-11h&lt;/span&gt;
+                            &lt;/span&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class=&quot;flex items-center justify-between pt-3 border-t border-gray-200&quot;&gt;
+                            &lt;button class=&quot;flex-1 flex items-center justify-center py-2 text-gray-600 hover:bg-gray-50 rounded-lg mx-1&quot;&gt;
+                                &lt;i class=&quot;fas fa-handshake mr-2 text-facebook-blue&quot;&gt;&lt;/i&gt;
+                                &lt;span class=&quot;font-semibold&quot;&gt;Conectar&lt;/span&gt;
+                            &lt;/button&gt;
+                            &lt;button class=&quot;flex-1 flex items-center justify-center py-2 text-gray-600 hover:bg-gray-50 rounded-lg mx-1&quot;&gt;
+                                &lt;i class=&quot;fab fa-whatsapp mr-2 text-green-500&quot;&gt;&lt;/i&gt;
+                                &lt;span class=&quot;font-semibold&quot;&gt;WhatsApp&lt;/span&gt;
+                            &lt;/button&gt;
+                            &lt;button class=&quot;flex-1 flex items-center justify-center py-2 text-gray-600 hover:bg-gray-50 rounded-lg mx-1&quot;&gt;
+                                &lt;i class=&quot;fas fa-envelope mr-2 text-blue-500&quot;&gt;&lt;/i&gt;
+                                &lt;span class=&quot;font-semibold&quot;&gt;Email&lt;/span&gt;
+                            &lt;/button&gt;
+                            &lt;button class=&quot;flex-1 flex items-center justify-center py-2 text-gray-600 hover:bg-gray-50 rounded-lg mx-1&quot;&gt;
+                                &lt;i class=&quot;fas fa-star mr-2 text-yellow-500&quot;&gt;&lt;/i&gt;
+                                &lt;span class=&quot;font-semibold&quot;&gt;Salvar&lt;/span&gt;
+                            &lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;!-- Lead Post 3 --&gt;
+                &lt;div class=&quot;bg-white rounded-lg shadow-sm border border-facebook-border post-hover cursor-pointer&quot; data-lead-id=&quot;3&quot;&gt;
+                    &lt;div class=&quot;p-4&quot;&gt;
+                        &lt;div class=&quot;flex items-start justify-between mb-3&quot;&gt;
+                            &lt;div class=&quot;flex items-center space-x-3&quot;&gt;
+                                &lt;div class=&quot;relative&quot;&gt;
+                                    &lt;input type=&quot;checkbox&quot; class=&quot;lead-checkbox absolute top-0 left-0 w-4 h-4 opacity-0 cursor-pointer&quot; onchange=&quot;toggleSelection(this)&quot;&gt;
+                                    &lt;!-- Restaurante gourmet com ambiente moderno --&gt;
+                                    &lt;img src=&quot;https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=48&amp;h=48&quot; 
+                                         alt=&quot;BISTRÔ GOURMET&quot; class=&quot;w-12 h-12 rounded-full object-cover border-2 border-transparent hover:border-facebook-blue&quot;&gt;
+                                &lt;/div&gt;
+                                &lt;div&gt;
+                                    &lt;h3 class=&quot;font-semibold text-gray-900&quot;&gt;BISTRÔ GOURMET&lt;/h3&gt;
+                                    &lt;p class=&quot;text-sm text-gray-600&quot;&gt;Restaurante • Gastronomia&lt;/p&gt;
+                                    &lt;p class=&quot;text-xs text-gray-500 flex items-center&quot;&gt;
+                                        &lt;i class=&quot;fas fa-clock mr-1&quot;&gt;&lt;/i&gt;
+                                        &lt;span&gt;5 horas atrás&lt;/span&gt;
+                                        &lt;span class=&quot;mx-2&quot;&gt;•&lt;/span&gt;
+                                        &lt;i class=&quot;fas fa-bolt text-yellow-500 mr-1&quot;&gt;&lt;/i&gt;
+                                        &lt;span class=&quot;text-yellow-600 font-semibold&quot;&gt;Urgente&lt;/span&gt;
+                                    &lt;/p&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;flex items-center space-x-2&quot;&gt;
+                                &lt;span class=&quot;bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded-full&quot;&gt;76% Match&lt;/span&gt;
+                                &lt;button class=&quot;text-gray-400 hover:text-gray-600&quot;&gt;
+                                    &lt;i class=&quot;fas fa-ellipsis-h&quot;&gt;&lt;/i&gt;
+                                &lt;/button&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class=&quot;mb-4&quot;&gt;
+                            &lt;p class=&quot;text-gray-800 mb-3&quot;&gt;Restaurante busca soluções para delivery e marketing digital. Alto potencial de crescimento.&lt;/p&gt;
+                            
+                            &lt;div class=&quot;bg-gray-50 rounded-lg p-4 border border-gray-200&quot;&gt;
+                                &lt;div class=&quot;grid grid-cols-2 gap-4 text-sm&quot;&gt;
+                                    &lt;div&gt;
+                                        &lt;span class=&quot;text-gray-600&quot;&gt;Localização:&lt;/span&gt;
+                                        &lt;span class=&quot;font-semibold ml-1&quot;&gt;Belo Horizonte, MG&lt;/span&gt;
+                                    &lt;/div&gt;
+                                    &lt;div&gt;
+                                        &lt;span class=&quot;text-gray-600&quot;&gt;Tipo:&lt;/span&gt;
+                                        &lt;span class=&quot;font-semibold ml-1&quot;&gt;Bistrô/Gourmet&lt;/span&gt;
+                                    &lt;/div&gt;
+                                    &lt;div&gt;
+                                        &lt;span class=&quot;text-gray-600&quot;&gt;Mesas:&lt;/span&gt;
+                                        &lt;span class=&quot;font-semibold ml-1&quot;&gt;45 lugares&lt;/span&gt;
+                                    &lt;/div&gt;
+                                    &lt;div&gt;
+                                        &lt;span class=&quot;text-gray-600&quot;&gt;Delivery:&lt;/span&gt;
+                                        &lt;span class=&quot;text-red-600 font-semibold ml-1&quot;&gt;Sem sistema&lt;/span&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class=&quot;flex items-center text-sm text-gray-500 mb-3&quot;&gt;
+                            &lt;span class=&quot;flex items-center mr-4&quot;&gt;
+                                &lt;i class=&quot;fas fa-eye mr-1&quot;&gt;&lt;/i&gt;
+                                &lt;span&gt;156 visualizações&lt;/span&gt;
+                            &lt;/span&gt;
+                            &lt;span class=&quot;flex items-center mr-4&quot;&gt;
+                                &lt;i class=&quot;fas fa-handshake mr-1&quot;&gt;&lt;/i&gt;
+                                &lt;span&gt;31 conexões&lt;/span&gt;
+                            &lt;/span&gt;
+                            &lt;span class=&quot;flex items-center&quot;&gt;
+                                &lt;i class=&quot;fas fa-clock mr-1&quot;&gt;&lt;/i&gt;
+                                &lt;span&gt;Melhor horário: 15h-17h&lt;/span&gt;
+                            &lt;/span&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class=&quot;flex items-center justify-between pt-3 border-t border-gray-200&quot;&gt;
+                            &lt;button class=&quot;flex-1 flex items-center justify-center py-2 text-gray-600 hover:bg-gray-50 rounded-lg mx-1&quot;&gt;
+                                &lt;i class=&quot;fas fa-handshake mr-2 text-facebook-blue&quot;&gt;&lt;/i&gt;
+                                &lt;span class=&quot;font-semibold&quot;&gt;Conectar&lt;/span&gt;
+                            &lt;/button&gt;
+                            &lt;button class=&quot;flex-1 flex items-center justify-center py-2 text-gray-600 hover:bg-gray-50 rounded-lg mx-1&quot;&gt;
+                                &lt;i class=&quot;fab fa-whatsapp mr-2 text-green-500&quot;&gt;&lt;/i&gt;
+                                &lt;span class=&quot;font-semibold&quot;&gt;WhatsApp&lt;/span&gt;
+                            &lt;/button&gt;
+                            &lt;button class=&quot;flex-1 flex items-center justify-center py-2 text-gray-600 hover:bg-gray-50 rounded-lg mx-1&quot;&gt;
+                                &lt;i class=&quot;fas fa-envelope mr-2 text-blue-500&quot;&gt;&lt;/i&gt;
+                                &lt;span class=&quot;font-semibold&quot;&gt;Email&lt;/span&gt;
+                            &lt;/button&gt;
+                            &lt;button class=&quot;flex-1 flex items-center justify-center py-2 text-gray-600 hover:bg-gray-50 rounded-lg mx-1&quot;&gt;
+                                &lt;i class=&quot;fas fa-star mr-2 text-yellow-500&quot;&gt;&lt;/i&gt;
+                                &lt;span class=&quot;font-semibold&quot;&gt;Salvar&lt;/span&gt;
+                            &lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;!-- @END_MAP )) --&gt;
+
+                &lt;!-- Load More Button --&gt;
+                &lt;div class=&quot;text-center py-6&quot;&gt;
+                    &lt;button class=&quot;bg-facebook-bg text-gray-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition-colors&quot; data-event=&quot;click:loadMoreLeads&quot;&gt;
+                        &lt;i class=&quot;fas fa-plus mr-2&quot;&gt;&lt;/i&gt;Carregar mais leads
+                    &lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/main&gt;
+        &lt;!-- @END_COMPONENT: MainFeed --&gt;
+
+        &lt;!-- @COMPONENT: ChatSidebar [messenger-style chat] --&gt;
+        &lt;aside class=&quot;hidden lg:block w-80 bg-white h-screen overflow-y-auto border-l border-facebook-border fixed right-0 top-14&quot;&gt;
+            &lt;div class=&quot;p-4&quot;&gt;
+                &lt;!-- Chat Header --&gt;
+                &lt;div class=&quot;flex items-center justify-between mb-4&quot;&gt;
+                    &lt;h3 class=&quot;text-lg font-semibold text-gray-800&quot;&gt;Conversas&lt;/h3&gt;
+                    &lt;div class=&quot;flex space-x-2&quot;&gt;
+                        &lt;button class=&quot;text-gray-500 hover:text-gray-700&quot;&gt;
+                            &lt;i class=&quot;fas fa-search&quot;&gt;&lt;/i&gt;
+                        &lt;/button&gt;
+                        &lt;button class=&quot;text-gray-500 hover:text-gray-700&quot;&gt;
+                            &lt;i class=&quot;fas fa-edit&quot;&gt;&lt;/i&gt;
+                        &lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;!-- Active Conversations --&gt;
+                &lt;div class=&quot;space-y-2 mb-6&quot;&gt;
+                    &lt;div class=&quot;flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-100 cursor-pointer&quot;&gt;
+                        &lt;div class=&quot;relative&quot;&gt;
+                            &lt;!-- Gerente de marketing de empresa de tecnologia --&gt;
+                            &lt;img src=&quot;https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=40&amp;h=40&quot; 
+                                 alt=&quot;Carlos Silva&quot; class=&quot;w-10 h-10 rounded-full object-cover&quot;&gt;
+                            &lt;div class=&quot;absolute -bottom-1 -right-1 w-4 h-4 bg-green-500 rounded-full border-2 border-white&quot;&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;flex-1&quot;&gt;
+                            &lt;div class=&quot;flex items-center justify-between&quot;&gt;
+                                &lt;span class=&quot;font-semibold text-sm&quot; data-bind=&quot;chat.contact.name&quot;&gt;Carlos Silva&lt;/span&gt;
+                                &lt;span class=&quot;text-xs text-gray-500&quot; data-bind=&quot;chat.lastMessageTime&quot;&gt;10:30&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;p class=&quot;text-sm text-gray-600 truncate&quot; data-bind=&quot;chat.lastMessage&quot;&gt;Olá! Gostaria de saber mais sobre...&lt;/p&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;w-2 h-2 bg-facebook-blue rounded-full&quot;&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class=&quot;flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-100 cursor-pointer&quot;&gt;
+                        &lt;div class=&quot;relative&quot;&gt;
+                            &lt;!-- Proprietária de clínica médica --&gt;
+                            &lt;img src=&quot;https://pixabay.com/get/g63b67e9a3ae966474694036f9a6803154fbdb9fdbb04f63549faa384cbedb542bff49c7aa5d0a7d19ba302031698b3a516571bad35ca5d98551f8a9773547d72_1280.jpg&quot; 
+                                 alt=&quot;Ana Santos&quot; class=&quot;w-10 h-10 rounded-full object-cover&quot;&gt;
+                            &lt;div class=&quot;absolute -bottom-1 -right-1 w-4 h-4 bg-yellow-500 rounded-full border-2 border-white&quot;&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;flex-1&quot;&gt;
+                            &lt;div class=&quot;flex items-center justify-between&quot;&gt;
+                                &lt;span class=&quot;font-semibold text-sm&quot;&gt;Dra. Ana Santos&lt;/span&gt;
+                                &lt;span class=&quot;text-xs text-gray-500&quot;&gt;09:45&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;p class=&quot;text-sm text-gray-600 truncate&quot;&gt;Perfeito! Quando podemos agendar...&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class=&quot;flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-100 cursor-pointer&quot;&gt;
+                        &lt;div class=&quot;relative&quot;&gt;
+                            &lt;!-- Chef de restaurante moderno --&gt;
+                            &lt;img src=&quot;https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=40&amp;h=40&quot; 
+                                 alt=&quot;Roberto Gomes&quot; class=&quot;w-10 h-10 rounded-full object-cover&quot;&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;flex-1&quot;&gt;
+                            &lt;div class=&quot;flex items-center justify-between&quot;&gt;
+                                &lt;span class=&quot;font-semibold text-sm&quot;&gt;Roberto Gomes&lt;/span&gt;
+                                &lt;span class=&quot;text-xs text-gray-500&quot;&gt;Ontem&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;p class=&quot;text-sm text-gray-600 truncate&quot;&gt;Obrigado pelas informações sobre o...&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;!-- Chat Window --&gt;
+                &lt;div class=&quot;bg-gray-50 rounded-lg p-4 h-80 flex flex-col&quot;&gt;
+                    &lt;div class=&quot;flex items-center space-x-3 pb-3 border-b border-gray-200&quot;&gt;
+                        &lt;!-- Gerente de marketing sorrindo --&gt;
+                        &lt;img src=&quot;https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=32&amp;h=32&quot; 
+                             alt=&quot;Carlos Silva&quot; class=&quot;w-8 h-8 rounded-full object-cover&quot;&gt;
+                        &lt;div&gt;
+                            &lt;span class=&quot;font-semibold text-sm&quot;&gt;Carlos Silva&lt;/span&gt;
+                            &lt;div class=&quot;flex items-center text-xs text-green-600&quot;&gt;
+                                &lt;div class=&quot;w-2 h-2 bg-green-500 rounded-full mr-1&quot;&gt;&lt;/div&gt;
+                                Online
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+
+                    &lt;!-- Messages --&gt;
+                    &lt;div class=&quot;flex-1 py-3 space-y-3 overflow-y-auto&quot;&gt;
+                        &lt;div class=&quot;flex&quot;&gt;
+                            &lt;div class=&quot;chat-bubble-received max-w-xs p-3 rounded-lg text-sm&quot;&gt;
+                                Olá! Vi sua proposta de marketing digital. Estou interessado em saber mais detalhes.
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;flex justify-end&quot;&gt;
+                            &lt;div class=&quot;chat-bubble-sent max-w-xs p-3 rounded-lg text-sm&quot;&gt;
+                                Ótimo! Posso explicar como nosso sistema pode aumentar suas vendas em até 40%. Quando seria um bom horário para conversarmos?
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;flex&quot;&gt;
+                            &lt;div class=&quot;chat-bubble-received max-w-xs p-3 rounded-lg text-sm&quot;&gt;
+                                Que tal amanhã às 14h?
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+
+                    &lt;!-- Message Input --&gt;
+                    &lt;div class=&quot;flex items-center space-x-2 pt-3 border-t border-gray-200&quot;&gt;
+                        &lt;input type=&quot;text&quot; placeholder=&quot;Digite sua mensagem...&quot; 
+                               class=&quot;flex-1 bg-white rounded-full px-4 py-2 text-sm border border-gray-300 focus:outline-none focus:border-facebook-blue&quot;&gt;
+                        &lt;button class=&quot;text-facebook-blue hover:text-blue-600&quot;&gt;
+                            &lt;i class=&quot;fas fa-paper-plane&quot;&gt;&lt;/i&gt;
+                        &lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;!-- Quick Actions --&gt;
+                &lt;div class=&quot;mt-4&quot;&gt;
+                    &lt;h4 class=&quot;text-sm font-semibold text-gray-800 mb-3&quot;&gt;Ações Rápidas&lt;/h4&gt;
+                    &lt;div class=&quot;space-y-2&quot;&gt;
+                        &lt;button class=&quot;w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-100 text-left&quot;&gt;
+                            &lt;i class=&quot;fas fa-bolt text-yellow-500&quot;&gt;&lt;/i&gt;
+                            &lt;span class=&quot;text-sm&quot;&gt;Enviar template&lt;/span&gt;
+                        &lt;/button&gt;
+                        &lt;button class=&quot;w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-100 text-left&quot;&gt;
+                            &lt;i class=&quot;fas fa-calendar text-blue-500&quot;&gt;&lt;/i&gt;
+                            &lt;span class=&quot;text-sm&quot;&gt;Agendar reunião&lt;/span&gt;
+                        &lt;/button&gt;
+                        &lt;button class=&quot;w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-100 text-left&quot;&gt;
+                            &lt;i class=&quot;fas fa-file-pdf text-red-500&quot;&gt;&lt;/i&gt;
+                            &lt;span class=&quot;text-sm&quot;&gt;Enviar proposta&lt;/span&gt;
+                        &lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/aside&gt;
+        &lt;!-- @END_COMPONENT: ChatSidebar --&gt;
+    &lt;/div&gt;
+
+    &lt;!-- @COMPONENT: MobileBottomNav [mobile navigation] --&gt;
+    &lt;nav class=&quot;lg:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-facebook-border z-50&quot;&gt;
+        &lt;div class=&quot;flex items-center justify-around py-2&quot;&gt;
+            &lt;button class=&quot;flex flex-col items-center p-2 text-facebook-blue&quot;&gt;
+                &lt;i class=&quot;fas fa-home text-xl mb-1&quot;&gt;&lt;/i&gt;
+                &lt;span class=&quot;text-xs font-semibold&quot;&gt;Feed&lt;/span&gt;
+            &lt;/button&gt;
+            &lt;button class=&quot;flex flex-col items-center p-2 text-gray-600&quot;&gt;
+                &lt;div class=&quot;relative&quot;&gt;
+                    &lt;i class=&quot;fas fa-search text-xl mb-1&quot;&gt;&lt;/i&gt;
+                &lt;/div&gt;
+                &lt;span class=&quot;text-xs&quot;&gt;Buscar&lt;/span&gt;
+            &lt;/button&gt;
+            &lt;button class=&quot;flex flex-col items-center p-2 text-gray-600&quot;&gt;
+                &lt;div class=&quot;relative&quot;&gt;
+                    &lt;i class=&quot;fas fa-star text-xl mb-1&quot;&gt;&lt;/i&gt;
+                    &lt;span class=&quot;absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-4 w-4 flex items-center justify-center&quot;&gt;5&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;span class=&quot;text-xs&quot;&gt;Favoritos&lt;/span&gt;
+            &lt;/button&gt;
+            &lt;button class=&quot;flex flex-col items-center p-2 text-gray-600&quot; onclick=&quot;toggleMobileChat()&quot;&gt;
+                &lt;div class=&quot;relative&quot;&gt;
+                    &lt;i class=&quot;fas fa-comment text-xl mb-1&quot;&gt;&lt;/i&gt;
+                    &lt;span class=&quot;absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-4 w-4 flex items-center justify-center&quot;&gt;3&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;span class=&quot;text-xs&quot;&gt;Chat&lt;/span&gt;
+            &lt;/button&gt;
+            &lt;button class=&quot;flex flex-col items-center p-2 text-gray-600&quot;&gt;
+                &lt;i class=&quot;fas fa-user text-xl mb-1&quot;&gt;&lt;/i&gt;
+                &lt;span class=&quot;text-xs&quot;&gt;Perfil&lt;/span&gt;
+            &lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/nav&gt;
+    &lt;!-- @END_COMPONENT: MobileBottomNav --&gt;
+
+    &lt;!-- @COMPONENT: MobileChatModal [fullscreen mobile chat] --&gt;
+    &lt;div id=&quot;mobileChatModal&quot; class=&quot;lg:hidden fixed inset-0 bg-white z-50 transform translate-x-full transition-transform duration-300&quot;&gt;
+        &lt;div class=&quot;flex flex-col h-full&quot;&gt;
+            &lt;!-- Chat Header --&gt;
+            &lt;div class=&quot;bg-facebook-blue text-white p-4 flex items-center&quot;&gt;
+                &lt;button onclick=&quot;toggleMobileChat()&quot; class=&quot;mr-3&quot;&gt;
+                    &lt;i class=&quot;fas fa-arrow-left text-xl&quot;&gt;&lt;/i&gt;
+                &lt;/button&gt;
+                &lt;div class=&quot;flex items-center space-x-3&quot;&gt;
+                    &lt;!-- Gerente de marketing profissional --&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=32&amp;h=32&quot; 
+                         alt=&quot;Carlos Silva&quot; class=&quot;w-8 h-8 rounded-full object-cover&quot;&gt;
+                    &lt;div&gt;
+                        &lt;span class=&quot;font-semibold&quot;&gt;Carlos Silva&lt;/span&gt;
+                        &lt;div class=&quot;text-xs opacity-90&quot;&gt;Online agora&lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;ml-auto&quot;&gt;
+                    &lt;button class=&quot;p-2&quot;&gt;
+                        &lt;i class=&quot;fas fa-phone&quot;&gt;&lt;/i&gt;
+                    &lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;!-- Messages --&gt;
+            &lt;div class=&quot;flex-1 p-4 space-y-3 overflow-y-auto bg-gray-50&quot;&gt;
+                &lt;div class=&quot;flex&quot;&gt;
+                    &lt;div class=&quot;chat-bubble-received max-w-xs p-3 rounded-lg text-sm&quot;&gt;
+                        Oi! Tenho interesse na sua solução de marketing. Pode me explicar melhor?
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;flex justify-end&quot;&gt;
+                    &lt;div class=&quot;chat-bubble-sent max-w-xs p-3 rounded-lg text-sm&quot;&gt;
+                        Claro! Nossa plataforma aumenta conversões em até 40%. Quer que eu mande um material explicativo?
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;flex&quot;&gt;
+                    &lt;div class=&quot;chat-bubble-received max-w-xs p-3 rounded-lg text-sm&quot;&gt;
+                        Perfeito! E qual seria o investimento inicial?
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;flex justify-end&quot;&gt;
+                    &lt;div class=&quot;chat-bubble-sent max-w-xs p-3 rounded-lg text-sm&quot;&gt;
+                        Temos planos a partir de R$ 297/mês. Que tal agendar uma call para apresentar melhor?
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;!-- Message Input --&gt;
+            &lt;div class=&quot;p-4 bg-white border-t border-gray-200&quot;&gt;
+                &lt;div class=&quot;flex items-center space-x-3&quot;&gt;
+                    &lt;button class=&quot;text-facebook-blue&quot;&gt;
+                        &lt;i class=&quot;fas fa-paperclip text-xl&quot;&gt;&lt;/i&gt;
+                    &lt;/button&gt;
+                    &lt;input type=&quot;text&quot; placeholder=&quot;Digite sua mensagem...&quot; 
+                           class=&quot;flex-1 bg-gray-100 rounded-full px-4 py-3 text-sm focus:outline-none focus:bg-white focus:ring-2 focus:ring-facebook-blue&quot;&gt;
+                    &lt;button class=&quot;bg-facebook-blue text-white p-3 rounded-full&quot;&gt;
+                        &lt;i class=&quot;fas fa-paper-plane&quot;&gt;&lt;/i&gt;
+                    &lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- @END_COMPONENT: MobileChatModal --&gt;
+
+    &lt;!-- @COMPONENT: NotificationDropdown [notification popup] --&gt;
+    &lt;div id=&quot;notificationDropdown&quot; class=&quot;hidden fixed top-16 right-4 w-80 bg-white rounded-lg shadow-xl border border-gray-200 z-50 max-h-96 overflow-y-auto&quot;&gt;
+        &lt;div class=&quot;p-4 border-b border-gray-200&quot;&gt;
+            &lt;h3 class=&quot;font-semibold text-gray-900&quot;&gt;Notificações&lt;/h3&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;divide-y divide-gray-100&quot;&gt;
+            &lt;div class=&quot;p-4 hover:bg-gray-50 cursor-pointer&quot;&gt;
+                &lt;div class=&quot;flex items-start space-x-3&quot;&gt;
+                    &lt;div class=&quot;w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center&quot;&gt;
+                        &lt;i class=&quot;fas fa-handshake text-blue-600 text-sm&quot;&gt;&lt;/i&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;flex-1&quot;&gt;
+                        &lt;p class=&quot;text-sm font-semibold text-gray-900&quot;&gt;Nova conexão!&lt;/p&gt;
+                        &lt;p class=&quot;text-sm text-gray-600&quot;&gt;Carlos Silva aceitou sua solicitação de conexão&lt;/p&gt;
+                        &lt;p class=&quot;text-xs text-gray-500 mt-1&quot;&gt;2 minutos atrás&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;p-4 hover:bg-gray-50 cursor-pointer&quot;&gt;
+                &lt;div class=&quot;flex items-start space-x-3&quot;&gt;
+                    &lt;div class=&quot;w-8 h-8 bg-green-100 rounded-full flex items-center justify-center&quot;&gt;
+                        &lt;i class=&quot;fab fa-whatsapp text-green-600 text-sm&quot;&gt;&lt;/i&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;flex-1&quot;&gt;
+                        &lt;p class=&quot;text-sm font-semibold text-gray-900&quot;&gt;Mensagem enviada&lt;/p&gt;
+                        &lt;p class=&quot;text-sm text-gray-600&quot;&gt;Sua mensagem para PROCEDER LTDA foi entregue&lt;/p&gt;
+                        &lt;p class=&quot;text-xs text-gray-500 mt-1&quot;&gt;15 minutos atrás&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;p-4 hover:bg-gray-50 cursor-pointer&quot;&gt;
+                &lt;div class=&quot;flex items-start space-x-3&quot;&gt;
+                    &lt;div class=&quot;w-8 h-8 bg-yellow-100 rounded-full flex items-center justify-center&quot;&gt;
+                        &lt;i class=&quot;fas fa-star text-yellow-600 text-sm&quot;&gt;&lt;/i&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;flex-1&quot;&gt;
+                        &lt;p class=&quot;text-sm font-semibold text-gray-900&quot;&gt;Lead em alta!&lt;/p&gt;
+                        &lt;p class=&quot;text-sm text-gray-600&quot;&gt;BISTRÔ GOURMET teve 50+ visualizações hoje&lt;/p&gt;
+                        &lt;p class=&quot;text-xs text-gray-500 mt-1&quot;&gt;1 hora atrás&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- @END_COMPONENT: NotificationDropdown --&gt;
+
+    &lt;script&gt;
+    (function() {
+        'use strict';
+
+        // Selection System
+        let selectedLeads = new Set();
+        
+        window.toggleSelection = function(checkbox) {
+            const leadCard = checkbox.closest('[data-lead-id]');
+            const leadId = leadCard.dataset.leadId;
+            
+            if (checkbox.checked) {
+                selectedLeads.add(leadId);
+                leadCard.classList.add('selection-overlay');
+            } else {
+                selectedLeads.delete(leadId);
+                leadCard.classList.remove('selection-overlay');
+            }
+            
+            updateBulkActionBar();
+        };
+        
+        function updateBulkActionBar() {
+            const bulkBar = document.getElementById('bulkActionBar');
+            const countEl = document.getElementById('selectedCount');
+            
+            if (selectedLeads.size &gt; 0) {
+                bulkBar.classList.remove('hidden');
+                countEl.textContent = `${selectedLeads.size} leads selecionados`;
+            } else {
+                bulkBar.classList.add('hidden');
+            }
+        }
+        
+        window.clearSelection = function() {
+            document.querySelectorAll('.lead-checkbox').forEach(checkbox =&gt; {
+                checkbox.checked = false;
+                checkbox.closest('[data-lead-id]').classList.remove('selection-overlay');
+            });
+            selectedLeads.clear();
+            updateBulkActionBar();
+        };
+
+        // Mobile Chat Toggle
+        window.toggleMobileChat = function() {
+            const modal = document.getElementById('mobileChatModal');
+            modal.classList.toggle('translate-x-full');
+        };
+
+        // Notification Toggle
+        let notificationDropdown = null;
+        
+        document.addEventListener('click', function(e) {
+            if (e.target.closest('.fa-bell')) {
+                e.preventDefault();
+                const dropdown = document.getElementById('notificationDropdown');
+                dropdown.classList.toggle('hidden');
+                notificationDropdown = dropdown.classList.contains('hidden') ? null : dropdown;
+            } else if (notificationDropdown &amp;&amp; !e.target.closest('#notificationDropdown')) {
+                notificationDropdown.classList.add('hidden');
+                notificationDropdown = null;
+            }
+        });
+
+        // Lead Card Interactions
+        document.addEventListener('click', function(e) {
+            const leadCard = e.target.closest('[data-lead-id]');
+            if (!leadCard) return;
+            
+            // Prevent selection when clicking action buttons
+            if (e.target.closest('button') || e.target.closest('.lead-checkbox')) return;
+            
+            // Simulate lead detail view
+            console.log('Opening lead details for:', leadCard.dataset.leadId);
+            // Here you would open a modal or navigate to detail page
+        });
+
+        // Infinite Scroll Simulation
+        let isLoading = false;
+        window.addEventListener('scroll', function() {
+            if (isLoading) return;
+            
+            const scrollPosition = window.innerHeight + window.scrollY;
+            const documentHeight = document.documentElement.offsetHeight;
+            
+            if (scrollPosition &gt;= documentHeight - 1000) {
+                isLoading = true;
+                // Simulate loading more leads
+                setTimeout(() =&gt; {
+                    console.log('Loading more leads...');
+                    isLoading = false;
+                }, 1000);
+            }
+        });
+
+        // Simulate real-time updates
+        setInterval(() =&gt; {
+            // Update notification badges randomly
+            const badges = document.querySelectorAll('.bg-red-500');
+            badges.forEach(badge =&gt; {
+                const currentCount = parseInt(badge.textContent) || 0;
+                if (Math.random() &gt; 0.9) { // 10% chance to update
+                    badge.textContent = currentCount + 1;
+                }
+            });
+        }, 10000); // Every 10 seconds
+
+        // Lead action handlers
+        document.addEventListener('click', function(e) {
+            const button = e.target.closest('[data-event]');
+            if (!button) return;
+            
+            const event = button.dataset.event;
+            
+            switch(event) {
+                case 'click:connectLead':
+                    console.log('Connecting to lead...');
+                    // Show success notification
+                    showNotification('Conexão enviada com sucesso!', 'success');
+                    break;
+                    
+                case 'click:openWhatsApp':
+                    console.log('Opening WhatsApp...');
+                    // Simulate WhatsApp opening
+                    showNotification('Abrindo WhatsApp...', 'info');
+                    break;
+                    
+                case 'click:sendEmail':
+                    console.log('Opening email composer...');
+                    showNotification('Abrindo composer de email...', 'info');
+                    break;
+                    
+                case 'click:saveLead':
+                    console.log('Saving lead to favorites...');
+                    showNotification('Lead salvo nos favoritos!', 'success');
+                    break;
+                    
+                case 'click:bulkWhatsApp':
+                    console.log('Bulk WhatsApp action...');
+                    showNotification(`Enviando WhatsApp para ${selectedLeads.size} leads...`, 'info');
+                    break;
+                    
+                case 'click:bulkEmail':
+                    console.log('Bulk email action...');
+                    showNotification(`Enviando email para ${selectedLeads.size} leads...`, 'info');
+                    break;
+                    
+                case 'click:loadMoreLeads':
+                    console.log('Loading more leads...');
+                    button.innerHTML = '&lt;i class=&quot;fas fa-spinner fa-spin mr-2&quot;&gt;&lt;/i&gt;Carregando...';
+                    setTimeout(() =&gt; {
+                        button.innerHTML = '&lt;i class=&quot;fas fa-plus mr-2&quot;&gt;&lt;/i&gt;Carregar mais leads';
+                        showNotification('Novos leads carregados!', 'success');
+                    }, 2000);
+                    break;
+            }
+        });
+
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.className = `fixed top-20 right-4 z-50 p-4 rounded-lg shadow-lg text-white max-w-sm ${
+                type === 'success' ? 'bg-green-500' : 
+                type === 'error' ? 'bg-red-500' : 
+                'bg-blue-500'
+            }`;
+            notification.innerHTML = `
+                &lt;div class=&quot;flex items-center space-x-2&quot;&gt;
+                    &lt;i class=&quot;fas fa-${type === 'success' ? 'check-circle' : type === 'error' ? 'exclamation-circle' : 'info-circle'}&quot;&gt;&lt;/i&gt;
+                    &lt;span&gt;${message}&lt;/span&gt;
+                &lt;/div&gt;
+            `;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() =&gt; {
+                notification.remove();
+            }, 3000);
+        }
+
+        // Initialize tooltips and hints for first-time users
+        const isFirstTime = !localStorage.getItem('leadpilot_toured');
+        if (isFirstTime) {
+            setTimeout(() =&gt; {
+                showNotification('Dica: Clique nos checkboxes para selecionar múltiplos leads!', 'info');
+                localStorage.setItem('leadpilot_toured', 'true');
+            }, 2000);
+        }
+    })();
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;pt-BR&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Lead Pilot - Networking Inteligente&lt;/title&gt;
+    &lt;script src=&quot;https://cdn.tailwindcss.com&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'facebook-blue': '#1877F2',
+                        'facebook-light': '#E7F3FF',
+                        'facebook-gray': '#F0F2F5',
+                        'facebook-dark': '#1C1E21',
+                        'facebook-secondary': '#65676B',
+                        'success-green': '#42B883',
+                        'warning-orange': '#FF6B35'
+                    },
+                    fontFamily: {
+                        'facebook': ['Segoe UI', '-apple-system', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        };
+    &lt;/script&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css&quot;&gt;
+    &lt;style&gt;
+        .facebook-shadow { box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1); }
+        .story-gradient { background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); }
+        .lead-card-hover:hover { transform: translateY(-2px); transition: all 0.2s ease; }
+        .messenger-bubble { border-radius: 18px; max-width: 75%; }
+        .selection-animation { animation: pulse 0.3s ease-in-out; }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body class=&quot;bg-facebook-gray font-facebook&quot;&gt;
+    &lt;!-- Facebook Header --&gt;
+    &lt;header class=&quot;bg-facebook-blue shadow-lg fixed top-0 w-full z-50 h-14&quot;&gt;
+        &lt;div class=&quot;max-w-7xl mx-auto px-4 h-full flex items-center justify-between&quot;&gt;
+            &lt;!-- Logo and Search (Left) --&gt;
+            &lt;div class=&quot;flex items-center space-x-4 flex-1&quot;&gt;
+                &lt;div class=&quot;flex items-center space-x-2&quot;&gt;
+                    &lt;div class=&quot;w-8 h-8 bg-white rounded-full flex items-center justify-center&quot;&gt;
+                        &lt;i class=&quot;fas fa-rocket text-facebook-blue&quot;&gt;&lt;/i&gt;
+                    &lt;/div&gt;
+                    &lt;span class=&quot;hidden md:block text-white font-bold text-lg&quot;&gt;Lead Pilot&lt;/span&gt;
+                &lt;/div&gt;
+                
+                &lt;!-- Search Bar --&gt;
+                &lt;div class=&quot;relative max-w-lg flex-1&quot;&gt;
+                    &lt;input type=&quot;text&quot; placeholder=&quot;Buscar empresas, segmentos...&quot; 
+                           class=&quot;w-full px-10 py-2 bg-facebook-light rounded-full text-facebook-dark placeholder-facebook-secondary focus:outline-none focus:ring-2 focus:ring-white&quot;&gt;
+                    &lt;i class=&quot;fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-facebook-secondary&quot;&gt;&lt;/i&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;!-- Center Navigation (Desktop) --&gt;
+            &lt;nav class=&quot;hidden lg:flex items-center space-x-8&quot;&gt;
+                &lt;a href=&quot;#&quot; class=&quot;text-white p-2 hover:bg-blue-600 rounded-lg border-b-2 border-white&quot;&gt;
+                    &lt;i class=&quot;fas fa-home text-xl&quot;&gt;&lt;/i&gt;
+                &lt;/a&gt;
+                &lt;a href=&quot;#&quot; class=&quot;text-blue-200 p-2 hover:bg-blue-600 rounded-lg&quot;&gt;
+                    &lt;i class=&quot;fas fa-users text-xl&quot;&gt;&lt;/i&gt;
+                &lt;/a&gt;
+                &lt;a href=&quot;#&quot; class=&quot;text-blue-200 p-2 hover:bg-blue-600 rounded-lg&quot;&gt;
+                    &lt;i class=&quot;fas fa-chart-line text-xl&quot;&gt;&lt;/i&gt;
+                &lt;/a&gt;
+            &lt;/nav&gt;
+
+            &lt;!-- Right Icons --&gt;
+            &lt;div class=&quot;flex items-center space-x-4&quot;&gt;
+                &lt;!-- Credits Counter --&gt;
+                &lt;div class=&quot;relative&quot;&gt;
+                    &lt;div class=&quot;bg-white text-facebook-blue px-3 py-1 rounded-full text-sm font-semibold&quot;&gt;
+                        &lt;i class=&quot;fas fa-coins&quot;&gt;&lt;/i&gt; 7 créditos
+                    &lt;/div&gt;
+                    &lt;div class=&quot;absolute -top-1 -right-1 w-4 h-4 bg-red-500 text-white text-xs rounded-full flex items-center justify-center&quot;&gt;
+                        !
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;!-- Notifications --&gt;
+                &lt;div class=&quot;relative&quot;&gt;
+                    &lt;button class=&quot;text-white p-2 hover:bg-blue-600 rounded-full&quot;&gt;
+                        &lt;i class=&quot;fas fa-bell text-lg&quot;&gt;&lt;/i&gt;
+                    &lt;/button&gt;
+                    &lt;div class=&quot;absolute -top-1 -right-1 w-5 h-5 bg-red-500 text-white text-xs rounded-full flex items-center justify-center&quot;&gt;3&lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;!-- Messages --&gt;
+                &lt;button class=&quot;text-white p-2 hover:bg-blue-600 rounded-full lg:hidden&quot; onclick=&quot;toggleChat()&quot;&gt;
+                    &lt;i class=&quot;fas fa-comment text-lg&quot;&gt;&lt;/i&gt;
+                &lt;/button&gt;
+
+                &lt;!-- Profile --&gt;
+                &lt;div class=&quot;w-8 h-8 bg-white rounded-full flex items-center justify-center&quot;&gt;
+                    &lt;span class=&quot;text-facebook-blue font-semibold text-sm&quot;&gt;JD&lt;/span&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/header&gt;
+
+    &lt;!-- Main Container --&gt;
+    &lt;div class=&quot;pt-14 min-h-screen flex&quot;&gt;
+        &lt;!-- Left Sidebar (Desktop) --&gt;
+        &lt;aside class=&quot;hidden lg:block w-80 bg-white h-screen sticky top-14 overflow-y-auto scrollbar-hide&quot;&gt;
+            &lt;div class=&quot;p-4 space-y-4&quot;&gt;
+                &lt;!-- User Profile --&gt;
+                &lt;div class=&quot;flex items-center space-x-3 p-2 rounded-lg hover:bg-facebook-gray cursor-pointer&quot;&gt;
+                    &lt;div class=&quot;w-9 h-9 bg-facebook-blue rounded-full flex items-center justify-center&quot;&gt;
+                        &lt;span class=&quot;text-white font-semibold text-sm&quot;&gt;JD&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;span class=&quot;font-semibold text-facebook-dark&quot;&gt;João da Silva&lt;/span&gt;
+                &lt;/div&gt;
+
+                &lt;!-- Menu Items --&gt;
+                &lt;nav class=&quot;space-y-1&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;flex items-center space-x-3 p-2 rounded-lg hover:bg-facebook-gray&quot;&gt;
+                        &lt;i class=&quot;fas fa-home text-facebook-blue w-6&quot;&gt;&lt;/i&gt;
+                        &lt;span class=&quot;text-facebook-dark font-medium&quot;&gt;Feed de Leads&lt;/span&gt;
+                    &lt;/a&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;flex items-center space-x-3 p-2 rounded-lg hover:bg-facebook-gray&quot;&gt;
+                        &lt;i class=&quot;fas fa-star text-warning-orange w-6&quot;&gt;&lt;/i&gt;
+                        &lt;span class=&quot;text-facebook-dark font-medium&quot;&gt;Favoritos&lt;/span&gt;
+                        &lt;span class=&quot;ml-auto bg-red-500 text-white text-xs px-2 py-1 rounded-full&quot;&gt;12&lt;/span&gt;
+                    &lt;/a&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;flex items-center space-x-3 p-2 rounded-lg hover:bg-facebook-gray&quot;&gt;
+                        &lt;i class=&quot;fas fa-chart-bar text-success-green w-6&quot;&gt;&lt;/i&gt;
+                        &lt;span class=&quot;text-facebook-dark font-medium&quot;&gt;Relatórios&lt;/span&gt;
+                    &lt;/a&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;flex items-center space-x-3 p-2 rounded-lg hover:bg-facebook-gray&quot;&gt;
+                        &lt;i class=&quot;fas fa-cog text-facebook-secondary w-6&quot;&gt;&lt;/i&gt;
+                        &lt;span class=&quot;text-facebook-dark font-medium&quot;&gt;Configurações&lt;/span&gt;
+                    &lt;/a&gt;
+                &lt;/nav&gt;
+
+                &lt;!-- Quick Stats --&gt;
+                &lt;div class=&quot;bg-facebook-light p-4 rounded-lg mt-6&quot;&gt;
+                    &lt;h3 class=&quot;font-semibold text-facebook-dark mb-3&quot;&gt;Estatísticas Hoje&lt;/h3&gt;
+                    &lt;div class=&quot;space-y-2 text-sm&quot;&gt;
+                        &lt;div class=&quot;flex justify-between&quot;&gt;
+                            &lt;span class=&quot;text-facebook-secondary&quot;&gt;Leads visualizados&lt;/span&gt;
+                            &lt;span class=&quot;font-semibold text-facebook-dark&quot;&gt;23&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;flex justify-between&quot;&gt;
+                            &lt;span class=&quot;text-facebook-secondary&quot;&gt;Conexões feitas&lt;/span&gt;
+                            &lt;span class=&quot;font-semibold text-facebook-dark&quot;&gt;5&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;flex justify-between&quot;&gt;
+                            &lt;span class=&quot;text-facebook-secondary&quot;&gt;Taxa de resposta&lt;/span&gt;
+                            &lt;span class=&quot;font-semibold text-success-green&quot;&gt;67%&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;!-- Upgrade Banner --&gt;
+                &lt;div class=&quot;bg-gradient-to-r from-facebook-blue to-blue-600 p-4 rounded-lg text-white&quot;&gt;
+                    &lt;h3 class=&quot;font-semibold mb-2&quot;&gt;Upgrade para Premium&lt;/h3&gt;
+                    &lt;p class=&quot;text-sm text-blue-100 mb-3&quot;&gt;Desbloqueie leads ilimitados e recursos avançados&lt;/p&gt;
+                    &lt;button class=&quot;bg-white text-facebook-blue px-4 py-2 rounded-lg text-sm font-semibold hover:bg-gray-100&quot;&gt;
+                        Assinar Agora
+                    &lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/aside&gt;
+
+        &lt;!-- Main Content --&gt;
+        &lt;main class=&quot;flex-1 max-w-2xl mx-auto px-4 pb-20 lg:pb-4&quot;&gt;
+            &lt;!-- Stories Section --&gt;
+            &lt;div class=&quot;bg-white rounded-lg facebook-shadow p-4 mb-4 mt-4&quot;&gt;
+                &lt;h3 class=&quot;font-semibold text-facebook-dark mb-3&quot;&gt;Empresas em Destaque&lt;/h3&gt;
+                &lt;div class=&quot;flex space-x-3 overflow-x-auto scrollbar-hide&quot;&gt;
+                    &lt;!-- Add Story --&gt;
+                    &lt;div class=&quot;flex-shrink-0 text-center&quot;&gt;
+                        &lt;div class=&quot;w-16 h-16 bg-facebook-gray rounded-full flex items-center justify-center mb-2 border-2 border-dashed border-facebook-secondary&quot;&gt;
+                            &lt;i class=&quot;fas fa-plus text-facebook-secondary&quot;&gt;&lt;/i&gt;
+                        &lt;/div&gt;
+                        &lt;span class=&quot;text-xs text-facebook-secondary&quot;&gt;Adicionar&lt;/span&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;!-- Company Stories --&gt;
+                    &lt;div class=&quot;flex-shrink-0 text-center&quot;&gt;
+                        &lt;div class=&quot;w-16 h-16 story-gradient rounded-full p-0.5 mb-2&quot;&gt;
+                            &lt;div class=&quot;w-full h-full bg-white rounded-full flex items-center justify-center&quot;&gt;
+                                &lt;!-- Tech startup modern office space with glass walls --&gt;
+                                &lt;img src=&quot;https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=64&amp;h=64&quot; alt=&quot;TechCorp&quot; class=&quot;w-full h-full rounded-full object-cover&quot; /&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;span class=&quot;text-xs text-facebook-dark&quot;&gt;TechCorp&lt;/span&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class=&quot;flex-shrink-0 text-center&quot;&gt;
+                        &lt;div class=&quot;w-16 h-16 story-gradient rounded-full p-0.5 mb-2&quot;&gt;
+                            &lt;div class=&quot;w-full h-full bg-white rounded-full flex items-center justify-center&quot;&gt;
+                                &lt;!-- Modern restaurant interior with elegant dining setup --&gt;
+                                &lt;img src=&quot;https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=64&amp;h=64&quot; alt=&quot;Restaurante Premium&quot; class=&quot;w-full h-full rounded-full object-cover&quot; /&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;span class=&quot;text-xs text-facebook-dark&quot;&gt;Premium&lt;/span&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class=&quot;flex-shrink-0 text-center&quot;&gt;
+                        &lt;div class=&quot;w-16 h-16 story-gradient rounded-full p-0.5 mb-2&quot;&gt;
+                            &lt;div class=&quot;w-full h-full bg-white rounded-full flex items-center justify-center&quot;&gt;
+                                &lt;!-- Modern medical clinic with professional healthcare setting --&gt;
+                                &lt;img src=&quot;https://images.unsplash.com/photo-1551601651-2a8555f1a136?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=64&amp;h=64&quot; alt=&quot;HealthCare Plus&quot; class=&quot;w-full h-full rounded-full object-cover&quot; /&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;span class=&quot;text-xs text-facebook-dark&quot;&gt;HealthCare&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;!-- Lead Feed --&gt;
+            &lt;div id=&quot;leadFeed&quot; class=&quot;space-y-4&quot;&gt;
+                &lt;!-- Lead Card 1 --&gt;
+                &lt;article class=&quot;bg-white rounded-lg facebook-shadow lead-card-hover cursor-pointer&quot; data-lead-id=&quot;1&quot;&gt;
+                    &lt;div class=&quot;p-4&quot;&gt;
+                        &lt;!-- Lead Header --&gt;
+                        &lt;div class=&quot;flex items-center space-x-3 mb-3&quot;&gt;
+                            &lt;input type=&quot;checkbox&quot; class=&quot;lead-checkbox hidden&quot; onchange=&quot;toggleLeadSelection(1)&quot;&gt;
+                            &lt;div class=&quot;relative&quot;&gt;
+                                &lt;!-- Professional business woman in modern office setting --&gt;
+                                &lt;img src=&quot;https://pixabay.com/get/g44aa6e4a349d0fffb26e15dd735a8e8842639ed29f36fe161c9a7eebeb4911f47ebfbd510ee67c9a97d961f2ab528bfe323ec606ada698774819b03a4a708dea_1280.jpg&quot; alt=&quot;Maria Silva&quot; class=&quot;w-10 h-10 rounded-full object-cover&quot; /&gt;
+                                &lt;div class=&quot;absolute -bottom-1 -right-1 w-4 h-4 bg-success-green rounded-full border-2 border-white&quot;&gt;&lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;flex-1&quot;&gt;
+                                &lt;h3 class=&quot;font-semibold text-facebook-dark&quot;&gt;Maria Silva&lt;/h3&gt;
+                                &lt;p class=&quot;text-sm text-facebook-secondary&quot;&gt;Diretora de Marketing • TechCorp Soluções&lt;/p&gt;
+                                &lt;div class=&quot;flex items-center space-x-2 mt-1&quot;&gt;
+                                    &lt;span class=&quot;text-xs bg-success-green text-white px-2 py-1 rounded-full&quot;&gt;95% Match&lt;/span&gt;
+                                    &lt;span class=&quot;text-xs text-facebook-secondary&quot;&gt;• Ativa há 2 horas&lt;/span&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;text-facebook-secondary&quot;&gt;
+                                &lt;i class=&quot;fas fa-ellipsis-h&quot;&gt;&lt;/i&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;!-- Lead Content --&gt;
+                        &lt;div class=&quot;mb-4&quot;&gt;
+                            &lt;p class=&quot;text-facebook-dark mb-3&quot;&gt;
+                                &lt;span class=&quot;font-semibold&quot;&gt;Oportunidade:&lt;/span&gt; Empresa de tecnologia em expansão procurando soluções de marketing digital. 
+                                Faturamento estimado: R$ 500K/mês. Histórico de investimento em ferramentas SaaS.
+                            &lt;/p&gt;
+                            
+                            &lt;!-- Company Info Card --&gt;
+                            &lt;div class=&quot;bg-facebook-gray p-3 rounded-lg&quot;&gt;
+                                &lt;div class=&quot;flex items-center space-x-3&quot;&gt;
+                                    &lt;!-- Modern tech office building exterior with glass facade --&gt;
+                                    &lt;img src=&quot;https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=60&amp;h=60&quot; alt=&quot;TechCorp Building&quot; class=&quot;w-15 h-15 rounded-lg object-cover&quot; /&gt;
+                                    &lt;div class=&quot;flex-1&quot;&gt;
+                                        &lt;h4 class=&quot;font-semibold text-facebook-dark&quot;&gt;TechCorp Soluções LTDA&lt;/h4&gt;
+                                        &lt;p class=&quot;text-sm text-facebook-secondary&quot;&gt;Tecnologia • 50-200 funcionários&lt;/p&gt;
+                                        &lt;p class=&quot;text-sm text-facebook-secondary&quot;&gt;São Paulo, SP&lt;/p&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;text-right&quot;&gt;
+                                        &lt;div class=&quot;text-sm font-semibold text-success-green&quot;&gt;Premium&lt;/div&gt;
+                                        &lt;div class=&quot;text-xs text-facebook-secondary&quot;&gt;Verificada&lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;!-- Engagement Stats --&gt;
+                        &lt;div class=&quot;flex items-center space-x-4 text-sm text-facebook-secondary mb-4&quot;&gt;
+                            &lt;span&gt;&lt;i class=&quot;fas fa-eye&quot;&gt;&lt;/i&gt; 127 visualizações&lt;/span&gt;
+                            &lt;span&gt;&lt;i class=&quot;fas fa-comments&quot;&gt;&lt;/i&gt; 8 contatos hoje&lt;/span&gt;
+                            &lt;span&gt;&lt;i class=&quot;fas fa-clock&quot;&gt;&lt;/i&gt; Melhor horário: 14h-16h&lt;/span&gt;
+                        &lt;/div&gt;
+
+                        &lt;!-- Action Buttons --&gt;
+                        &lt;div class=&quot;flex items-center justify-between pt-3 border-t border-facebook-gray&quot;&gt;
+                            &lt;button class=&quot;flex items-center space-x-2 text-facebook-secondary hover:text-facebook-blue flex-1 justify-center py-2 hover:bg-facebook-light rounded-lg transition-colors&quot;&gt;
+                                &lt;i class=&quot;fas fa-handshake&quot;&gt;&lt;/i&gt;
+                                &lt;span class=&quot;font-medium&quot;&gt;Conectar&lt;/span&gt;
+                            &lt;/button&gt;
+                            &lt;button class=&quot;flex items-center space-x-2 text-facebook-secondary hover:text-success-green flex-1 justify-center py-2 hover:bg-green-50 rounded-lg transition-colors&quot;&gt;
+                                &lt;i class=&quot;fab fa-whatsapp&quot;&gt;&lt;/i&gt;
+                                &lt;span class=&quot;font-medium&quot;&gt;WhatsApp&lt;/span&gt;
+                            &lt;/button&gt;
+                            &lt;button class=&quot;flex items-center space-x-2 text-facebook-secondary hover:text-facebook-blue flex-1 justify-center py-2 hover:bg-facebook-light rounded-lg transition-colors&quot;&gt;
+                                &lt;i class=&quot;fas fa-envelope&quot;&gt;&lt;/i&gt;
+                                &lt;span class=&quot;font-medium&quot;&gt;Email&lt;/span&gt;
+                            &lt;/button&gt;
+                            &lt;button class=&quot;flex items-center space-x-2 text-facebook-secondary hover:text-warning-orange flex-1 justify-center py-2 hover:bg-orange-50 rounded-lg transition-colors&quot;&gt;
+                                &lt;i class=&quot;fas fa-bookmark&quot;&gt;&lt;/i&gt;
+                                &lt;span class=&quot;font-medium&quot;&gt;Salvar&lt;/span&gt;
+                            &lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/article&gt;
+
+                &lt;!-- Lead Card 2 --&gt;
+                &lt;article class=&quot;bg-white rounded-lg facebook-shadow lead-card-hover cursor-pointer&quot; data-lead-id=&quot;2&quot;&gt;
+                    &lt;div class=&quot;p-4&quot;&gt;
+                        &lt;div class=&quot;flex items-center space-x-3 mb-3&quot;&gt;
+                            &lt;input type=&quot;checkbox&quot; class=&quot;lead-checkbox hidden&quot; onchange=&quot;toggleLeadSelection(2)&quot;&gt;
+                            &lt;div class=&quot;relative&quot;&gt;
+                                &lt;!-- Professional businessman in suit with confident expression --&gt;
+                                &lt;img src=&quot;https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=40&amp;h=40&quot; alt=&quot;Carlos Roberto&quot; class=&quot;w-10 h-10 rounded-full object-cover&quot; /&gt;
+                                &lt;div class=&quot;absolute -bottom-1 -right-1 w-4 h-4 bg-yellow-500 rounded-full border-2 border-white&quot;&gt;&lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;flex-1&quot;&gt;
+                                &lt;h3 class=&quot;font-semibold text-facebook-dark&quot;&gt;Carlos Roberto&lt;/h3&gt;
+                                &lt;p class=&quot;text-sm text-facebook-secondary&quot;&gt;CEO • Transportes São João&lt;/p&gt;
+                                &lt;div class=&quot;flex items-center space-x-2 mt-1&quot;&gt;
+                                    &lt;span class=&quot;text-xs bg-warning-orange text-white px-2 py-1 rounded-full&quot;&gt;87% Match&lt;/span&gt;
+                                    &lt;span class=&quot;text-xs text-facebook-secondary&quot;&gt;• Ativo há 1 dia&lt;/span&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;text-facebook-secondary&quot;&gt;
+                                &lt;i class=&quot;fas fa-ellipsis-h&quot;&gt;&lt;/i&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class=&quot;mb-4&quot;&gt;
+                            &lt;p class=&quot;text-facebook-dark mb-3&quot;&gt;
+                                &lt;span class=&quot;font-semibold&quot;&gt;Oportunidade:&lt;/span&gt; Empresa de logística buscando otimização de rotas e gestão de frota. 
+                                Potencial para automação de processos. Budget estimado: R$ 50K-100K.
+                            &lt;/p&gt;
+                            
+                            &lt;div class=&quot;bg-facebook-gray p-3 rounded-lg&quot;&gt;
+                                &lt;div class=&quot;flex items-center space-x-3&quot;&gt;
+                                    &lt;!-- Large logistics truck fleet in organized parking facility --&gt;
+                                    &lt;img src=&quot;https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=60&amp;h=60&quot; alt=&quot;Transportes São João&quot; class=&quot;w-15 h-15 rounded-lg object-cover&quot; /&gt;
+                                    &lt;div class=&quot;flex-1&quot;&gt;
+                                        &lt;h4 class=&quot;font-semibold text-facebook-dark&quot;&gt;Transportes São João LTDA&lt;/h4&gt;
+                                        &lt;p class=&quot;text-sm text-facebook-secondary&quot;&gt;Logística • 20-50 funcionários&lt;/p&gt;
+                                        &lt;p class=&quot;text-sm text-facebook-secondary&quot;&gt;Campinas, SP&lt;/p&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;text-right&quot;&gt;
+                                        &lt;div class=&quot;text-sm font-semibold text-facebook-blue&quot;&gt;Standard&lt;/div&gt;
+                                        &lt;div class=&quot;text-xs text-facebook-secondary&quot;&gt;Verificada&lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class=&quot;flex items-center space-x-4 text-sm text-facebook-secondary mb-4&quot;&gt;
+                            &lt;span&gt;&lt;i class=&quot;fas fa-eye&quot;&gt;&lt;/i&gt; 89 visualizações&lt;/span&gt;
+                            &lt;span&gt;&lt;i class=&quot;fas fa-comments&quot;&gt;&lt;/i&gt; 3 contatos hoje&lt;/span&gt;
+                            &lt;span&gt;&lt;i class=&quot;fas fa-clock&quot;&gt;&lt;/i&gt; Melhor horário: 9h-11h&lt;/span&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class=&quot;flex items-center justify-between pt-3 border-t border-facebook-gray&quot;&gt;
+                            &lt;button class=&quot;flex items-center space-x-2 text-facebook-secondary hover:text-facebook-blue flex-1 justify-center py-2 hover:bg-facebook-light rounded-lg transition-colors&quot;&gt;
+                                &lt;i class=&quot;fas fa-handshake&quot;&gt;&lt;/i&gt;
+                                &lt;span class=&quot;font-medium&quot;&gt;Conectar&lt;/span&gt;
+                            &lt;/button&gt;
+                            &lt;button class=&quot;flex items-center space-x-2 text-facebook-secondary hover:text-success-green flex-1 justify-center py-2 hover:bg-green-50 rounded-lg transition-colors&quot;&gt;
+                                &lt;i class=&quot;fab fa-whatsapp&quot;&gt;&lt;/i&gt;
+                                &lt;span class=&quot;font-medium&quot;&gt;WhatsApp&lt;/span&gt;
+                            &lt;/button&gt;
+                            &lt;button class=&quot;flex items-center space-x-2 text-facebook-secondary hover:text-facebook-blue flex-1 justify-center py-2 hover:bg-facebook-light rounded-lg transition-colors&quot;&gt;
+                                &lt;i class=&quot;fas fa-envelope&quot;&gt;&lt;/i&gt;
+                                &lt;span class=&quot;font-medium&quot;&gt;Email&lt;/span&gt;
+                            &lt;/button&gt;
+                            &lt;button class=&quot;flex items-center space-x-2 text-facebook-secondary hover:text-warning-orange flex-1 justify-center py-2 hover:bg-orange-50 rounded-lg transition-colors&quot;&gt;
+                                &lt;i class=&quot;fas fa-bookmark&quot;&gt;&lt;/i&gt;
+                                &lt;span class=&quot;font-medium&quot;&gt;Salvar&lt;/span&gt;
+                            &lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/article&gt;
+
+                &lt;!-- Lead Card 3 --&gt;
+                &lt;article class=&quot;bg-white rounded-lg facebook-shadow lead-card-hover cursor-pointer&quot; data-lead-id=&quot;3&quot;&gt;
+                    &lt;div class=&quot;p-4&quot;&gt;
+                        &lt;div class=&quot;flex items-center space-x-3 mb-3&quot;&gt;
+                            &lt;input type=&quot;checkbox&quot; class=&quot;lead-checkbox hidden&quot; onchange=&quot;toggleLeadSelection(3)&quot;&gt;
+                            &lt;div class=&quot;relative&quot;&gt;
+                                &lt;!-- Professional healthcare doctor in white coat with stethoscope --&gt;
+                                &lt;img src=&quot;https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=40&amp;h=40&quot; alt=&quot;Dr. Ana Costa&quot; class=&quot;w-10 h-10 rounded-full object-cover&quot; /&gt;
+                                &lt;div class=&quot;absolute -bottom-1 -right-1 w-4 h-4 bg-success-green rounded-full border-2 border-white&quot;&gt;&lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;flex-1&quot;&gt;
+                                &lt;h3 class=&quot;font-semibold text-facebook-dark&quot;&gt;Dr. Ana Costa&lt;/h3&gt;
+                                &lt;p class=&quot;text-sm text-facebook-secondary&quot;&gt;Diretora Médica • Clínica Saúde+&lt;/p&gt;
+                                &lt;div class=&quot;flex items-center space-x-2 mt-1&quot;&gt;
+                                    &lt;span class=&quot;text-xs bg-success-green text-white px-2 py-1 rounded-full&quot;&gt;92% Match&lt;/span&gt;
+                                    &lt;span class=&quot;text-xs text-facebook-secondary&quot;&gt;• Ativa há 3 horas&lt;/span&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;text-facebook-secondary&quot;&gt;
+                                &lt;i class=&quot;fas fa-ellipsis-h&quot;&gt;&lt;/i&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class=&quot;mb-4&quot;&gt;
+                            &lt;p class=&quot;text-facebook-dark mb-3&quot;&gt;
+                                &lt;span class=&quot;font-semibold&quot;&gt;Oportunidade:&lt;/span&gt; Clínica especializada buscando sistema de agendamento online e telemedicina. 
+                                Interesse em marketing médico digital. Orçamento disponível para tecnologia.
+                            &lt;/p&gt;
+                            
+                            &lt;div class=&quot;bg-facebook-gray p-3 rounded-lg&quot;&gt;
+                                &lt;div class=&quot;flex items-center space-x-3&quot;&gt;
+                                    &lt;!-- Modern medical clinic reception area with professional healthcare setting --&gt;
+                                    &lt;img src=&quot;https://images.unsplash.com/photo-1551601651-2a8555f1a136?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=60&amp;h=60&quot; alt=&quot;Clínica Saúde+&quot; class=&quot;w-15 h-15 rounded-lg object-cover&quot; /&gt;
+                                    &lt;div class=&quot;flex-1&quot;&gt;
+                                        &lt;h4 class=&quot;font-semibold text-facebook-dark&quot;&gt;Clínica Saúde+ LTDA&lt;/h4&gt;
+                                        &lt;p class=&quot;text-sm text-facebook-secondary&quot;&gt;Saúde • 10-20 funcionários&lt;/p&gt;
+                                        &lt;p class=&quot;text-sm text-facebook-secondary&quot;&gt;Rio de Janeiro, RJ&lt;/p&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;text-right&quot;&gt;
+                                        &lt;div class=&quot;text-sm font-semibold text-success-green&quot;&gt;Premium&lt;/div&gt;
+                                        &lt;div class=&quot;text-xs text-facebook-secondary&quot;&gt;Verificada&lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class=&quot;flex items-center space-x-4 text-sm text-facebook-secondary mb-4&quot;&gt;
+                            &lt;span&gt;&lt;i class=&quot;fas fa-eye&quot;&gt;&lt;/i&gt; 156 visualizações&lt;/span&gt;
+                            &lt;span&gt;&lt;i class=&quot;fas fa-comments&quot;&gt;&lt;/i&gt; 12 contatos hoje&lt;/span&gt;
+                            &lt;span&gt;&lt;i class=&quot;fas fa-clock&quot;&gt;&lt;/i&gt; Melhor horário: 8h-10h&lt;/span&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class=&quot;flex items-center justify-between pt-3 border-t border-facebook-gray&quot;&gt;
+                            &lt;button class=&quot;flex items-center space-x-2 text-facebook-secondary hover:text-facebook-blue flex-1 justify-center py-2 hover:bg-facebook-light rounded-lg transition-colors&quot;&gt;
+                                &lt;i class=&quot;fas fa-handshake&quot;&gt;&lt;/i&gt;
+                                &lt;span class=&quot;font-medium&quot;&gt;Conectar&lt;/span&gt;
+                            &lt;/button&gt;
+                            &lt;button class=&quot;flex items-center space-x-2 text-facebook-secondary hover:text-success-green flex-1 justify-center py-2 hover:bg-green-50 rounded-lg transition-colors&quot;&gt;
+                                &lt;i class=&quot;fab fa-whatsapp&quot;&gt;&lt;/i&gt;
+                                &lt;span class=&quot;font-medium&quot;&gt;WhatsApp&lt;/span&gt;
+                            &lt;/button&gt;
+                            &lt;button class=&quot;flex items-center space-x-2 text-facebook-secondary hover:text-facebook-blue flex-1 justify-center py-2 hover:bg-facebook-light rounded-lg transition-colors&quot;&gt;
+                                &lt;i class=&quot;fas fa-envelope&quot;&gt;&lt;/i&gt;
+                                &lt;span class=&quot;font-medium&quot;&gt;Email&lt;/span&gt;
+                            &lt;/button&gt;
+                            &lt;button class=&quot;flex items-center space-x-2 text-facebook-secondary hover:text-warning-orange flex-1 justify-center py-2 hover:bg-orange-50 rounded-lg transition-colors&quot;&gt;
+                                &lt;i class=&quot;fas fa-bookmark&quot;&gt;&lt;/i&gt;
+                                &lt;span class=&quot;font-medium&quot;&gt;Salvar&lt;/span&gt;
+                            &lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/article&gt;
+            &lt;/div&gt;
+
+            &lt;!-- Loading Placeholder --&gt;
+            &lt;div class=&quot;text-center py-8&quot;&gt;
+                &lt;div class=&quot;inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-facebook-blue&quot;&gt;&lt;/div&gt;
+                &lt;p class=&quot;text-facebook-secondary mt-2&quot;&gt;Carregando mais oportunidades...&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/main&gt;
+
+        &lt;!-- Right Chat Panel (Desktop) --&gt;
+        &lt;aside class=&quot;hidden lg:block w-80 bg-white h-screen sticky top-14 border-l border-facebook-gray&quot; id=&quot;chatPanel&quot;&gt;
+            &lt;div class=&quot;p-4 border-b border-facebook-gray&quot;&gt;
+                &lt;h3 class=&quot;font-semibold text-facebook-dark&quot;&gt;Conversas&lt;/h3&gt;
+            &lt;/div&gt;
+            
+            &lt;div class=&quot;p-4 space-y-3 h-64 overflow-y-auto scrollbar-hide&quot;&gt;
+                &lt;!-- Chat Preview --&gt;
+                &lt;div class=&quot;flex items-center space-x-3 p-2 rounded-lg hover:bg-facebook-gray cursor-pointer&quot;&gt;
+                    &lt;!-- Professional woman in business attire in modern office --&gt;
+                    &lt;img src=&quot;https://pixabay.com/get/gad94f7f05c6ee8ab8916f1e3119939b6beaa85b48aa78e373c89bbe5d0236ccfb20ca8e365733590a7d8e55818cba7da547db8e11c0826d0d77eece70b1820cd_1280.jpg&quot; alt=&quot;Maria Silva&quot; class=&quot;w-8 h-8 rounded-full object-cover&quot; /&gt;
+                    &lt;div class=&quot;flex-1&quot;&gt;
+                        &lt;div class=&quot;flex justify-between items-center&quot;&gt;
+                            &lt;span class=&quot;font-medium text-facebook-dark text-sm&quot;&gt;Maria Silva&lt;/span&gt;
+                            &lt;span class=&quot;text-xs text-facebook-secondary&quot;&gt;2h&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;p class=&quot;text-sm text-facebook-secondary truncate&quot;&gt;Olá! Gostaria de agendar uma reunião...&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;w-3 h-3 bg-facebook-blue rounded-full&quot;&gt;&lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;div class=&quot;flex items-center space-x-3 p-2 rounded-lg hover:bg-facebook-gray cursor-pointer&quot;&gt;
+                    &lt;!-- Professional businessman with confident smile --&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=32&amp;h=32&quot; alt=&quot;Carlos Roberto&quot; class=&quot;w-8 h-8 rounded-full object-cover&quot; /&gt;
+                    &lt;div class=&quot;flex-1&quot;&gt;
+                        &lt;div class=&quot;flex justify-between items-center&quot;&gt;
+                            &lt;span class=&quot;font-medium text-facebook-dark text-sm&quot;&gt;Carlos Roberto&lt;/span&gt;
+                            &lt;span class=&quot;text-xs text-facebook-secondary&quot;&gt;1d&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;p class=&quot;text-sm text-facebook-secondary truncate&quot;&gt;Perfeito! Vamos conversar sobre o projeto&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;!-- Active Chat --&gt;
+            &lt;div class=&quot;border-t border-facebook-gray flex-1 flex flex-col h-96&quot;&gt;
+                &lt;div class=&quot;p-3 border-b border-facebook-gray bg-facebook-light&quot;&gt;
+                    &lt;div class=&quot;flex items-center space-x-3&quot;&gt;
+                        &lt;!-- Professional woman in business setting --&gt;
+                        &lt;img src=&quot;https://pixabay.com/get/g625b258e09860d96ec0f429cd21de51a730616503b6595473eb3e1a435897fa493411343d72264d55c939d9bb1b62e33a751e784d124ffd595547cfda2dfd86e_1280.jpg&quot; alt=&quot;Maria Silva&quot; class=&quot;w-8 h-8 rounded-full object-cover&quot; /&gt;
+                        &lt;div&gt;
+                            &lt;span class=&quot;font-semibold text-facebook-dark text-sm&quot;&gt;Maria Silva&lt;/span&gt;
+                            &lt;p class=&quot;text-xs text-success-green&quot;&gt;Ativa agora&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;div class=&quot;flex-1 p-3 space-y-3 overflow-y-auto scrollbar-hide&quot;&gt;
+                    &lt;!-- Messages --&gt;
+                    &lt;div class=&quot;flex items-end space-x-2&quot;&gt;
+                        &lt;!-- Professional woman avatar --&gt;
+                        &lt;img src=&quot;https://pixabay.com/get/g941608b2daf2c7ae8bc7599dc7b164bca5fb50bfcffd611c1cdec3d50191adc4139fd3b39ac8a376721a74b1a9074aeb65b36ec0a6d9e874f69bf3ac031f7715_1280.jpg&quot; alt=&quot;Maria Silva&quot; class=&quot;w-6 h-6 rounded-full object-cover&quot; /&gt;
+                        &lt;div class=&quot;messenger-bubble bg-facebook-gray p-3&quot;&gt;
+                            &lt;p class=&quot;text-sm text-facebook-dark&quot;&gt;Olá! Vi sua proposta e fiquei interessada. Podemos agendar uma conversa?&lt;/p&gt;
+                            &lt;span class=&quot;text-xs text-facebook-secondary&quot;&gt;14:32&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class=&quot;flex items-end space-x-2 justify-end&quot;&gt;
+                        &lt;div class=&quot;messenger-bubble bg-facebook-blue text-white p-3&quot;&gt;
+                            &lt;p class=&quot;text-sm&quot;&gt;Claro! Que tal hoje às 16h? Posso te mostrar como nossa solução pode aumentar suas vendas em 40%.&lt;/p&gt;
+                            &lt;span class=&quot;text-xs text-blue-200&quot;&gt;14:35&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class=&quot;flex items-end space-x-2&quot;&gt;
+                        &lt;!-- Professional woman avatar --&gt;
+                        &lt;img src=&quot;https://pixabay.com/get/g941608b2daf2c7ae8bc7599dc7b164bca5fb50bfcffd611c1cdec3d50191adc4139fd3b39ac8a376721a74b1a9074aeb65b36ec0a6d9e874f69bf3ac031f7715_1280.jpg&quot; alt=&quot;Maria Silva&quot; class=&quot;w-6 h-6 rounded-full object-cover&quot; /&gt;
+                        &lt;div class=&quot;messenger-bubble bg-facebook-gray p-3&quot;&gt;
+                            &lt;p class=&quot;text-sm text-facebook-dark&quot;&gt;Perfeito! Vou preparar algumas informações sobre nossa empresa.&lt;/p&gt;
+                            &lt;span class=&quot;text-xs text-facebook-secondary&quot;&gt;14:36&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;div class=&quot;p-3 border-t border-facebook-gray&quot;&gt;
+                    &lt;div class=&quot;flex items-center space-x-2&quot;&gt;
+                        &lt;input type=&quot;text&quot; placeholder=&quot;Digite sua mensagem...&quot; 
+                               class=&quot;flex-1 bg-facebook-gray rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-facebook-blue&quot;&gt;
+                        &lt;button class=&quot;text-facebook-blue p-2 rounded-full hover:bg-facebook-light&quot;&gt;
+                            &lt;i class=&quot;fas fa-paper-plane&quot;&gt;&lt;/i&gt;
+                        &lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/aside&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Mobile Bottom Navigation --&gt;
+    &lt;nav class=&quot;lg:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-facebook-gray z-40&quot;&gt;
+        &lt;div class=&quot;flex items-center justify-around py-2&quot;&gt;
+            &lt;button class=&quot;flex flex-col items-center space-y-1 px-4 py-2 text-facebook-blue&quot;&gt;
+                &lt;i class=&quot;fas fa-home text-lg&quot;&gt;&lt;/i&gt;
+                &lt;span class=&quot;text-xs&quot;&gt;Feed&lt;/span&gt;
+            &lt;/button&gt;
+            &lt;button class=&quot;flex flex-col items-center space-y-1 px-4 py-2 text-facebook-secondary relative&quot;&gt;
+                &lt;i class=&quot;fas fa-star text-lg&quot;&gt;&lt;/i&gt;
+                &lt;span class=&quot;text-xs&quot;&gt;Favoritos&lt;/span&gt;
+                &lt;div class=&quot;absolute -top-1 -right-1 w-5 h-5 bg-red-500 text-white text-xs rounded-full flex items-center justify-center&quot;&gt;12&lt;/div&gt;
+            &lt;/button&gt;
+            &lt;button class=&quot;flex flex-col items-center space-y-1 px-4 py-2 text-facebook-secondary&quot; onclick=&quot;toggleSelectionMode()&quot;&gt;
+                &lt;i class=&quot;fas fa-check-square text-lg&quot;&gt;&lt;/i&gt;
+                &lt;span class=&quot;text-xs&quot;&gt;Selecionar&lt;/span&gt;
+            &lt;/button&gt;
+            &lt;button class=&quot;flex flex-col items-center space-y-1 px-4 py-2 text-facebook-secondary&quot; onclick=&quot;toggleChat()&quot;&gt;
+                &lt;i class=&quot;fas fa-comment text-lg&quot;&gt;&lt;/i&gt;
+                &lt;span class=&quot;text-xs&quot;&gt;Chat&lt;/span&gt;
+            &lt;/button&gt;
+            &lt;button class=&quot;flex flex-col items-center space-y-1 px-4 py-2 text-facebook-secondary&quot;&gt;
+                &lt;i class=&quot;fas fa-user text-lg&quot;&gt;&lt;/i&gt;
+                &lt;span class=&quot;text-xs&quot;&gt;Perfil&lt;/span&gt;
+            &lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/nav&gt;
+
+    &lt;!-- Selection Action Bar (Hidden by default) --&gt;
+    &lt;div id=&quot;selectionBar&quot; class=&quot;fixed bottom-16 lg:bottom-4 left-4 right-4 bg-facebook-blue text-white rounded-lg p-4 facebook-shadow transform translate-y-20 transition-transform duration-300 z-30&quot;&gt;
+        &lt;div class=&quot;flex items-center justify-between&quot;&gt;
+            &lt;div&gt;
+                &lt;span id=&quot;selectedCount&quot; class=&quot;font-semibold&quot;&gt;0 leads selecionados&lt;/span&gt;
+                &lt;p class=&quot;text-sm text-blue-200&quot;&gt;Escolha uma ação para continuar&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;flex space-x-2&quot;&gt;
+                &lt;button class=&quot;bg-white text-facebook-blue px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-100&quot;&gt;
+                    &lt;i class=&quot;fab fa-whatsapp mr-1&quot;&gt;&lt;/i&gt; WhatsApp
+                &lt;/button&gt;
+                &lt;button class=&quot;bg-success-green text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-green-600&quot;&gt;
+                    &lt;i class=&quot;fas fa-envelope mr-1&quot;&gt;&lt;/i&gt; Email
+                &lt;/button&gt;
+                &lt;button class=&quot;bg-transparent border border-white text-white px-3 py-2 rounded-lg hover:bg-white hover:text-facebook-blue&quot; onclick=&quot;clearSelection()&quot;&gt;
+                    &lt;i class=&quot;fas fa-times&quot;&gt;&lt;/i&gt;
+                &lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Mobile Chat Overlay --&gt;
+    &lt;div id=&quot;mobileChat&quot; class=&quot;lg:hidden fixed inset-0 bg-white z-50 transform translate-x-full transition-transform duration-300&quot;&gt;
+        &lt;div class=&quot;flex flex-col h-full&quot;&gt;
+            &lt;!-- Chat Header --&gt;
+            &lt;div class=&quot;bg-facebook-blue text-white p-4 flex items-center space-x-3&quot;&gt;
+                &lt;button onclick=&quot;toggleChat()&quot; class=&quot;text-white&quot;&gt;
+                    &lt;i class=&quot;fas fa-arrow-left text-lg&quot;&gt;&lt;/i&gt;
+                &lt;/button&gt;
+                &lt;div class=&quot;flex items-center space-x-3 flex-1&quot;&gt;
+                    &lt;!-- Professional woman in business setting --&gt;
+                    &lt;img src=&quot;https://pixabay.com/get/g625b258e09860d96ec0f429cd21de51a730616503b6595473eb3e1a435897fa493411343d72264d55c939d9bb1b62e33a751e784d124ffd595547cfda2dfd86e_1280.jpg&quot; alt=&quot;Maria Silva&quot; class=&quot;w-8 h-8 rounded-full object-cover&quot; /&gt;
+                    &lt;div&gt;
+                        &lt;span class=&quot;font-semibold&quot;&gt;Maria Silva&lt;/span&gt;
+                        &lt;p class=&quot;text-xs text-blue-200&quot;&gt;Ativa agora&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;button class=&quot;text-white&quot;&gt;
+                    &lt;i class=&quot;fas fa-phone text-lg&quot;&gt;&lt;/i&gt;
+                &lt;/button&gt;
+            &lt;/div&gt;
+
+            &lt;!-- Chat Messages --&gt;
+            &lt;div class=&quot;flex-1 p-4 space-y-4 overflow-y-auto bg-facebook-gray&quot;&gt;
+                &lt;div class=&quot;flex items-end space-x-2&quot;&gt;
+                    &lt;!-- Professional woman avatar --&gt;
+                    &lt;img src=&quot;https://pixabay.com/get/g941608b2daf2c7ae8bc7599dc7b164bca5fb50bfcffd611c1cdec3d50191adc4139fd3b39ac8a376721a74b1a9074aeb65b36ec0a6d9e874f69bf3ac031f7715_1280.jpg&quot; alt=&quot;Maria Silva&quot; class=&quot;w-6 h-6 rounded-full object-cover&quot; /&gt;
+                    &lt;div class=&quot;messenger-bubble bg-white p-3 shadow-sm&quot;&gt;
+                        &lt;p class=&quot;text-sm text-facebook-dark&quot;&gt;Olá! Vi sua proposta e fiquei interessada. Podemos agendar uma conversa?&lt;/p&gt;
+                        &lt;span class=&quot;text-xs text-facebook-secondary&quot;&gt;14:32&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;div class=&quot;flex items-end space-x-2 justify-end&quot;&gt;
+                    &lt;div class=&quot;messenger-bubble bg-facebook-blue text-white p-3&quot;&gt;
+                        &lt;p class=&quot;text-sm&quot;&gt;Claro! Que tal hoje às 16h? Posso te mostrar como nossa solução pode aumentar suas vendas em 40%.&lt;/p&gt;
+                        &lt;span class=&quot;text-xs text-blue-200&quot;&gt;14:35&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;!-- Chat Input --&gt;
+            &lt;div class=&quot;p-4 bg-white border-t border-facebook-gray&quot;&gt;
+                &lt;div class=&quot;flex items-center space-x-2&quot;&gt;
+                    &lt;input type=&quot;text&quot; placeholder=&quot;Digite sua mensagem...&quot; 
+                           class=&quot;flex-1 bg-facebook-gray rounded-full px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-facebook-blue&quot;&gt;
+                    &lt;button class=&quot;bg-facebook-blue text-white p-3 rounded-full&quot;&gt;
+                        &lt;i class=&quot;fas fa-paper-plane&quot;&gt;&lt;/i&gt;
+                    &lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;script&gt;
+        (() =&gt; {
+            let selectedLeads = new Set();
+            let selectionMode = false;
+
+            // Toggle lead selection
+            window.toggleLeadSelection = (leadId) =&gt; {
+                if (selectedLeads.has(leadId)) {
+                    selectedLeads.delete(leadId);
+                } else {
+                    selectedLeads.add(leadId);
+                }
+                updateSelectionUI();
+                
+                // Add visual feedback
+                const card = document.querySelector(`[data-lead-id=&quot;${leadId}&quot;]`);
+                if (card) {
+                    if (selectedLeads.has(leadId)) {
+                        card.classList.add('ring-2', 'ring-facebook-blue', 'selection-animation');
+                    } else {
+                        card.classList.remove('ring-2', 'ring-facebook-blue');
+                    }
+                }
+            };
+
+            // Toggle selection mode
+            window.toggleSelectionMode = () =&gt; {
+                selectionMode = !selectionMode;
+                const checkboxes = document.querySelectorAll('.lead-checkbox');
+                const cards = document.querySelectorAll('[data-lead-id]');
+                
+                checkboxes.forEach(checkbox =&gt; {
+                    checkbox.classList.toggle('hidden', !selectionMode);
+                });
+
+                if (selectionMode) {
+                    cards.forEach(card =&gt; {
+                        card.classList.add('cursor-pointer');
+                        card.addEventListener('click', handleCardClick);
+                    });
+                } else {
+                    clearSelection();
+                    cards.forEach(card =&gt; {
+                        card.removeEventListener('click', handleCardClick);
+                    });
+                }
+            };
+
+            // Handle card click in selection mode
+            function handleCardClick(event) {
+                if (!selectionMode) return;
+                
+                const leadId = parseInt(event.currentTarget.getAttribute('data-lead-id'));
+                const checkbox = event.currentTarget.querySelector('.lead-checkbox');
+                
+                checkbox.checked = !checkbox.checked;
+                toggleLeadSelection(leadId);
+            }
+
+            // Update selection UI
+            function updateSelectionUI() {
+                const count = selectedLeads.size;
+                const selectionBar = document.getElementById('selectionBar');
+                const selectedCount = document.getElementById('selectedCount');
+                
+                selectedCount.textContent = `${count} lead${count !== 1 ? 's' : ''} selecionado${count !== 1 ? 's' : ''}`;
+                
+                if (count &gt; 0) {
+                    selectionBar.classList.remove('translate-y-20');
+                } else {
+                    selectionBar.classList.add('translate-y-20');
+                }
+            }
+
+            // Clear selection
+            window.clearSelection = () =&gt; {
+                selectedLeads.clear();
+                const checkboxes = document.querySelectorAll('.lead-checkbox');
+                const cards = document.querySelectorAll('[data-lead-id]');
+                
+                checkboxes.forEach(checkbox =&gt; {
+                    checkbox.checked = false;
+                });
+                
+                cards.forEach(card =&gt; {
+                    card.classList.remove('ring-2', 'ring-facebook-blue');
+                });
+                
+                updateSelectionUI();
+                selectionMode = false;
+                
+                checkboxes.forEach(checkbox =&gt; {
+                    checkbox.classList.add('hidden');
+                });
+            };
+
+            // Toggle mobile chat
+            window.toggleChat = () =&gt; {
+                const mobileChat = document.getElementById('mobileChat');
+                mobileChat.classList.toggle('translate-x-full');
+            };
+
+            // Infinite scroll simulation
+            let loading = false;
+            function loadMoreLeads() {
+                if (loading) return;
+                loading = true;
+                
+                setTimeout(() =&gt; {
+                    // Simulate loading more leads
+                    console.log('Loading more leads...');
+                    loading = false;
+                }, 1000);
+            }
+
+            // Scroll event listener
+            window.addEventListener('scroll', () =&gt; {
+                if ((window.innerHeight + window.scrollY) &gt;= document.body.offsetHeight - 1000) {
+                    loadMoreLeads();
+                }
+            });
+
+            // Initialize tooltips and interactions
+            document.addEventListener('DOMContentLoaded', () =&gt; {
+                // Add click handlers to action buttons
+                const actionButtons = document.querySelectorAll('article button');
+                actionButtons.forEach(button =&gt; {
+                    button.addEventListener('click', (e) =&gt; {
+                        e.stopPropagation();
+                        const action = button.textContent.trim();
+                        console.log(`Action: ${action}`);
+                        
+                        // Add visual feedback
+                        button.classList.add('scale-95');
+                        setTimeout(() =&gt; {
+                            button.classList.remove('scale-95');
+                        }, 150);
+                    });
+                });
+
+                // Simulate real-time updates
+                setInterval(() =&gt; {
+                    // Update credits counter occasionally
+                    const creditsEl = document.querySelector('.bg-white.text-facebook-blue.px-3.py-1');
+                    if (creditsEl &amp;&amp; Math.random() &gt; 0.95) {
+                        const currentCredits = parseInt(creditsEl.textContent.match(/\d+/)[0]);
+                        if (currentCredits &gt; 0) {
+                            creditsEl.innerHTML = `&lt;i class=&quot;fas fa-coins&quot;&gt;&lt;/i&gt; ${currentCredits - 1} créditos`;
+                        }
+                    }
+                }, 5000);
+            });
+        })();
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;pt-BR&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Lead Pilot - Networking Inteligente&lt;/title&gt;
+    &lt;script src=&quot;https://cdn.tailwindcss.com&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        facebook: '#1877F2',
+                        facebookHover: '#166FE5',
+                        facebookLight: '#E7F3FF',
+                        success: '#42B883',
+                        warning: '#FF6B35'
+                    }
+                }
+            }
+        };
+    &lt;/script&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css&quot;&gt;
+&lt;/head&gt;
+&lt;body class=&quot;bg-gray-100 font-sans&quot;&gt;
+    &lt;!-- @COMPONENT: FacebookHeader --&gt;
+    &lt;header class=&quot;bg-facebook shadow-lg fixed top-0 w-full z-50&quot;&gt;
+        &lt;div class=&quot;max-w-full px-4&quot;&gt;
+            &lt;div class=&quot;flex items-center justify-between h-14&quot;&gt;
+                &lt;!-- Logo and Search --&gt;
+                &lt;div class=&quot;flex items-center space-x-3 flex-1&quot;&gt;
+                    &lt;div class=&quot;flex items-center space-x-2&quot;&gt;
+                        &lt;div class=&quot;w-10 h-10 bg-white rounded-full flex items-center justify-center&quot;&gt;
+                            &lt;i class=&quot;fas fa-rocket text-facebook text-lg&quot;&gt;&lt;/i&gt;
+                        &lt;/div&gt;
+                        &lt;span class=&quot;text-white font-bold text-lg hidden sm:block&quot; data-mock=&quot;true&quot;&gt;Lead Pilot&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;hidden sm:block flex-1 max-w-lg&quot;&gt;
+                        &lt;div class=&quot;relative&quot;&gt;
+                            &lt;i class=&quot;fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400&quot;&gt;&lt;/i&gt;
+                            &lt;input type=&quot;text&quot; placeholder=&quot;Buscar empresas, segmentos...&quot; data-mock=&quot;true&quot; 
+                                   class=&quot;w-full pl-10 pr-4 py-2 bg-gray-100 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-white&quot;&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;!-- Navigation Icons --&gt;
+                &lt;div class=&quot;flex items-center space-x-1 sm:space-x-4&quot;&gt;
+                    &lt;button class=&quot;p-2 text-white hover:bg-facebookHover rounded-lg transition-colors&quot;&gt;
+                        &lt;i class=&quot;fas fa-home text-lg&quot;&gt;&lt;/i&gt;
+                    &lt;/button&gt;
+                    &lt;button class=&quot;p-2 text-white hover:bg-facebookHover rounded-lg transition-colors relative&quot;&gt;
+                        &lt;i class=&quot;fas fa-user-friends text-lg&quot;&gt;&lt;/i&gt;
+                        &lt;span class=&quot;absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center&quot; data-mock=&quot;true&quot;&gt;3&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;button class=&quot;p-2 text-white hover:bg-facebookHover rounded-lg transition-colors relative&quot;&gt;
+                        &lt;i class=&quot;fas fa-bell text-lg&quot;&gt;&lt;/i&gt;
+                        &lt;span class=&quot;absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center&quot; data-mock=&quot;true&quot;&gt;8&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;button class=&quot;p-2 text-white hover:bg-facebookHover rounded-lg transition-colors&quot;&gt;
+                        &lt;i class=&quot;fas fa-envelope text-lg&quot;&gt;&lt;/i&gt;
+                    &lt;/button&gt;
+                    &lt;div class=&quot;w-8 h-8 bg-gray-300 rounded-full ml-2 hidden sm:block&quot; data-mock-image=&quot;true&quot;&gt;&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/header&gt;
+    &lt;!-- @END_COMPONENT: FacebookHeader --&gt;
+
+    &lt;!-- Mobile Search Bar --&gt;
+    &lt;div class=&quot;sm:hidden fixed top-14 w-full bg-white border-b border-gray-200 p-3 z-40&quot;&gt;
+        &lt;div class=&quot;relative&quot;&gt;
+            &lt;i class=&quot;fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400&quot;&gt;&lt;/i&gt;
+            &lt;input type=&quot;text&quot; placeholder=&quot;Buscar empresas...&quot; data-mock=&quot;true&quot;
+                   class=&quot;w-full pl-10 pr-4 py-2 bg-gray-100 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-facebook&quot;&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;flex pt-14 sm:pt-14&quot;&gt;
+        &lt;!-- @COMPONENT: LeftSidebar --&gt;
+        &lt;aside class=&quot;hidden lg:block w-80 bg-white h-screen sticky top-14 overflow-y-auto border-r border-gray-200&quot;&gt;
+            &lt;div class=&quot;p-4&quot;&gt;
+                &lt;!-- User Profile Section --&gt;
+                &lt;div class=&quot;flex items-center space-x-3 p-3 hover:bg-gray-100 rounded-lg cursor-pointer transition-colors&quot;&gt;
+                    &lt;div class=&quot;w-10 h-10 bg-gradient-to-r from-facebook to-purple-500 rounded-full&quot; data-mock-image=&quot;true&quot;&gt;&lt;/div&gt;
+                    &lt;div&gt;
+                        &lt;div class=&quot;font-semibold text-gray-900&quot; data-bind=&quot;user.name&quot; data-mock=&quot;true&quot;&gt;João Silva&lt;/div&gt;
+                        &lt;div class=&quot;text-sm text-gray-500&quot; data-mock=&quot;true&quot;&gt;Consultor de Vendas&lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;!-- Credits Status --&gt;
+                &lt;div class=&quot;bg-gradient-to-r from-facebook to-purple-500 text-white p-4 rounded-xl mb-4&quot;&gt;
+                    &lt;div class=&quot;flex items-center justify-between&quot;&gt;
+                        &lt;div&gt;
+                            &lt;div class=&quot;text-sm opacity-90&quot;&gt;Créditos Restantes&lt;/div&gt;
+                            &lt;div class=&quot;text-2xl font-bold&quot; data-bind=&quot;user.credits&quot; data-mock=&quot;true&quot;&gt;7&lt;/div&gt;
+                            &lt;div class=&quot;text-xs opacity-75&quot; data-mock=&quot;true&quot;&gt;de 10 no plano gratuito&lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;i class=&quot;fas fa-coins text-2xl opacity-80&quot;&gt;&lt;/i&gt;
+                    &lt;/div&gt;
+                    &lt;button class=&quot;w-full bg-white text-facebook font-semibold py-2 rounded-lg mt-3 hover:bg-gray-50 transition-colors&quot;&gt;
+                        Fazer Upgrade
+                    &lt;/button&gt;
+                &lt;/div&gt;
+
+                &lt;!-- Navigation Menu --&gt;
+                &lt;nav class=&quot;space-y-1&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;flex items-center space-x-3 p-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors&quot;&gt;
+                        &lt;i class=&quot;fas fa-home text-facebook&quot;&gt;&lt;/i&gt;
+                        &lt;span class=&quot;font-medium&quot;&gt;Feed de Oportunidades&lt;/span&gt;
+                    &lt;/a&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;flex items-center space-x-3 p-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors&quot;&gt;
+                        &lt;i class=&quot;fas fa-star text-yellow-500&quot;&gt;&lt;/i&gt;
+                        &lt;span&gt;Favoritos&lt;/span&gt;
+                        &lt;span class=&quot;ml-auto bg-gray-200 text-gray-700 text-xs px-2 py-1 rounded-full&quot; data-mock=&quot;true&quot;&gt;12&lt;/span&gt;
+                    &lt;/a&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;flex items-center space-x-3 p-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors&quot;&gt;
+                        &lt;i class=&quot;fas fa-handshake text-green-500&quot;&gt;&lt;/i&gt;
+                        &lt;span&gt;Em Negociação&lt;/span&gt;
+                        &lt;span class=&quot;ml-auto bg-gray-200 text-gray-700 text-xs px-2 py-1 rounded-full&quot; data-mock=&quot;true&quot;&gt;5&lt;/span&gt;
+                    &lt;/a&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;flex items-center space-x-3 p-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors&quot;&gt;
+                        &lt;i class=&quot;fas fa-chart-line text-purple-500&quot;&gt;&lt;/i&gt;
+                        &lt;span&gt;Analytics&lt;/span&gt;
+                    &lt;/a&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;flex items-center space-x-3 p-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors&quot;&gt;
+                        &lt;i class=&quot;fas fa-cog text-gray-500&quot;&gt;&lt;/i&gt;
+                        &lt;span&gt;Configurações&lt;/span&gt;
+                    &lt;/a&gt;
+                &lt;/nav&gt;
+
+                &lt;!-- Quick Stats --&gt;
+                &lt;div class=&quot;mt-6 p-4 bg-gray-50 rounded-xl&quot;&gt;
+                    &lt;div class=&quot;text-sm font-semibold text-gray-700 mb-3&quot;&gt;Estatísticas Hoje&lt;/div&gt;
+                    &lt;div class=&quot;space-y-2&quot;&gt;
+                        &lt;div class=&quot;flex justify-between&quot;&gt;
+                            &lt;span class=&quot;text-sm text-gray-600&quot;&gt;Contatos visualizados&lt;/span&gt;
+                            &lt;span class=&quot;text-sm font-semibold&quot; data-mock=&quot;true&quot;&gt;23&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;flex justify-between&quot;&gt;
+                            &lt;span class=&quot;text-sm text-gray-600&quot;&gt;Mensagens enviadas&lt;/span&gt;
+                            &lt;span class=&quot;text-sm font-semibold&quot; data-mock=&quot;true&quot;&gt;8&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;flex justify-between&quot;&gt;
+                            &lt;span class=&quot;text-sm text-gray-600&quot;&gt;Taxa de resposta&lt;/span&gt;
+                            &lt;span class=&quot;text-sm font-semibold text-green-600&quot; data-mock=&quot;true&quot;&gt;73%&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/aside&gt;
+        &lt;!-- @END_COMPONENT: LeftSidebar --&gt;
+
+        &lt;!-- @COMPONENT: MainFeed --&gt;
+        &lt;main class=&quot;flex-1 max-w-2xl mx-auto&quot;&gt;
+            &lt;!-- Mobile padding for search --&gt;
+            &lt;div class=&quot;sm:hidden h-16&quot;&gt;&lt;/div&gt;
+            
+            &lt;!-- Stories Section --&gt;
+            &lt;div class=&quot;bg-white rounded-xl shadow-sm p-4 m-4 mb-6&quot;&gt;
+                &lt;div class=&quot;flex space-x-4 overflow-x-auto pb-2&quot;&gt;
+                    &lt;!-- Add Story --&gt;
+                    &lt;div class=&quot;flex-shrink-0 text-center&quot;&gt;
+                        &lt;div class=&quot;w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mb-2 cursor-pointer hover:bg-gray-300 transition-colors&quot;&gt;
+                            &lt;i class=&quot;fas fa-plus text-gray-500&quot;&gt;&lt;/i&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;text-xs text-gray-600&quot;&gt;Criar Story&lt;/div&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;!-- Stories --&gt;
+                    &lt;!-- @MAP: stories.map(story =&gt; ( --&gt;
+                    &lt;div class=&quot;flex-shrink-0 text-center&quot; data-mock=&quot;true&quot;&gt;
+                        &lt;div class=&quot;w-16 h-16 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full p-0.5 cursor-pointer&quot;&gt;
+                            &lt;!-- A professional headshot of a business person in a suit --&gt;
+                            &lt;img src=&quot;https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=150&amp;h=150&quot; 
+                                 alt=&quot;Story profile&quot; class=&quot;w-full h-full rounded-full object-cover&quot;&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;text-xs text-gray-600 mt-1&quot; data-mock=&quot;true&quot;&gt;Tech Corp&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;flex-shrink-0 text-center&quot; data-mock=&quot;true&quot;&gt;
+                        &lt;div class=&quot;w-16 h-16 bg-gradient-to-r from-green-400 to-blue-500 rounded-full p-0.5 cursor-pointer&quot;&gt;
+                            &lt;!-- A modern office building with glass windows --&gt;
+                            &lt;img src=&quot;https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=150&amp;h=150&quot; 
+                                 alt=&quot;Story profile&quot; class=&quot;w-full h-full rounded-full object-cover&quot;&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;text-xs text-gray-600 mt-1&quot; data-mock=&quot;true&quot;&gt;Inovação SA&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;flex-shrink-0 text-center&quot; data-mock=&quot;true&quot;&gt;
+                        &lt;div class=&quot;w-16 h-16 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full p-0.5 cursor-pointer&quot;&gt;
+                            &lt;!-- A diverse group of business professionals in a meeting --&gt;
+                            &lt;img src=&quot;https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=150&amp;h=150&quot; 
+                                 alt=&quot;Story profile&quot; class=&quot;w-full h-full rounded-full object-cover&quot;&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;text-xs text-gray-600 mt-1&quot; data-mock=&quot;true&quot;&gt;StartupBR&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;!-- @END_MAP )) --&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;!-- Lead Posts --&gt;
+            &lt;div class=&quot;space-y-6 pb-20 sm:pb-6&quot;&gt;
+                &lt;!-- @MAP: leads.map(lead =&gt; ( --&gt;
+                &lt;!-- Lead Post 1 --&gt;
+                &lt;article class=&quot;bg-white rounded-xl shadow-sm mx-4&quot; data-mock=&quot;true&quot;&gt;
+                    &lt;input type=&quot;checkbox&quot; class=&quot;hidden lead-checkbox&quot; data-lead-id=&quot;1&quot;&gt;
+                    
+                    &lt;!-- Post Header --&gt;
+                    &lt;div class=&quot;p-4 border-b border-gray-100&quot;&gt;
+                        &lt;div class=&quot;flex items-center justify-between&quot;&gt;
+                            &lt;div class=&quot;flex items-center space-x-3&quot;&gt;
+                                &lt;div class=&quot;relative&quot;&gt;
+                                    &lt;!-- A professional logo of a technology company --&gt;
+                                    &lt;img src=&quot;https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=100&amp;h=100&quot; 
+                                         alt=&quot;PRODENER LTDA logo&quot; class=&quot;w-12 h-12 rounded-full object-cover&quot;&gt;
+                                    &lt;div class=&quot;absolute -bottom-1 -right-1 bg-green-500 w-4 h-4 rounded-full border-2 border-white&quot;&gt;&lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div&gt;
+                                    &lt;div class=&quot;font-semibold text-gray-900&quot; data-bind=&quot;lead.name&quot; data-mock=&quot;true&quot;&gt;PRODENER LTDA&lt;/div&gt;
+                                    &lt;div class=&quot;text-sm text-gray-500&quot; data-mock=&quot;true&quot;&gt;Energia e Sustentabilidade • São Paulo&lt;/div&gt;
+                                    &lt;div class=&quot;text-xs text-gray-400&quot; data-mock=&quot;true&quot;&gt;96% Match • Ativo há 2h&lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;flex items-center space-x-2&quot;&gt;
+                                &lt;button class=&quot;select-lead-btn p-2 hover:bg-gray-100 rounded-full transition-colors&quot; data-lead-id=&quot;1&quot;&gt;
+                                    &lt;i class=&quot;far fa-square text-gray-400&quot;&gt;&lt;/i&gt;
+                                &lt;/button&gt;
+                                &lt;span class=&quot;bg-orange-100 text-orange-600 text-xs px-2 py-1 rounded-full font-medium&quot; data-mock=&quot;true&quot;&gt;Premium&lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+
+                    &lt;!-- Post Content --&gt;
+                    &lt;div class=&quot;p-4&quot;&gt;
+                        &lt;p class=&quot;text-gray-700 mb-3&quot; data-mock=&quot;true&quot;&gt;
+                            🔥 &lt;strong&gt;Oportunidade Quente:&lt;/strong&gt; Empresa especializada em soluções de energia renovável está expandindo operações. 
+                            Procuram parceiros estratégicos para projetos de energia solar.
+                        &lt;/p&gt;
+                        
+                        &lt;div class=&quot;bg-gray-50 rounded-lg p-3 mb-3&quot;&gt;
+                            &lt;div class=&quot;grid grid-cols-2 gap-3 text-sm&quot;&gt;
+                                &lt;div class=&quot;flex items-center space-x-2&quot;&gt;
+                                    &lt;i class=&quot;fas fa-building text-facebook&quot;&gt;&lt;/i&gt;
+                                    &lt;span class=&quot;text-gray-600&quot;&gt;Funcionários:&lt;/span&gt;
+                                    &lt;span class=&quot;font-semibold&quot; data-mock=&quot;true&quot;&gt;50-200&lt;/span&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;flex items-center space-x-2&quot;&gt;
+                                    &lt;i class=&quot;fas fa-chart-line text-green-500&quot;&gt;&lt;/i&gt;
+                                    &lt;span class=&quot;text-gray-600&quot;&gt;Faturamento:&lt;/span&gt;
+                                    &lt;span class=&quot;font-semibold&quot; data-mock=&quot;true&quot;&gt;R$ 5-10M&lt;/span&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;flex items-center space-x-2&quot;&gt;
+                                    &lt;i class=&quot;fas fa-phone text-warning&quot;&gt;&lt;/i&gt;
+                                    &lt;span class=&quot;text-gray-600&quot;&gt;Contato:&lt;/span&gt;
+                                    &lt;span class=&quot;font-semibold text-warning&quot; data-mock=&quot;true&quot;&gt;🔒 Desbloqueado&lt;/span&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;flex items-center space-x-2&quot;&gt;
+                                    &lt;i class=&quot;fas fa-clock text-purple-500&quot;&gt;&lt;/i&gt;
+                                    &lt;span class=&quot;text-gray-600&quot;&gt;Melhor horário:&lt;/span&gt;
+                                    &lt;span class=&quot;font-semibold&quot; data-mock=&quot;true&quot;&gt;14h-16h&lt;/span&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;!-- AI Insights --&gt;
+                        &lt;div class=&quot;bg-gradient-to-r from-facebook/5 to-purple-500/5 border border-facebook/20 rounded-lg p-3 mb-3&quot;&gt;
+                            &lt;div class=&quot;flex items-start space-x-2&quot;&gt;
+                                &lt;i class=&quot;fas fa-robot text-facebook text-sm mt-0.5&quot;&gt;&lt;/i&gt;
+                                &lt;div&gt;
+                                    &lt;div class=&quot;text-sm font-medium text-facebook mb-1&quot;&gt;IA Insights&lt;/div&gt;
+                                    &lt;div class=&quot;text-sm text-gray-600&quot; data-mock=&quot;true&quot;&gt;
+                                        73% chance de conversão • Empresas similares responderam em média 2.3h • 
+                                        Mencione &quot;sustentabilidade&quot; para melhor engajamento
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+
+                    &lt;!-- Post Actions --&gt;
+                    &lt;div class=&quot;border-t border-gray-100 px-4 py-3&quot;&gt;
+                        &lt;div class=&quot;flex justify-between items-center&quot;&gt;
+                            &lt;button class=&quot;flex items-center space-x-2 px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-lg transition-colors flex-1 justify-center&quot;&gt;
+                                &lt;i class=&quot;far fa-handshake&quot;&gt;&lt;/i&gt;
+                                &lt;span class=&quot;font-medium&quot;&gt;Conectar&lt;/span&gt;
+                            &lt;/button&gt;
+                            &lt;button class=&quot;flex items-center space-x-2 px-4 py-2 text-green-600 hover:bg-green-50 rounded-lg transition-colors flex-1 justify-center&quot;&gt;
+                                &lt;i class=&quot;fab fa-whatsapp&quot;&gt;&lt;/i&gt;
+                                &lt;span class=&quot;font-medium&quot;&gt;WhatsApp&lt;/span&gt;
+                            &lt;/button&gt;
+                            &lt;button class=&quot;flex items-center space-x-2 px-4 py-2 text-facebook hover:bg-blue-50 rounded-lg transition-colors flex-1 justify-center&quot;&gt;
+                                &lt;i class=&quot;far fa-envelope&quot;&gt;&lt;/i&gt;
+                                &lt;span class=&quot;font-medium&quot;&gt;Email&lt;/span&gt;
+                            &lt;/button&gt;
+                            &lt;button class=&quot;flex items-center space-x-2 px-4 py-2 text-yellow-600 hover:bg-yellow-50 rounded-lg transition-colors flex-1 justify-center&quot;&gt;
+                                &lt;i class=&quot;far fa-star&quot;&gt;&lt;/i&gt;
+                                &lt;span class=&quot;font-medium&quot;&gt;Salvar&lt;/span&gt;
+                            &lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/article&gt;
+
+                &lt;!-- Lead Post 2 --&gt;
+                &lt;article class=&quot;bg-white rounded-xl shadow-sm mx-4&quot; data-mock=&quot;true&quot;&gt;
+                    &lt;input type=&quot;checkbox&quot; class=&quot;hidden lead-checkbox&quot; data-lead-id=&quot;2&quot;&gt;
+                    
+                    &lt;!-- Post Header --&gt;
+                    &lt;div class=&quot;p-4 border-b border-gray-100&quot;&gt;
+                        &lt;div class=&quot;flex items-center justify-between&quot;&gt;
+                            &lt;div class=&quot;flex items-center space-x-3&quot;&gt;
+                                &lt;div class=&quot;relative&quot;&gt;
+                                    &lt;!-- A modern restaurant interior with elegant design --&gt;
+                                    &lt;img src=&quot;https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=100&amp;h=100&quot; 
+                                         alt=&quot;Clínica Médica Saúde+ logo&quot; class=&quot;w-12 h-12 rounded-full object-cover&quot;&gt;
+                                    &lt;div class=&quot;absolute -bottom-1 -right-1 bg-yellow-500 w-4 h-4 rounded-full border-2 border-white&quot;&gt;&lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div&gt;
+                                    &lt;div class=&quot;font-semibold text-gray-900&quot; data-bind=&quot;lead.name&quot; data-mock=&quot;true&quot;&gt;Clínica Médica Saúde+&lt;/div&gt;
+                                    &lt;div class=&quot;text-sm text-gray-500&quot; data-mock=&quot;true&quot;&gt;Saúde e Medicina • Rio de Janeiro&lt;/div&gt;
+                                    &lt;div class=&quot;text-xs text-gray-400&quot; data-mock=&quot;true&quot;&gt;87% Match • Ativo há 5h&lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;flex items-center space-x-2&quot;&gt;
+                                &lt;button class=&quot;select-lead-btn p-2 hover:bg-gray-100 rounded-full transition-colors&quot; data-lead-id=&quot;2&quot;&gt;
+                                    &lt;i class=&quot;far fa-square text-gray-400&quot;&gt;&lt;/i&gt;
+                                &lt;/button&gt;
+                                &lt;span class=&quot;bg-blue-100 text-blue-600 text-xs px-2 py-1 rounded-full font-medium&quot; data-mock=&quot;true&quot;&gt;Novo&lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+
+                    &lt;!-- Post Content --&gt;
+                    &lt;div class=&quot;p-4&quot;&gt;
+                        &lt;p class=&quot;text-gray-700 mb-3&quot; data-mock=&quot;true&quot;&gt;
+                            💊 &lt;strong&gt;Clínica em Expansão:&lt;/strong&gt; Rede de clínicas especializadas em cardiologia está buscando 
+                            soluções tecnológicas para melhorar atendimento ao paciente.
+                        &lt;/p&gt;
+                        
+                        &lt;div class=&quot;bg-gray-50 rounded-lg p-3 mb-3&quot;&gt;
+                            &lt;div class=&quot;grid grid-cols-2 gap-3 text-sm&quot;&gt;
+                                &lt;div class=&quot;flex items-center space-x-2&quot;&gt;
+                                    &lt;i class=&quot;fas fa-building text-facebook&quot;&gt;&lt;/i&gt;
+                                    &lt;span class=&quot;text-gray-600&quot;&gt;Funcionários:&lt;/span&gt;
+                                    &lt;span class=&quot;font-semibold&quot; data-mock=&quot;true&quot;&gt;20-50&lt;/span&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;flex items-center space-x-2&quot;&gt;
+                                    &lt;i class=&quot;fas fa-chart-line text-green-500&quot;&gt;&lt;/i&gt;
+                                    &lt;span class=&quot;text-gray-600&quot;&gt;Faturamento:&lt;/span&gt;
+                                    &lt;span class=&quot;font-semibold&quot; data-mock=&quot;true&quot;&gt;R$ 2-5M&lt;/span&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;flex items-center space-x-2&quot;&gt;
+                                    &lt;i class=&quot;fas fa-lock text-gray-400&quot;&gt;&lt;/i&gt;
+                                    &lt;span class=&quot;text-gray-600&quot;&gt;Contato:&lt;/span&gt;
+                                    &lt;span class=&quot;font-semibold text-gray-400&quot; data-mock=&quot;true&quot;&gt;🔒 Bloqueado&lt;/span&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;flex items-center space-x-2&quot;&gt;
+                                    &lt;i class=&quot;fas fa-clock text-purple-500&quot;&gt;&lt;/i&gt;
+                                    &lt;span class=&quot;text-gray-600&quot;&gt;Melhor horário:&lt;/span&gt;
+                                    &lt;span class=&quot;font-semibold&quot; data-mock=&quot;true&quot;&gt;9h-11h&lt;/span&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;!-- Unlock Prompt --&gt;
+                        &lt;div class=&quot;bg-gradient-to-r from-warning/10 to-yellow-500/10 border border-warning/30 rounded-lg p-3 mb-3&quot;&gt;
+                            &lt;div class=&quot;flex items-center justify-between&quot;&gt;
+                                &lt;div&gt;
+                                    &lt;div class=&quot;text-sm font-medium text-warning mb-1&quot;&gt;Desbloqueie este contato&lt;/div&gt;
+                                    &lt;div class=&quot;text-sm text-gray-600&quot; data-mock=&quot;true&quot;&gt;
+                                        1 crédito • Ver telefone, email e WhatsApp
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;button class=&quot;bg-warning text-white px-4 py-2 rounded-lg font-medium hover:bg-orange-600 transition-colors&quot;&gt;
+                                    Desbloquear
+                                &lt;/button&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+
+                    &lt;!-- Post Actions --&gt;
+                    &lt;div class=&quot;border-t border-gray-100 px-4 py-3&quot;&gt;
+                        &lt;div class=&quot;flex justify-between items-center&quot;&gt;
+                            &lt;button class=&quot;flex items-center space-x-2 px-4 py-2 text-gray-400 bg-gray-100 rounded-lg flex-1 justify-center cursor-not-allowed&quot;&gt;
+                                &lt;i class=&quot;far fa-handshake&quot;&gt;&lt;/i&gt;
+                                &lt;span class=&quot;font-medium&quot;&gt;Conectar&lt;/span&gt;
+                            &lt;/button&gt;
+                            &lt;button class=&quot;flex items-center space-x-2 px-4 py-2 text-gray-400 bg-gray-100 rounded-lg flex-1 justify-center cursor-not-allowed&quot;&gt;
+                                &lt;i class=&quot;fab fa-whatsapp&quot;&gt;&lt;/i&gt;
+                                &lt;span class=&quot;font-medium&quot;&gt;WhatsApp&lt;/span&gt;
+                            &lt;/button&gt;
+                            &lt;button class=&quot;flex items-center space-x-2 px-4 py-2 text-gray-400 bg-gray-100 rounded-lg flex-1 justify-center cursor-not-allowed&quot;&gt;
+                                &lt;i class=&quot;far fa-envelope&quot;&gt;&lt;/i&gt;
+                                &lt;span class=&quot;font-medium&quot;&gt;Email&lt;/span&gt;
+                            &lt;/button&gt;
+                            &lt;button class=&quot;flex items-center space-x-2 px-4 py-2 text-yellow-600 hover:bg-yellow-50 rounded-lg transition-colors flex-1 justify-center&quot;&gt;
+                                &lt;i class=&quot;far fa-star&quot;&gt;&lt;/i&gt;
+                                &lt;span class=&quot;font-medium&quot;&gt;Salvar&lt;/span&gt;
+                            &lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/article&gt;
+
+                &lt;!-- Lead Post 3 --&gt;
+                &lt;article class=&quot;bg-white rounded-xl shadow-sm mx-4&quot; data-mock=&quot;true&quot;&gt;
+                    &lt;input type=&quot;checkbox&quot; class=&quot;hidden lead-checkbox&quot; data-lead-id=&quot;3&quot;&gt;
+                    
+                    &lt;!-- Post Header --&gt;
+                    &lt;div class=&quot;p-4 border-b border-gray-100&quot;&gt;
+                        &lt;div class=&quot;flex items-center justify-between&quot;&gt;
+                            &lt;div class=&quot;flex items-center space-x-3&quot;&gt;
+                                &lt;div class=&quot;relative&quot;&gt;
+                                    &lt;!-- A modern logistics warehouse with trucks and cargo --&gt;
+                                    &lt;img src=&quot;https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=100&amp;h=100&quot; 
+                                         alt=&quot;TATUI TELECOM LTDA logo&quot; class=&quot;w-12 h-12 rounded-full object-cover&quot;&gt;
+                                    &lt;div class=&quot;absolute -bottom-1 -right-1 bg-green-500 w-4 h-4 rounded-full border-2 border-white&quot;&gt;&lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div&gt;
+                                    &lt;div class=&quot;font-semibold text-gray-900&quot; data-bind=&quot;lead.name&quot; data-mock=&quot;true&quot;&gt;TATUI TELECOM LTDA&lt;/div&gt;
+                                    &lt;div class=&quot;text-sm text-gray-500&quot; data-mock=&quot;true&quot;&gt;Telecomunicações • Tatuí, SP&lt;/div&gt;
+                                    &lt;div class=&quot;text-xs text-gray-400&quot; data-mock=&quot;true&quot;&gt;91% Match • Ativo há 1h&lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;flex items-center space-x-2&quot;&gt;
+                                &lt;button class=&quot;select-lead-btn p-2 hover:bg-gray-100 rounded-full transition-colors&quot; data-lead-id=&quot;3&quot;&gt;
+                                    &lt;i class=&quot;far fa-square text-gray-400&quot;&gt;&lt;/i&gt;
+                                &lt;/button&gt;
+                                &lt;span class=&quot;bg-green-100 text-green-600 text-xs px-2 py-1 rounded-full font-medium&quot; data-mock=&quot;true&quot;&gt;Quente&lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+
+                    &lt;!-- Post Content --&gt;
+                    &lt;div class=&quot;p-4&quot;&gt;
+                        &lt;p class=&quot;text-gray-700 mb-3&quot; data-mock=&quot;true&quot;&gt;
+                            📡 &lt;strong&gt;Telecom em Crescimento:&lt;/strong&gt; Provedora de internet fibra ótica regional está 
+                            expandindo cobertura e buscando parceiros tecnológicos.
+                        &lt;/p&gt;
+                        
+                        &lt;div class=&quot;bg-gray-50 rounded-lg p-3 mb-3&quot;&gt;
+                            &lt;div class=&quot;grid grid-cols-2 gap-3 text-sm&quot;&gt;
+                                &lt;div class=&quot;flex items-center space-x-2&quot;&gt;
+                                    &lt;i class=&quot;fas fa-building text-facebook&quot;&gt;&lt;/i&gt;
+                                    &lt;span class=&quot;text-gray-600&quot;&gt;Funcionários:&lt;/span&gt;
+                                    &lt;span class=&quot;font-semibold&quot; data-mock=&quot;true&quot;&gt;100-500&lt;/span&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;flex items-center space-x-2&quot;&gt;
+                                    &lt;i class=&quot;fas fa-chart-line text-green-500&quot;&gt;&lt;/i&gt;
+                                    &lt;span class=&quot;text-gray-600&quot;&gt;Faturamento:&lt;/span&gt;
+                                    &lt;span class=&quot;font-semibold&quot; data-mock=&quot;true&quot;&gt;R$ 10-50M&lt;/span&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;flex items-center space-x-2&quot;&gt;
+                                    &lt;i class=&quot;fas fa-phone text-warning&quot;&gt;&lt;/i&gt;
+                                    &lt;span class=&quot;text-gray-600&quot;&gt;Contato:&lt;/span&gt;
+                                    &lt;span class=&quot;font-semibold text-warning&quot; data-mock=&quot;true&quot;&gt;🔒 Desbloqueado&lt;/span&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;flex items-center space-x-2&quot;&gt;
+                                    &lt;i class=&quot;fas fa-clock text-purple-500&quot;&gt;&lt;/i&gt;
+                                    &lt;span class=&quot;text-gray-600&quot;&gt;Melhor horário:&lt;/span&gt;
+                                    &lt;span class=&quot;font-semibold&quot; data-mock=&quot;true&quot;&gt;8h-10h&lt;/span&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;!-- Recent Activity --&gt;
+                        &lt;div class=&quot;bg-green-50 border border-green-200 rounded-lg p-3 mb-3&quot;&gt;
+                            &lt;div class=&quot;flex items-start space-x-2&quot;&gt;
+                                &lt;i class=&quot;fas fa-check-circle text-green-500 text-sm mt-0.5&quot;&gt;&lt;/i&gt;
+                                &lt;div&gt;
+                                    &lt;div class=&quot;text-sm font-medium text-green-700 mb-1&quot;&gt;Atividade Recente&lt;/div&gt;
+                                    &lt;div class=&quot;text-sm text-green-600&quot; data-mock=&quot;true&quot;&gt;
+                                        Visualizou seu perfil há 1h • Abriu email de prospecção • 
+                                        Momento ideal para contato!
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+
+                    &lt;!-- Post Actions --&gt;
+                    &lt;div class=&quot;border-t border-gray-100 px-4 py-3&quot;&gt;
+                        &lt;div class=&quot;flex justify-between items-center&quot;&gt;
+                            &lt;button class=&quot;flex items-center space-x-2 px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-lg transition-colors flex-1 justify-center&quot;&gt;
+                                &lt;i class=&quot;far fa-handshake&quot;&gt;&lt;/i&gt;
+                                &lt;span class=&quot;font-medium&quot;&gt;Conectar&lt;/span&gt;
+                            &lt;/button&gt;
+                            &lt;button class=&quot;flex items-center space-x-2 px-4 py-2 text-green-600 hover:bg-green-50 rounded-lg transition-colors flex-1 justify-center&quot;&gt;
+                                &lt;i class=&quot;fab fa-whatsapp&quot;&gt;&lt;/i&gt;
+                                &lt;span class=&quot;font-medium&quot;&gt;WhatsApp&lt;/span&gt;
+                            &lt;/button&gt;
+                            &lt;button class=&quot;flex items-center space-x-2 px-4 py-2 text-facebook hover:bg-blue-50 rounded-lg transition-colors flex-1 justify-center&quot;&gt;
+                                &lt;i class=&quot;far fa-envelope&quot;&gt;&lt;/i&gt;
+                                &lt;span class=&quot;font-medium&quot;&gt;Email&lt;/span&gt;
+                            &lt;/button&gt;
+                            &lt;button class=&quot;flex items-center space-x-2 px-4 py-2 text-yellow-600 hover:bg-yellow-50 rounded-lg transition-colors flex-1 justify-center&quot;&gt;
+                                &lt;i class=&quot;far fa-star&quot;&gt;&lt;/i&gt;
+                                &lt;span class=&quot;font-medium&quot;&gt;Salvar&lt;/span&gt;
+                            &lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/article&gt;
+                &lt;!-- @END_MAP )) --&gt;
+
+                &lt;!-- Load More --&gt;
+                &lt;div class=&quot;flex justify-center p-6&quot;&gt;
+                    &lt;button class=&quot;bg-facebook text-white px-6 py-3 rounded-lg font-medium hover:bg-facebookHover transition-colors&quot;&gt;
+                        &lt;i class=&quot;fas fa-spinner fa-spin mr-2 hidden&quot;&gt;&lt;/i&gt;
+                        Carregar mais oportunidades
+                    &lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/main&gt;
+        &lt;!-- @END_COMPONENT: MainFeed --&gt;
+
+        &lt;!-- @COMPONENT: RightSidebar --&gt;
+        &lt;aside class=&quot;hidden xl:block w-80 bg-white h-screen sticky top-14 overflow-y-auto border-l border-gray-200&quot;&gt;
+            &lt;div class=&quot;p-4&quot;&gt;
+                &lt;!-- Online Status --&gt;
+                &lt;div class=&quot;bg-gradient-to-r from-green-500 to-emerald-500 text-white p-4 rounded-xl mb-4&quot;&gt;
+                    &lt;div class=&quot;flex items-center space-x-2 mb-2&quot;&gt;
+                        &lt;div class=&quot;w-3 h-3 bg-white rounded-full animate-pulse&quot;&gt;&lt;/div&gt;
+                        &lt;span class=&quot;font-semibold&quot;&gt;Sistema Online&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;text-sm opacity-90&quot; data-mock=&quot;true&quot;&gt;
+                        1.247 novas oportunidades disponíveis
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;!-- Quick Actions --&gt;
+                &lt;div class=&quot;mb-6&quot;&gt;
+                    &lt;h3 class=&quot;font-semibold text-gray-900 mb-3&quot;&gt;Ações Rápidas&lt;/h3&gt;
+                    &lt;div class=&quot;space-y-2&quot;&gt;
+                        &lt;button class=&quot;w-full text-left p-3 hover:bg-gray-100 rounded-lg transition-colors flex items-center space-x-3&quot;&gt;
+                            &lt;i class=&quot;fas fa-plus-circle text-facebook&quot;&gt;&lt;/i&gt;
+                            &lt;span&gt;Criar Campanha&lt;/span&gt;
+                        &lt;/button&gt;
+                        &lt;button class=&quot;w-full text-left p-3 hover:bg-gray-100 rounded-lg transition-colors flex items-center space-x-3&quot;&gt;
+                            &lt;i class=&quot;fas fa-download text-green-500&quot;&gt;&lt;/i&gt;
+                            &lt;span&gt;Exportar Leads&lt;/span&gt;
+                        &lt;/button&gt;
+                        &lt;button class=&quot;w-full text-left p-3 hover:bg-gray-100 rounded-lg transition-colors flex items-center space-x-3&quot;&gt;
+                            &lt;i class=&quot;fas fa-filter text-purple-500&quot;&gt;&lt;/i&gt;
+                            &lt;span&gt;Filtros Avançados&lt;/span&gt;
+                        &lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;!-- Top Performers --&gt;
+                &lt;div class=&quot;mb-6&quot;&gt;
+                    &lt;h3 class=&quot;font-semibold text-gray-900 mb-3&quot;&gt;Top Performers Hoje&lt;/h3&gt;
+                    &lt;div class=&quot;space-y-3&quot;&gt;
+                        &lt;div class=&quot;flex items-center space-x-3&quot; data-mock=&quot;true&quot;&gt;
+                            &lt;div class=&quot;w-8 h-8 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center text-white font-bold text-sm&quot;&gt;1&lt;/div&gt;
+                            &lt;div class=&quot;flex-1&quot;&gt;
+                                &lt;div class=&quot;font-medium text-sm&quot;&gt;Maria Silva&lt;/div&gt;
+                                &lt;div class=&quot;text-xs text-gray-500&quot;&gt;43 conexões&lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;text-green-600 font-semibold text-sm&quot;&gt;R$ 25k&lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;flex items-center space-x-3&quot; data-mock=&quot;true&quot;&gt;
+                            &lt;div class=&quot;w-8 h-8 bg-gradient-to-r from-gray-400 to-gray-500 rounded-full flex items-center justify-center text-white font-bold text-sm&quot;&gt;2&lt;/div&gt;
+                            &lt;div class=&quot;flex-1&quot;&gt;
+                                &lt;div class=&quot;font-medium text-sm&quot;&gt;Carlos Santos&lt;/div&gt;
+                                &lt;div class=&quot;text-xs text-gray-500&quot;&gt;38 conexões&lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;text-green-600 font-semibold text-sm&quot;&gt;R$ 19k&lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;flex items-center space-x-3&quot; data-mock=&quot;true&quot;&gt;
+                            &lt;div class=&quot;w-8 h-8 bg-gradient-to-r from-yellow-600 to-yellow-700 rounded-full flex items-center justify-center text-white font-bold text-sm&quot;&gt;3&lt;/div&gt;
+                            &lt;div class=&quot;flex-1&quot;&gt;
+                                &lt;div class=&quot;font-medium text-sm&quot;&gt;Ana Costa&lt;/div&gt;
+                                &lt;div class=&quot;text-xs text-gray-500&quot;&gt;35 conexões&lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;text-green-600 font-semibold text-sm&quot;&gt;R$ 17k&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;!-- Trending Segments --&gt;
+                &lt;div&gt;
+                    &lt;h3 class=&quot;font-semibold text-gray-900 mb-3&quot;&gt;Segmentos em Alta&lt;/h3&gt;
+                    &lt;div class=&quot;space-y-2&quot;&gt;
+                        &lt;div class=&quot;flex items-center justify-between p-2 hover:bg-gray-50 rounded-lg cursor-pointer&quot; data-mock=&quot;true&quot;&gt;
+                            &lt;span class=&quot;text-sm&quot;&gt;🏥 Saúde&lt;/span&gt;
+                            &lt;span class=&quot;text-xs text-green-600 font-medium&quot;&gt;+23%&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;flex items-center justify-between p-2 hover:bg-gray-50 rounded-lg cursor-pointer&quot; data-mock=&quot;true&quot;&gt;
+                            &lt;span class=&quot;text-sm&quot;&gt;💻 Tecnologia&lt;/span&gt;
+                            &lt;span class=&quot;text-xs text-green-600 font-medium&quot;&gt;+18%&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;flex items-center justify-between p-2 hover:bg-gray-50 rounded-lg cursor-pointer&quot; data-mock=&quot;true&quot;&gt;
+                            &lt;span class=&quot;text-sm&quot;&gt;🏭 Indústria&lt;/span&gt;
+                            &lt;span class=&quot;text-xs text-green-600 font-medium&quot;&gt;+15%&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;flex items-center justify-between p-2 hover:bg-gray-50 rounded-lg cursor-pointer&quot; data-mock=&quot;true&quot;&gt;
+                            &lt;span class=&quot;text-sm&quot;&gt;🏪 Varejo&lt;/span&gt;
+                            &lt;span class=&quot;text-xs text-green-600 font-medium&quot;&gt;+12%&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/aside&gt;
+        &lt;!-- @END_COMPONENT: RightSidebar --&gt;
+    &lt;/div&gt;
+
+    &lt;!-- @COMPONENT: FloatingActionBar --&gt;
+    &lt;div id=&quot;floatingActionBar&quot; class=&quot;fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-facebook text-white px-6 py-3 rounded-full shadow-lg hidden z-50 transition-all duration-300&quot;&gt;
+        &lt;div class=&quot;flex items-center space-x-4&quot;&gt;
+            &lt;span id=&quot;selectedCount&quot; class=&quot;font-medium&quot; data-mock=&quot;true&quot;&gt;0 selecionados&lt;/span&gt;
+            &lt;div class=&quot;flex space-x-2&quot;&gt;
+                &lt;button class=&quot;bg-white/20 hover:bg-white/30 px-3 py-1 rounded-lg text-sm font-medium transition-colors&quot;&gt;
+                    &lt;i class=&quot;fab fa-whatsapp mr-1&quot;&gt;&lt;/i&gt;
+                    WhatsApp
+                &lt;/button&gt;
+                &lt;button class=&quot;bg-white/20 hover:bg-white/30 px-3 py-1 rounded-lg text-sm font-medium transition-colors&quot;&gt;
+                    &lt;i class=&quot;far fa-envelope mr-1&quot;&gt;&lt;/i&gt;
+                    Email
+                &lt;/button&gt;
+                &lt;button class=&quot;bg-white/20 hover:bg-white/30 px-3 py-1 rounded-lg text-sm font-medium transition-colors&quot;&gt;
+                    &lt;i class=&quot;far fa-star mr-1&quot;&gt;&lt;/i&gt;
+                    Salvar
+                &lt;/button&gt;
+            &lt;/div&gt;
+            &lt;button id=&quot;clearSelection&quot; class=&quot;text-white/70 hover:text-white&quot;&gt;
+                &lt;i class=&quot;fas fa-times&quot;&gt;&lt;/i&gt;
+            &lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- @END_COMPONENT: FloatingActionBar --&gt;
+
+    &lt;!-- @COMPONENT: MobileBottomNav --&gt;
+    &lt;nav class=&quot;sm:hidden fixed bottom-0 w-full bg-white border-t border-gray-200 z-40&quot;&gt;
+        &lt;div class=&quot;flex justify-around py-2&quot;&gt;
+            &lt;button class=&quot;flex flex-col items-center py-2 px-4 text-facebook&quot;&gt;
+                &lt;i class=&quot;fas fa-home text-lg&quot;&gt;&lt;/i&gt;
+                &lt;span class=&quot;text-xs mt-1&quot;&gt;Feed&lt;/span&gt;
+            &lt;/button&gt;
+            &lt;button class=&quot;flex flex-col items-center py-2 px-4 text-gray-400&quot;&gt;
+                &lt;i class=&quot;fas fa-search text-lg&quot;&gt;&lt;/i&gt;
+                &lt;span class=&quot;text-xs mt-1&quot;&gt;Buscar&lt;/span&gt;
+            &lt;/button&gt;
+            &lt;button class=&quot;flex flex-col items-center py-2 px-4 text-gray-400 relative&quot;&gt;
+                &lt;i class=&quot;fas fa-star text-lg&quot;&gt;&lt;/i&gt;
+                &lt;span class=&quot;text-xs mt-1&quot;&gt;Favoritos&lt;/span&gt;
+                &lt;div class=&quot;absolute -top-1 right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center&quot; data-mock=&quot;true&quot;&gt;3&lt;/div&gt;
+            &lt;/button&gt;
+            &lt;button class=&quot;flex flex-col items-center py-2 px-4 text-gray-400 relative&quot;&gt;
+                &lt;i class=&quot;fas fa-envelope text-lg&quot;&gt;&lt;/i&gt;
+                &lt;span class=&quot;text-xs mt-1&quot;&gt;Mensagens&lt;/span&gt;
+                &lt;div class=&quot;absolute -top-1 right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center&quot; data-mock=&quot;true&quot;&gt;5&lt;/div&gt;
+            &lt;/button&gt;
+            &lt;button class=&quot;flex flex-col items-center py-2 px-4 text-gray-400&quot;&gt;
+                &lt;i class=&quot;fas fa-user text-lg&quot;&gt;&lt;/i&gt;
+                &lt;span class=&quot;text-xs mt-1&quot;&gt;Perfil&lt;/span&gt;
+            &lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/nav&gt;
+    &lt;!-- @END_COMPONENT: MobileBottomNav --&gt;
+
+    &lt;!-- @COMPONENT: ChatModal --&gt;
+    &lt;div id=&quot;chatModal&quot; class=&quot;fixed inset-0 bg-black bg-opacity-50 z-50 hidden&quot;&gt;
+        &lt;div class=&quot;fixed right-4 bottom-4 w-80 h-96 bg-white rounded-xl shadow-2xl overflow-hidden&quot;&gt;
+            &lt;!-- Chat Header --&gt;
+            &lt;div class=&quot;bg-facebook text-white p-4 flex items-center justify-between&quot;&gt;
+                &lt;div class=&quot;flex items-center space-x-3&quot;&gt;
+                    &lt;div class=&quot;w-8 h-8 bg-white/20 rounded-full&quot; data-mock-image=&quot;true&quot;&gt;&lt;/div&gt;
+                    &lt;div&gt;
+                        &lt;div class=&quot;font-medium&quot; data-mock=&quot;true&quot;&gt;PRODENER LTDA&lt;/div&gt;
+                        &lt;div class=&quot;text-xs opacity-75&quot; data-mock=&quot;true&quot;&gt;Online agora&lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;button id=&quot;closeChatModal&quot; class=&quot;text-white/70 hover:text-white&quot;&gt;
+                    &lt;i class=&quot;fas fa-times&quot;&gt;&lt;/i&gt;
+                &lt;/button&gt;
+            &lt;/div&gt;
+            
+            &lt;!-- Chat Messages --&gt;
+            &lt;div class=&quot;h-64 overflow-y-auto p-4 space-y-3&quot;&gt;
+                &lt;div class=&quot;flex justify-start&quot; data-mock=&quot;true&quot;&gt;
+                    &lt;div class=&quot;bg-gray-100 text-gray-800 p-3 rounded-2xl rounded-bl-sm max-w-xs&quot;&gt;
+                        Olá! Vi que vocês trabalham com energia renovável. Gostaria de conversar sobre uma parceria.
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;flex justify-end&quot; data-mock=&quot;true&quot;&gt;
+                    &lt;div class=&quot;bg-facebook text-white p-3 rounded-2xl rounded-br-sm max-w-xs&quot;&gt;
+                        Oi! Sim, sempre abertos a novas parcerias. Qual seria a proposta?
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;!-- Chat Input --&gt;
+            &lt;div class=&quot;border-t border-gray-200 p-4&quot;&gt;
+                &lt;div class=&quot;flex space-x-2&quot;&gt;
+                    &lt;input type=&quot;text&quot; placeholder=&quot;Digite sua mensagem...&quot; data-mock=&quot;true&quot;
+                           class=&quot;flex-1 border border-gray-300 rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-facebook&quot;&gt;
+                    &lt;button class=&quot;bg-facebook text-white p-2 rounded-full hover:bg-facebookHover transition-colors&quot;&gt;
+                        &lt;i class=&quot;fas fa-paper-plane&quot;&gt;&lt;/i&gt;
+                    &lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- @END_COMPONENT: ChatModal --&gt;
+
+    &lt;script&gt;
+        (function() {
+            // Multi-select functionality
+            let selectedLeads = new Set();
+            const floatingActionBar = document.getElementById('floatingActionBar');
+            const selectedCount = document.getElementById('selectedCount');
+            const clearSelection = document.getElementById('clearSelection');
+
+            // Handle lead selection
+            document.addEventListener('click', function(e) {
+                if (e.target.closest('.select-lead-btn')) {
+                    const button = e.target.closest('.select-lead-btn');
+                    const leadId = button.dataset.leadId;
+                    const checkbox = document.querySelector(`input[data-lead-id=&quot;${leadId}&quot;]`);
+                    const icon = button.querySelector('i');
+                    
+                    if (selectedLeads.has(leadId)) {
+                        selectedLeads.delete(leadId);
+                        icon.className = 'far fa-square text-gray-400';
+                        checkbox.checked = false;
+                    } else {
+                        selectedLeads.add(leadId);
+                        icon.className = 'fas fa-check-square text-facebook';
+                        checkbox.checked = true;
+                    }
+                    
+                    updateFloatingActionBar();
+                }
+            });
+
+            function updateFloatingActionBar() {
+                const count = selectedLeads.size;
+                if (count &gt; 0) {
+                    selectedCount.textContent = `${count} selecionado${count &gt; 1 ? 's' : ''}`;
+                    floatingActionBar.classList.remove('hidden');
+                } else {
+                    floatingActionBar.classList.add('hidden');
+                }
+            }
+
+            // Clear selection
+            clearSelection.addEventListener('click', function() {
+                selectedLeads.clear();
+                document.querySelectorAll('.select-lead-btn i').forEach(icon =&gt; {
+                    icon.className = 'far fa-square text-gray-400';
+                });
+                document.querySelectorAll('.lead-checkbox').forEach(checkbox =&gt; {
+                    checkbox.checked = false;
+                });
+                updateFloatingActionBar();
+            });
+
+            // Chat modal functionality
+            const chatModal = document.getElementById('chatModal');
+            const closeChatModal = document.getElementById('closeChatModal');
+
+            // Open chat when clicking WhatsApp button (for demo)
+            document.addEventListener('click', function(e) {
+                if (e.target.closest('button') &amp;&amp; e.target.textContent.includes('WhatsApp')) {
+                    chatModal.classList.remove('hidden');
+                }
+            });
+
+            closeChatModal.addEventListener('click', function() {
+                chatModal.classList.add('hidden');
+            });
+
+            // Close chat when clicking outside
+            chatModal.addEventListener('click', function(e) {
+                if (e.target === chatModal) {
+                    chatModal.classList.add('hidden');
+                }
+            });
+
+            // Infinite scroll simulation
+            let loading = false;
+            window.addEventListener('scroll', function() {
+                if (loading) return;
+                
+                const scrolled = window.scrollY;
+                const viewport = window.innerHeight;
+                const total = document.body.scrollHeight;
+                
+                if (scrolled + viewport &gt;= total - 1000) {
+                    loading = true;
+                    // Simulate loading more content
+                    setTimeout(() =&gt; {
+                        loading = false;
+                    }, 2000);
+                }
+            });
+
+            // Stories interaction
+            document.addEventListener('click', function(e) {
+                if (e.target.closest('.w-16.h-16')) {
+                    // Story clicked - could open story viewer
+                    console.log('Story clicked');
+                }
+            });
+
+            // Mobile optimization
+            if (window.innerWidth &lt;= 768) {
+                // Add mobile-specific behaviors
+                document.body.classList.add('mobile-view');
+            }
+
+            // Simulate real-time updates
+            setInterval(() =&gt; {
+                // Simulate new notifications
+                const notificationBadges = document.querySelectorAll('.bg-red-500');
+                notificationBadges.forEach(badge =&gt; {
+                    const count = parseInt(badge.textContent) || 0;
+                    if (Math.random() &gt; 0.8) {
+                        badge.textContent = count + 1;
+                    }
+                });
+            }, 30000);
+        })();
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;" src="https://97d07b37-e7d8-4bac-baa1-dab1924d898e-00-biheeum35noo.picard.replit.dev:5904/"></iframe></div></div>
+
+Claro otimizado para mobile tambem no celular tipo estilo facebook mas como na iamgem

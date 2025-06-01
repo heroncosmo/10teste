@@ -1,0 +1,62 @@
+/* Estilos críticos para evitar quebras de layout */
+
+/* Garante que o botão de sair é sempre visível e pode ser clicado */
+.logout-button-area {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  z-index: 1000;
+  display: none;
+}
+
+/* Este botão só aparece quando o layout está quebrado */
+.emergency-logout {
+  background-color: #f44336;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+}
+
+/* Aparecer quando o botão normal não estiver visível */
+@media screen and (max-width: 768px) {
+  .layout-broken .logout-button-area {
+    display: block;
+  }
+}
+
+/* Truncate de texto para garantir que o layout não seja quebrado */
+.truncate-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+/* Garantir que contêineres de texto não expandam demais */
+.text-container {
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* Fixar tamanho de áreas críticas */
+.critical-width {
+  max-width: 200px;
+  width: 100%;
+}
+
+/* Garantir que elementos flex não encolham de forma inesperada */
+.no-shrink {
+  flex-shrink: 0;
+}
+
+/* Elemento pode ser escondido em telas pequenas */
+.hide-on-small {
+  @media screen and (max-width: 640px) {
+    display: none;
+  }
+} 

@@ -1,0 +1,300 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 215 100% 50%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 215 100% 97%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 222 84% 5%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 210 40% 98%;
+    --sidebar-foreground: 222 47% 11%;
+    --sidebar-primary: 222 47% 11%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 214 32% 91%;
+    --sidebar-accent-foreground: 222 47% 11%;
+    --sidebar-border: 214 32% 91%;
+    --sidebar-ring: 217 91% 60%;
+  }
+
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 222 47% 11%;
+
+    --secondary: 217 33% 18%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 33% 18%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 217 33% 18%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 18%;
+    --input: 217 33% 18%;
+    --ring: 213 27% 84%;
+
+    --sidebar-background: 222 47% 11%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 217 33% 18%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217 33% 18%;
+    --sidebar-ring: 217 91% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .z-pattern {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-8 items-center;
+  }
+  
+  .z-pattern-reverse {
+    @apply flex flex-col md:flex-row-reverse gap-8 items-center;
+  }
+
+  .story-link {
+    @apply relative inline-block after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left;
+  }
+  
+  .hover-scale {
+    @apply transition-transform duration-200 hover:scale-105;
+  }
+  
+  .feature-card {
+    @apply p-6 rounded-lg border border-border bg-card shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1;
+  }
+  
+  .whatsapp-chat-bubble {
+    @apply p-4 rounded-lg relative;
+  }
+  
+  .whatsapp-chat-bubble-sent {
+    @apply whatsapp-chat-bubble bg-whatsapp-light ml-auto;
+  }
+  
+  .whatsapp-chat-bubble-received {
+    @apply whatsapp-chat-bubble bg-white;
+  }
+  
+  .sticky-header {
+    @apply sticky top-0 z-10 bg-background/80 backdrop-blur-md;
+  }
+}
+
+/* Correção para o botão de sair que fica inacessível quando o email é grande */
+.email-container {
+  max-width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+}
+
+.logout-button {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-left: 4px !important;
+  min-width: 30px;
+  min-height: 30px;
+  z-index: 100;
+  position: relative;
+  flex-shrink: 0 !important;
+}
+
+.user-menu {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  width: 100% !important;
+  justify-content: space-between !important;
+}
+
+@media screen and (max-width: 768px) {
+  .email-container {
+    max-width: 100px;
+  }
+}
+
+/* Mobile responsive fixes */
+@media screen and (max-width: 640px) {
+  body {
+    overscroll-behavior-y: none; /* Prevent pull-to-refresh on mobile */
+  }
+  
+  /* Add padding for bottom navigation */
+  .pb-safe {
+    padding-bottom: calc(1rem + env(safe-area-inset-bottom, 1rem));
+  }
+  
+  /* Ensure content isn't hidden behind bottom navigation */
+  main {
+    padding-bottom: 5rem !important;
+  }
+  
+  /* Fix overflow issues in cards */
+  .truncate-content {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  /* Responsive typography */
+  h1 {
+    font-size: 1.5rem !important;
+  }
+  
+  h2 {
+    font-size: 1.25rem !important;
+  }
+  
+  p {
+    font-size: 0.875rem !important;
+  }
+  
+  /* Adjust spacing for mobile */
+  .mobile-space-y-2 > * + * {
+    margin-top: 0.5rem;
+  }
+  
+  .mobile-space-x-2 > * + * {
+    margin-left: 0.5rem;
+  }
+  
+  /* WhatsApp-like chat bubbles for mobile */
+  .whatsapp-chat-bubble-mobile {
+    max-width: 80%;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.5rem;
+    position: relative;
+    word-break: break-word;
+  }
+  
+  .whatsapp-chat-time {
+    font-size: 0.65rem;
+    color: rgba(0,0,0,0.45);
+    margin-top: 0.25rem;
+    text-align: right;
+  }
+}
+
+@keyframes slideUp {
+  0% { transform: translateY(100%); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounceGentle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.3s ease-out;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.animate-bounce-gentle {
+  animation: bounceGentle 2s infinite;
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.blur-text {
+  filter: blur(4px);
+  user-select: none;
+  pointer-events: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.selection-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(34, 197, 94, 0.2);
+  border: 2px solid #22c55e;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.selected .selection-overlay::before {
+  opacity: 1;
+}
