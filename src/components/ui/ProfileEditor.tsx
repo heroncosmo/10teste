@@ -17,7 +17,6 @@ const ProfileEditor: React.FC<ProfileEditorProps> = ({ onClose }) => {
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
-    phone: '',
     whatsapp: '',
     currentPassword: '',
     newPassword: '',
@@ -30,7 +29,6 @@ const ProfileEditor: React.FC<ProfileEditorProps> = ({ onClose }) => {
         ...prev,
         fullName: profile.full_name || '',
         email: user.email || '',
-        phone: user.phone || '',
         whatsapp: profile.whatsapp || ''
       }));
     }
@@ -151,21 +149,6 @@ const ProfileEditor: React.FC<ProfileEditorProps> = ({ onClose }) => {
                 type="email"
                 placeholder="seu@email.com"
                 value={formData.email}
-                onChange={handleChange}
-                className="pl-8"
-              />
-            </div>
-          </div>
-          
-          <div>
-            <Label htmlFor="phone">Telefone</Label>
-            <div className="relative">
-              <Phone className="absolute left-2 top-2.5 h-4 w-4 text-gray-500" />
-              <Input
-                id="phone"
-                name="phone"
-                placeholder="(99) 99999-9999"
-                value={formData.phone}
                 onChange={handleChange}
                 className="pl-8"
               />
