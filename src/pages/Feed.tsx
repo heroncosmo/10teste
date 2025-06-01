@@ -116,7 +116,7 @@ export default function Feed() {
   const observerRef = useRef<IntersectionObserver | null>(null);
   const loadMoreRef = useRef<HTMLDivElement>(null);
   
-  const { user, session } = useAuth();
+  const { user, session, profile } = useAuth();
   
   const { 
     data: leads,
@@ -221,7 +221,7 @@ export default function Feed() {
 
   // Add new popular filters with location options
   const popularFilters = [
-    { id: 'novas24h', label: 'Abertas 24h', icon: '��', premium: true },
+    { id: 'novas24h', label: 'Abertas 24h', icon: '🔥', premium: true },
     { id: 'novasMes', label: 'Abertas no mês', icon: '📅', premium: true },
     { id: 'altaConversao', label: 'Alta conversão', icon: '📈', premium: true },
     { id: 'poucosContatos', label: 'Pouco contatadas', icon: '💎', premium: true },
@@ -654,59 +654,80 @@ export default function Feed() {
     const filter = popularFilters.find(f => f.id === filterId);
     const isPremiumFilter = filter?.premium;
     
-    if (isPremiumFilter && !user) {
-      // Check if it's a location filter
-      const isLocationFilter = filterId.includes('sp') || filterId.includes('rio') || 
-                               filterId.includes('minas') || filterId.includes('parana') ||
-                               filterId.includes('bahia') || filterId.includes('capital') ||
-                               filterId.includes('bh') || filterId.includes('campinas');
-      
-      if (isLocationFilter) {
-        setPremiumFeature({
-          title: `Leads em ${filter?.label} - Exclusivo Plus`,
-          description: "Encontre clientes próximos a você! Filtre empresas por estado e cidade para contatos locais e maiores chances de conversão. Economize em deslocamentos e foque em clientes da sua região.",
-          featureType: 'filter',
-          planType: 'plus'
-        });
-      } else if (filterId === 'novas24h' || filterId === 'novasMes') {
-        setPremiumFeature({
-          title: `Empresas Recém-Abertas - Oportunidade Única`,
-          description: "Empresas novas têm 5x mais chances de contratar serviços. Seja o primeiro a entrar em contato antes da concorrência e feche negócios com quem ainda está definindo fornecedores.",
-          featureType: 'filter',
-          planType: 'plus'
-        });
-      } else if (filterId === 'poucosContatos') {
-        setPremiumFeature({
-          title: "Leads Virgens - Nunca Contatados",
-          description: "Acesse empresas que ninguém contatou ainda! Sem concorrência, sem caixa de entrada lotada, apenas você oferecendo soluções para necessidades reais. Taxa de resposta 3x maior.",
-          featureType: 'filter',
-          planType: 'plus'
-        });
-      } else if (filterId === 'altaConversao') {
-        setPremiumFeature({
-          title: "Leads com Alta Taxa de Conversão",
-          description: "Nossa IA identifica empresas com maior probabilidade de compra baseado em histórico de conversões similares. Economize tempo e foque em quem realmente está pronto para fechar negócio.",
-          featureType: 'filter',
-          planType: 'plus'
-        });
-      } else {
-        setPremiumFeature({
-          title: `${filter?.label} - Filtro Premium`,
-          description: "Desbloqueie filtros avançados para encontrar leads específicos para seu negócio. Economize horas de prospecção manual e encontre clientes ideais em segundos.",
-          featureType: 'filter',
-          planType: 'plus'
-        });
-      }
-      
-      setShowPremiumBanner(true);
-      
-      // Activate global discount countdown
-      globalDiscountState.isTimerActive = true;
-      
+    // If this is a non-premium filter, just apply the filter directly
+    if (!isPremiumFilter) {
+      setActiveFilter(filterId);
       return;
     }
     
-    setActiveFilter(filterId);
+    // For demonstration purposes, we're assuming no users have premium access yet
+    // In a real implementation, you would check for an active subscription
+    const hasPremiumAccess = false; // This would be determined by checking user subscription status
+    
+    if (hasPremiumAccess) {
+      setActiveFilter(filterId);
+      return;
+    }
+    
+    // If user is not logged in, show login banner first
+    if (!user) {
+      setPremiumFeature({
+        title: `Login Necessário`,
+        description: `Para acessar o filtro "${filter?.label}", faça login ou cadastre-se primeiro.`,
+        featureType: 'filter',
+        planType: 'plus'
+      });
+      setShowPremiumBanner(true);
+      globalDiscountState.isTimerActive = true;
+      return;
+    }
+    
+    // User is logged in but not premium, show subscription banner
+    // Check if it's a location filter
+    const isLocationFilter = filterId.includes('sp') || filterId.includes('rio') || 
+                             filterId.includes('minas') || filterId.includes('parana') ||
+                             filterId.includes('bahia') || filterId.includes('capital') ||
+                             filterId.includes('bh') || filterId.includes('campinas');
+    
+    if (isLocationFilter) {
+      setPremiumFeature({
+        title: `Leads em ${filter?.label} - Exclusivo Plus`,
+        description: "Encontre clientes próximos a você! Filtre empresas por estado e cidade para contatos locais e maiores chances de conversão. Economize em deslocamentos e foque em clientes da sua região.",
+        featureType: 'filter',
+        planType: 'plus'
+      });
+    } else if (filterId === 'novas24h' || filterId === 'novasMes') {
+      setPremiumFeature({
+        title: `Empresas Recém-Abertas - Oportunidade Única`,
+        description: "Empresas novas têm 5x mais chances de contratar serviços. Seja o primeiro a entrar em contato antes da concorrência e feche negócios com quem ainda está definindo fornecedores.",
+        featureType: 'filter',
+        planType: 'plus'
+      });
+    } else if (filterId === 'poucosContatos') {
+      setPremiumFeature({
+        title: "Leads Virgens - Nunca Contatados",
+        description: "Acesse empresas que ninguém contatou ainda! Sem concorrência, sem caixa de entrada lotada, apenas você oferecendo soluções para necessidades reais. Taxa de resposta 3x maior.",
+        featureType: 'filter',
+        planType: 'plus'
+      });
+    } else if (filterId === 'altaConversao') {
+      setPremiumFeature({
+        title: "Leads com Alta Taxa de Conversão",
+        description: "Nossa IA identifica empresas com maior probabilidade de compra baseado em histórico de conversões similares. Economize tempo e foque em quem realmente está pronto para fechar negócio.",
+        featureType: 'filter',
+        planType: 'plus'
+      });
+    } else {
+      setPremiumFeature({
+        title: `${filter?.label} - Filtro Premium`,
+        description: "Desbloqueie filtros avançados para encontrar leads específicos para seu negócio. Economize horas de prospecção manual e encontre clientes ideais em segundos.",
+        featureType: 'filter',
+        planType: 'plus'
+      });
+    }
+    
+    setShowPremiumBanner(true);
+    globalDiscountState.isTimerActive = true;
   };
 
   if (isLoading) {
@@ -829,6 +850,20 @@ export default function Feed() {
                   size="sm"
                   className="whitespace-nowrap rounded-full text-xs px-4 border-blue-200 text-blue-700 bg-blue-50"
                   onClick={() => {
+                    // If user is not logged in, show login banner first
+                    if (!user) {
+                      setPremiumFeature({
+                        title: `Login Necessário`,
+                        description: `Para acessar o filtro por Estado, faça login ou cadastre-se primeiro.`,
+                        featureType: 'filter',
+                        planType: 'plus'
+                      });
+                      setShowPremiumBanner(true);
+                      globalDiscountState.isTimerActive = true;
+                      return;
+                    }
+                    
+                    // User is logged in but not premium, show subscription banner
                     setPremiumFeature({
                       title: "Filtro por Estado - Recurso Plus",
                       description: "Encontre leads próximos da sua região! Filtre por qualquer estado do Brasil e aumente suas chances de conversão com contatos locais. Assine o plano Plus para desbloquear.",
@@ -849,6 +884,20 @@ export default function Feed() {
                   size="sm"
                   className="whitespace-nowrap rounded-full text-xs px-4 border-blue-200 text-blue-700 bg-blue-50"
                   onClick={() => {
+                    // If user is not logged in, show login banner first
+                    if (!user) {
+                      setPremiumFeature({
+                        title: `Login Necessário`,
+                        description: `Para acessar o filtro por Cidade, faça login ou cadastre-se primeiro.`,
+                        featureType: 'filter',
+                        planType: 'plus'
+                      });
+                      setShowPremiumBanner(true);
+                      globalDiscountState.isTimerActive = true;
+                      return;
+                    }
+                    
+                    // User is logged in but not premium, show subscription banner
                     setPremiumFeature({
                       title: "Filtro por Cidade - Recurso Plus",
                       description: "Prospecte empresas da sua cidade! Filtrar por cidade permite encontrar clientes próximos, economizar em deslocamentos e focar em negócios locais. Assine o plano Plus para desbloquear.",
@@ -881,6 +930,20 @@ export default function Feed() {
                   size="sm"
                   className="whitespace-nowrap rounded-full text-xs px-4"
                   onClick={() => {
+                    // If user is not logged in, show login banner first
+                    if (!user) {
+                      setPremiumFeature({
+                        title: `Login Necessário`,
+                        description: `Para acessar os filtros avançados, faça login ou cadastre-se primeiro.`,
+                        featureType: 'filter',
+                        planType: 'plus'
+                      });
+                      setShowPremiumBanner(true);
+                      globalDiscountState.isTimerActive = true;
+                      return;
+                    }
+                    
+                    // User is logged in but not premium, show subscription banner
                     setPremiumFeature({
                       title: "Filtros Avançados",
                       description: "Desbloqueie filtros avançados para encontrar leads específicos por localização, tamanho da empresa, faturamento e muito mais.",
@@ -888,6 +951,7 @@ export default function Feed() {
                       planType: 'plus'
                     });
                     setShowPremiumBanner(true);
+                    globalDiscountState.isTimerActive = true;
                   }}
                 >
                   <Filter className="h-3.5 w-3.5 mr-1" />
