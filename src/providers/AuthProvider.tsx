@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
-import type { User, Session } from '@supabase/supabase-js';
+import type { User, Session, AuthChangeEvent } from '@supabase/supabase-js';
 import { Profile } from '@/types/database';
 
 interface AuthContextType {
@@ -71,11 +71,41 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   useEffect(() => {
     // Set up auth state listener FIRST
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
-      (event, session) => {
+      async (event: AuthChangeEvent, session) => {
+        console.log('Auth state changed:', event);
         setSession(session);
         setUser(session?.user ?? null);
         
         if (session?.user) {
+          // Para eventos de registro, garantir que o perfil seja criado/atualizado com os dados corretos
+          if (event.toLowerCase() === 'signed_up') {
+            try {
+              // Obter metadados do usuário para o whatsapp
+              const whatsapp = session.user.user_metadata?.whatsapp;
+              const fullName = session.user.user_metadata?.full_name;
+              
+              console.log('Creating profile after signup with whatsapp:', whatsapp);
+              
+              // Criar/atualizar perfil com whatsapp
+              const profileData = {
+                id: session.user.id,
+                user_id: session.user.id,
+                full_name: fullName || null,
+                whatsapp: whatsapp || null
+              };
+              
+              const { error: profileError } = await supabase
+                .from('profiles')
+                .upsert(profileData, { onConflict: 'user_id' });
+                
+              if (profileError) {
+                console.error('Error creating profile after signup:', profileError);
+              }
+            } catch (profileError) {
+              console.error('Error creating profile after signup:', profileError);
+            }
+          }
+          
           fetchProfile(session.user.id);
         } else {
           setProfile(null);
@@ -122,7 +152,10 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     // Create or update the user profile with whatsapp info if provided
     if (data?.user) {
       try {
+        console.log('Creating profile immediately with whatsapp:', userData?.whatsapp);
+        
         const profileData = {
+          id: data.user.id,
           user_id: data.user.id,
           full_name: userData?.full_name || null,
           whatsapp: userData?.whatsapp || null
@@ -130,13 +163,13 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         
         const { error: profileError } = await supabase
           .from('profiles')
-          .upsert(profileData, { onConflict: 'user_id' });
+          .upsert(profileData, { onConflict: 'id' });
           
         if (profileError) {
-          console.error('Error creating profile:', profileError);
+          console.error('Error creating profile during signup:', profileError);
         }
       } catch (profileError) {
-        console.error('Error creating profile:', profileError);
+        console.error('Error creating profile during signup:', profileError);
       }
     }
   };
