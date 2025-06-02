@@ -127,7 +127,7 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose, plan, paym
 
   const handleSubmitCard = (e: React.FormEvent) => {
     e.preventDefault();
-    // Redirect to WhatsApp with error message
+    // URL do WhatsApp para suporte
     const whatsappUrl = "https://api.whatsapp.com/send?phone=5517981679818&text=Oi%2C%20tudo%20bem%3F%20Preciso%20de%20ajuda%20com%20LeadPilot%20.";
     
     toast.error("Ocorreu um erro ao processar o pagamento", {
@@ -138,8 +138,6 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose, plan, paym
       }
     });
     
-    // Automatically open WhatsApp
-    window.open(whatsappUrl, "_blank");
     onClose();
   };
 
