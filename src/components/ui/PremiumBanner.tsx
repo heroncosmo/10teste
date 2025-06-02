@@ -315,9 +315,19 @@ const PremiumBanner: React.FC<PremiumBannerProps> = ({
 
   const handleSubmitCard = (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success("Pagamento processado com sucesso!", {
-      description: `Você assinou o plano ${currentPlanType === 'plus' ? 'Plus' : currentPlanType === 'pro' ? 'Pro' : 'Ultra IA'}. Boas prospecções!`
+    // Redirect to WhatsApp with error message
+    const whatsappUrl = "https://api.whatsapp.com/send?phone=5517981679818&text=Oi%2C%20tudo%20bem%3F%20Preciso%20de%20ajuda%20com%20LeadPilot%20.";
+    
+    toast.error("Ocorreu um erro ao processar o pagamento", {
+      description: "Por favor, entre em contato com o suporte via WhatsApp para assistência.",
+      action: {
+        label: "Contatar suporte",
+        onClick: () => window.open(whatsappUrl, "_blank")
+      }
     });
+    
+    // Automatically open WhatsApp
+    window.open(whatsappUrl, "_blank");
     onClose();
   };
 
