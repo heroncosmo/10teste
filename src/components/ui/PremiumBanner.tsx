@@ -318,8 +318,8 @@ const PremiumBanner: React.FC<PremiumBannerProps> = ({
     // URL do WhatsApp para suporte
     const whatsappUrl = "https://api.whatsapp.com/send?phone=5517981679818&text=Oi%2C%20tudo%20bem%3F%20Preciso%20de%20ajuda%20com%20LeadPilot%20.";
     
-    toast.error("Ocorreu um erro ao processar o pagamento", {
-      description: "Por favor, entre em contato com o suporte via WhatsApp para assistência.",
+    toast.error("Pagamento recusado pela operadora", {
+      description: "A intermediadora do cartão recusou a compra. Entre em contato com o suporte pelo WhatsApp (55 17 98167-9818) para resolver.",
       action: {
         label: "Contatar suporte",
         onClick: () => window.open(whatsappUrl, "_blank")
