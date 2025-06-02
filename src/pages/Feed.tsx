@@ -110,7 +110,8 @@ export default function Feed() {
     title: "",
     description: "",
     featureType: 'action' as 'search' | 'filter' | 'recommendation' | 'action' | 'navigation',
-    planType: 'plus' as 'plus' | 'pro' | 'ultra'
+    planType: 'plus' as 'plus' | 'pro' | 'ultra',
+    showPaymentOptions: false
   });
   
   const observerRef = useRef<IntersectionObserver | null>(null);
@@ -427,7 +428,8 @@ export default function Feed() {
         title: "Desbloqueie Contatos Ilimitados",
         description: "Tenha acesso a telefones, emails e dados completos de mais de 30 milhões de empresas. Seja o primeiro a contatar empresas recém-abertas com 5x mais chances de conversão. Assine agora com desconto especial!",
         featureType: 'action',
-        planType: 'plus'
+        planType: 'plus',
+        showPaymentOptions: false
       });
       setShowPremiumBanner(true);
       
@@ -443,7 +445,8 @@ export default function Feed() {
         title: "Sem créditos disponíveis",
         description: "Assine o plano Plus e tenha contatos ilimitados! Pare de perder oportunidades e comece a gerar resultados agora mesmo. Retorno garantido já no primeiro mês com apenas 5 novos clientes.",
         featureType: 'action',
-        planType: 'plus'
+        planType: 'plus',
+        showPaymentOptions: false
       });
       setShowPremiumBanner(true);
       return;
@@ -486,7 +489,8 @@ export default function Feed() {
         title: "Mensagens em Massa",
         description: "Envie mensagens para múltiplos leads de uma só vez e economize seu tempo. Crie sua conta gratuitamente para começar!",
         featureType: 'action',
-        planType: 'pro'
+        planType: 'pro',
+        showPaymentOptions: false
       });
       setShowPremiumBanner(true);
       return;
@@ -507,7 +511,8 @@ export default function Feed() {
         title: "Organize seus Leads Favoritos",
         description: "Marque leads como favoritos para acompanhamento rápido e eficiente. Crie uma conta agora para começar a organizar suas oportunidades!",
         featureType: 'action',
-        planType: 'plus'
+        planType: 'plus',
+        showPaymentOptions: false
       });
       setShowPremiumBanner(true);
       return;
@@ -524,7 +529,8 @@ export default function Feed() {
         title: "WhatsApp Direto - Feche Negócios Mais Rápido",
         description: "Envie mensagens diretamente para decisores via WhatsApp e aumente suas taxas de resposta em 300%. Empresas respondem 5x mais rápido no WhatsApp do que por email ou ligação. Comece agora!",
         featureType: 'action',
-        planType: 'plus'
+        planType: 'plus',
+        showPaymentOptions: false
       });
       setShowPremiumBanner(true);
       return;
@@ -539,7 +545,8 @@ export default function Feed() {
         title: "Comunicação Profissional por Email",
         description: "Entre ou crie sua conta para enviar emails profissionais personalizados diretamente para os leads.",
         featureType: 'action',
-        planType: 'plus'
+        planType: 'plus',
+        showPaymentOptions: false
       });
       setShowPremiumBanner(true);
       return;
@@ -554,7 +561,8 @@ export default function Feed() {
         title: "Chat Interno com Leads",
         description: "Acesse nosso sistema de chat interno e organize todas as suas conversas com leads em um só lugar. Crie sua conta gratuitamente!",
         featureType: 'action',
-        planType: 'plus'
+        planType: 'plus',
+        showPaymentOptions: false
       });
       setShowPremiumBanner(true);
       return;
@@ -581,7 +589,8 @@ export default function Feed() {
       title: "Filtros CNAE Premium",
       description: `Para encontrar empresas com CNAE "${cnae}", assine o plano Premium e desbloqueie filtros avançados!`,
       featureType: 'filter',
-      planType: 'plus'
+      planType: 'plus',
+      showPaymentOptions: false
     });
     setShowPremiumBanner(true);
     
@@ -627,7 +636,8 @@ export default function Feed() {
       title: item.title,
       description: description,
       featureType: 'recommendation',
-      planType
+      planType,
+      showPaymentOptions: false
     });
     setShowPremiumBanner(true);
     
@@ -641,7 +651,8 @@ export default function Feed() {
       title: "Acesso Completo a Leads Premium",
       description: "Desbloqueie acesso ilimitado a mais de 30 milhões de empresas em nosso banco de dados. Encontre o cliente perfeito com filtros avançados, busca por CNAE e recomendações personalizadas baseadas em IA.",
       featureType: 'recommendation',
-      planType: 'ultra'
+      planType: 'ultra',
+      showPaymentOptions: false
     });
     setShowPremiumBanner(true);
     
@@ -675,7 +686,8 @@ export default function Feed() {
         title: `Login Necessário`,
         description: `Para acessar o filtro "${filter?.label}", faça login ou cadastre-se primeiro.`,
         featureType: 'filter',
-        planType: 'plus'
+        planType: 'plus',
+        showPaymentOptions: false
       });
       setShowPremiumBanner(true);
       globalDiscountState.isTimerActive = true;
@@ -694,35 +706,40 @@ export default function Feed() {
         title: `Leads em ${filter?.label} - Exclusivo Plus`,
         description: "Encontre clientes próximos a você! Filtre empresas por estado e cidade para contatos locais e maiores chances de conversão. Economize em deslocamentos e foque em clientes da sua região.",
         featureType: 'filter',
-        planType: 'plus'
+        planType: 'plus',
+        showPaymentOptions: true
       });
     } else if (filterId === 'novas24h' || filterId === 'novasMes') {
       setPremiumFeature({
         title: `Empresas Recém-Abertas - Oportunidade Única`,
         description: "Empresas novas têm 5x mais chances de contratar serviços. Seja o primeiro a entrar em contato antes da concorrência e feche negócios com quem ainda está definindo fornecedores.",
         featureType: 'filter',
-        planType: 'plus'
+        planType: 'plus',
+        showPaymentOptions: false
       });
     } else if (filterId === 'poucosContatos') {
       setPremiumFeature({
         title: "Leads Virgens - Nunca Contatados",
         description: "Acesse empresas que ninguém contatou ainda! Sem concorrência, sem caixa de entrada lotada, apenas você oferecendo soluções para necessidades reais. Taxa de resposta 3x maior.",
         featureType: 'filter',
-        planType: 'plus'
+        planType: 'plus',
+        showPaymentOptions: false
       });
     } else if (filterId === 'altaConversao') {
       setPremiumFeature({
         title: "Leads com Alta Taxa de Conversão",
         description: "Nossa IA identifica empresas com maior probabilidade de compra baseado em histórico de conversões similares. Economize tempo e foque em quem realmente está pronto para fechar negócio.",
         featureType: 'filter',
-        planType: 'plus'
+        planType: 'plus',
+        showPaymentOptions: false
       });
     } else {
       setPremiumFeature({
         title: `${filter?.label} - Filtro Premium`,
         description: "Desbloqueie filtros avançados para encontrar leads específicos para seu negócio. Economize horas de prospecção manual e encontre clientes ideais em segundos.",
         featureType: 'filter',
-        planType: 'plus'
+        planType: 'plus',
+        showPaymentOptions: false
       });
     }
     
@@ -769,7 +786,8 @@ export default function Feed() {
                     title: "Busca Avançada Premium",
                     description: "Desbloqueie a busca avançada para encontrar leads específicos para seu negócio.",
                     featureType: 'search',
-                    planType: 'plus'
+                    planType: 'plus',
+                    showPaymentOptions: false
                   });
                   setShowPremiumBanner(true);
                 }}>
@@ -802,7 +820,8 @@ export default function Feed() {
                     title: "Entre ou Crie sua Conta",
                     description: "Desbloqueie o acesso a leads exclusivos e ferramentas avançadas para impulsionar suas vendas!",
                     featureType: 'action',
-                    planType: 'plus'
+                    planType: 'plus',
+                    showPaymentOptions: false
                   });
                   setShowPremiumBanner(true);
                 }}
@@ -856,7 +875,8 @@ export default function Feed() {
                         title: `Login Necessário`,
                         description: `Para acessar o filtro por Estado, faça login ou cadastre-se primeiro.`,
                         featureType: 'filter',
-                        planType: 'plus'
+                        planType: 'plus',
+                        showPaymentOptions: false
                       });
                       setShowPremiumBanner(true);
                       globalDiscountState.isTimerActive = true;
@@ -868,7 +888,8 @@ export default function Feed() {
                       title: "Filtro por Estado - Recurso Plus",
                       description: "Encontre leads próximos da sua região! Filtre por qualquer estado do Brasil e aumente suas chances de conversão com contatos locais. Assine o plano Plus para desbloquear.",
                       featureType: 'filter',
-                      planType: 'plus'
+                      planType: 'plus',
+                      showPaymentOptions: true
                     });
                     setShowPremiumBanner(true);
                     globalDiscountState.isTimerActive = true;
@@ -890,7 +911,8 @@ export default function Feed() {
                         title: `Login Necessário`,
                         description: `Para acessar o filtro por Cidade, faça login ou cadastre-se primeiro.`,
                         featureType: 'filter',
-                        planType: 'plus'
+                        planType: 'plus',
+                        showPaymentOptions: false
                       });
                       setShowPremiumBanner(true);
                       globalDiscountState.isTimerActive = true;
@@ -902,7 +924,8 @@ export default function Feed() {
                       title: "Filtro por Cidade - Recurso Plus",
                       description: "Prospecte empresas da sua cidade! Filtrar por cidade permite encontrar clientes próximos, economizar em deslocamentos e focar em negócios locais. Assine o plano Plus para desbloquear.",
                       featureType: 'filter',
-                      planType: 'plus'
+                      planType: 'plus',
+                      showPaymentOptions: true
                     });
                     setShowPremiumBanner(true);
                     globalDiscountState.isTimerActive = true;
@@ -936,7 +959,8 @@ export default function Feed() {
                         title: `Login Necessário`,
                         description: `Para acessar os filtros avançados, faça login ou cadastre-se primeiro.`,
                         featureType: 'filter',
-                        planType: 'plus'
+                        planType: 'plus',
+                        showPaymentOptions: false
                       });
                       setShowPremiumBanner(true);
                       globalDiscountState.isTimerActive = true;
@@ -948,7 +972,8 @@ export default function Feed() {
                       title: "Filtros Avançados",
                       description: "Desbloqueie filtros avançados para encontrar leads específicos por localização, tamanho da empresa, faturamento e muito mais.",
                       featureType: 'filter',
-                      planType: 'plus'
+                      planType: 'plus',
+                      showPaymentOptions: true
                     });
                     setShowPremiumBanner(true);
                     globalDiscountState.isTimerActive = true;
@@ -1060,7 +1085,8 @@ export default function Feed() {
                                 title: promoMessages[index % promoMessages.length].title,
                                 description: promoMessages[index % promoMessages.length].message,
                                 featureType: 'action',
-                                planType: 'plus'
+                                planType: 'plus',
+                                showPaymentOptions: true
                               });
                               setShowPremiumBanner(true);
                             }}
@@ -1116,6 +1142,8 @@ export default function Feed() {
           description={premiumFeature.description}
           showLogin={!user}
           featureType={premiumFeature.featureType}
+          planType={premiumFeature.planType}
+          showPaymentOptions={premiumFeature.showPaymentOptions}
         />
       </div>
     </ErrorBoundary>

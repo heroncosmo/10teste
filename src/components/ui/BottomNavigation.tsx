@@ -18,8 +18,9 @@ const BottomNavigation: React.FC<BottomNavigationProps> = ({
   const [premiumFeature, setPremiumFeature] = useState({
     title: '',
     description: '',
-    featureType: 'navigation' as 'search' | 'filter' | 'recommendation' | 'action' | 'navigation',
-    planType: 'plus' as 'plus' | 'pro' | 'ultra' // Add plan type to differentiate pricing
+    featureType: 'action' as 'search' | 'filter' | 'recommendation' | 'action' | 'navigation',
+    planType: 'plus' as 'plus' | 'pro' | 'ultra',
+    showPaymentOptions: false
   });
   const { user } = useAuth();
 
@@ -41,7 +42,8 @@ const BottomNavigation: React.FC<BottomNavigationProps> = ({
             title: "Gerenciador de Conversas",
             description: "Organize e acompanhe todas as suas conversas com leads em um só lugar. Nunca mais perca um lead importante!",
             featureType: 'navigation',
-            planType: 'plus'
+            planType: 'plus',
+            showPaymentOptions: true
           });
           break;
         case 'whatsapp-auto':
@@ -49,7 +51,8 @@ const BottomNavigation: React.FC<BottomNavigationProps> = ({
             title: "WhatsApp Automático",
             description: "Economize horas enviando mensagens personalizadas em massa para centenas de leads. Aumente suas chances de venda em até 5x com automação inteligente!",
             featureType: 'navigation',
-            planType: 'pro'
+            planType: 'pro',
+            showPaymentOptions: true
           });
           break;
         case 'auto-piloto':
@@ -57,7 +60,8 @@ const BottomNavigation: React.FC<BottomNavigationProps> = ({
             title: "Auto Piloto - IA para Vendas",
             description: "Deixe nossa IA encontrar leads qualificados e enviar mensagens automaticamente enquanto você foca no fechamento. Imagine acordar toda manhã com novas conversas iniciadas sem qualquer esforço!",
             featureType: 'navigation',
-            planType: 'ultra'
+            planType: 'ultra',
+            showPaymentOptions: true
           });
           break;
         default:
@@ -65,7 +69,8 @@ const BottomNavigation: React.FC<BottomNavigationProps> = ({
             title: "Recurso Premium",
             description: "Desbloqueie todos os recursos premium para maximizar suas conversões e potencializar seu negócio.",
             featureType: 'navigation',
-            planType
+            planType,
+            showPaymentOptions: true
           });
       }
       
@@ -143,7 +148,8 @@ const BottomNavigation: React.FC<BottomNavigationProps> = ({
         description={premiumFeature.description}
         showLogin={!user}
         featureType={premiumFeature.featureType}
-        planType={premiumFeature.planType} // Pass the plan type to the banner
+        planType={premiumFeature.planType}
+        showPaymentOptions={premiumFeature.showPaymentOptions}
       />
     </>
   );

@@ -92,6 +92,7 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose, plan, paym
     expiry: '',
     cvv: ''
   });
+  const [activePaymentMethod, setActivePaymentMethod] = useState<'credit' | 'pix'>(paymentMethod);
 
   const handleCardInfoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -149,8 +150,30 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ isOpen, onClose, plan, paym
           </Button>
         </div>
         
+        {/* Payment method toggle */}
+        <div className="flex border-b">
+          <button 
+            className={`flex-1 py-3 text-center font-medium text-sm ${activePaymentMethod === 'credit' ? 'border-b-2 border-blue-600 text-blue-600' : 'text-gray-500'}`}
+            onClick={() => setActivePaymentMethod('credit')}
+          >
+            <div className="flex justify-center items-center">
+              <CreditCard className="h-4 w-4 mr-2" />
+              Cartão de Crédito
+            </div>
+          </button>
+          <button 
+            className={`flex-1 py-3 text-center font-medium text-sm ${activePaymentMethod === 'pix' ? 'border-b-2 border-blue-600 text-blue-600' : 'text-gray-500'}`}
+            onClick={() => setActivePaymentMethod('pix')}
+          >
+            <div className="flex justify-center items-center">
+              <QrCode className="h-4 w-4 mr-2" />
+              PIX
+            </div>
+          </button>
+        </div>
+        
         <div className="p-4">
-          {paymentMethod === 'credit' ? (
+          {activePaymentMethod === 'credit' ? (
             <form onSubmit={handleSubmitCard} className="space-y-4">
               <div className="space-y-2">
                 <Label htmlFor="number">Número do Cartão</Label>

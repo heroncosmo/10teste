@@ -40,7 +40,9 @@ const LeadCard: React.FC<LeadCardProps> = ({
   const [premiumFeature, setPremiumFeature] = useState({
     title: '',
     description: '',
-    featureType: 'action' as 'search' | 'filter' | 'recommendation' | 'action' | 'navigation'
+    featureType: 'action' as 'search' | 'filter' | 'recommendation' | 'action' | 'navigation',
+    planType: 'plus' as 'plus' | 'pro' | 'ultra',
+    showPaymentOptions: false
   });
 
   // Timer for discount countdown
@@ -96,7 +98,9 @@ const LeadCard: React.FC<LeadCardProps> = ({
     setPremiumFeature({
       title: "Plano Plus - Contatos Ilimitados",
       description: "Desbloqueie acesso a 30 milhões de empresas! Contate leads recém-abertos, seja o primeiro a falar com empresas nunca contatadas antes. Filtros avançados por localidade e segmento. ROI garantido já no primeiro mês.",
-      featureType: 'action'
+      featureType: 'action',
+      planType: 'plus',
+      showPaymentOptions: true
     });
     
     // Keep the existing discount logic with the countdown
@@ -108,7 +112,9 @@ const LeadCard: React.FC<LeadCardProps> = ({
     setPremiumFeature({
       title: "Plano Ultra IA - Seu Funcionário Virtual 24h/dia",
       description: "Imagine ter um funcionário que nunca dorme, nunca adoece, não tira férias e trabalha 24h/dia, 7 dias por semana buscando oportunidades. Nossa IA encontra leads ideais, envia mensagens personalizadas e mantém relacionamentos automaticamente. Tudo enquanto você foca apenas no fechamento.",
-      featureType: 'action'
+      featureType: 'action',
+      planType: 'ultra',
+      showPaymentOptions: true
     });
     
     // Keep the existing discount logic with the countdown
@@ -542,7 +548,7 @@ const LeadCard: React.FC<LeadCardProps> = ({
           )}
           
           {/* Botões de ação estilo rede social */}
-          <div className="mt-3 grid grid-cols-5 gap-1 border-t border-gray-200 pt-2">
+          <div className="mt-3 grid grid-cols-4 gap-1 border-t border-gray-200 pt-2">
             {isReallyUnlocked ? (
                 <button 
                   onClick={(e) => {
@@ -581,35 +587,7 @@ const LeadCard: React.FC<LeadCardProps> = ({
               </div>
                 <span className="text-[10px] text-blue-600 font-medium">Ver dados</span>
               </button>
-          )}
-      
-            {/* Botão Seguir estilo LinkedIn */}
-            <button 
-              onClick={(e) => {
-                e.stopPropagation();
-                if (!isLoggedIn) {
-                  // Mostrar banner premium para não logados
-                  setPremiumFeature({
-                    title: "Siga empresas de interesse",
-                    description: "Crie sua conta gratuita para seguir empresas e receber atualizações sobre elas.",
-                    featureType: 'action'
-                  });
-                  setShowPricingModal(true);
-                  return;
-                }
-                
-                toast.success("Empresa adicionada aos seus seguidos!");
-              }}
-              className="flex flex-col items-center justify-center text-gray-600 hover:text-blue-600 transition-colors"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4 mb-1">
-                <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                <circle cx="8.5" cy="7" r="4"></circle>
-                <line x1="20" y1="8" x2="20" y2="14"></line>
-                <line x1="23" y1="11" x2="17" y2="11"></line>
-              </svg>
-              <span className="text-[10px]">Seguir</span>
-            </button>
+            )}
             
             <button
               onClick={(e) => {
@@ -684,9 +662,9 @@ const LeadCard: React.FC<LeadCardProps> = ({
               <Phone className="h-4 w-4 mb-1" />
               <span className="text-[10px]">Ligar</span>
             </button>
-              </div>
-            </div>
           </div>
+        </div>
+      </div>
       
       {/* Modal de Pricing para WhatsApp com Desconto e Countdown */}
       {showPricingModal && (
@@ -818,7 +796,20 @@ const LeadCard: React.FC<LeadCardProps> = ({
                 <Button 
                   onClick={() => {
                     setShowPricingModal(false);
-                    window.location.href = "http://localhost:8080/pricing";
+                    // Removing window.location.href redirection and replace with directly showing premium payment
+                    setPremiumFeature({
+                      title: premiumFeature.title?.includes("Plus") ? 
+                        "Plano Plus - Contatos Ilimitados" :
+                        premiumFeature.title?.includes("Ultra") ?
+                        "Plano Ultra IA - Seu Funcionário Virtual 24h/dia" :
+                        "Plano Pro - WhatsApp em Massa",
+                      description: premiumFeature.description,
+                      featureType: 'action',
+                      planType: premiumFeature.title?.includes("Plus") ? 'plus' : 
+                               premiumFeature.title?.includes("Ultra") ? 'ultra' : 'pro',
+                      showPaymentOptions: true
+                    });
+                    setShowPricingModal(true);
                   }}
                   className={`flex-1 ${
                     premiumFeature.title?.includes("Plus") ? 
@@ -899,7 +890,15 @@ const LeadCard: React.FC<LeadCardProps> = ({
                 <Button 
                   onClick={() => {
                     setShowCnaeInfo(false);
-                    window.location.href = "http://localhost:8080/pricing";
+                    // Replace redirect with showing payment options
+                    setPremiumFeature({
+                      title: `Acesso a Leads CNAE ${formatCnae(lead.cnae)}`,
+                      description: "Desbloqueie acesso a todos os leads deste CNAE e encontre clientes ideais para seu negócio.",
+                      featureType: 'filter',
+                      planType: 'plus',
+                      showPaymentOptions: true
+                    });
+                    setShowPricingModal(true);
                   }}
                   className="flex-1 bg-gray-600 hover:bg-gray-700 text-white"
                 >

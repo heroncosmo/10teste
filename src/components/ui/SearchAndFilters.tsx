@@ -95,8 +95,9 @@ const SearchAndFilters: React.FC<SearchAndFiltersProps> = ({
   const [premiumFeature, setPremiumFeature] = useState({
     title: '',
     description: '',
-    featureType: 'search' as 'search' | 'filter' | 'recommendation' | 'action' | 'navigation',
-    planType: 'plus' as 'plus' | 'pro' | 'ultra'
+    featureType: 'action' as 'search' | 'filter' | 'recommendation' | 'action' | 'navigation',
+    planType: 'plus' as 'plus' | 'pro' | 'ultra',
+    showPaymentOptions: false
   });
   const [recentSearches, setRecentSearches] = useState<string[]>([
     "Desenvolvimento de software",
@@ -222,7 +223,8 @@ const SearchAndFilters: React.FC<SearchAndFiltersProps> = ({
         title: "Busca Avançada Pro",
         description: "Desbloqueie buscas avançadas e filtros premium para encontrar os melhores leads para seu negócio.",
         featureType: 'search',
-        planType: 'pro'
+        planType: 'pro',
+        showPaymentOptions: false
       });
       setShowPremiumBanner(true);
       
@@ -242,7 +244,8 @@ const SearchAndFilters: React.FC<SearchAndFiltersProps> = ({
       title: "Filtros CNAE Premium",
       description: `Para filtrar empresas com CNAE "${cnae.code} - ${cnae.label}", assine o plano Premium!`,
       featureType: 'filter',
-      planType: 'pro'
+      planType: 'pro',
+      showPaymentOptions: true
     });
     setShowPremiumBanner(true);
     
@@ -269,7 +272,8 @@ const SearchAndFilters: React.FC<SearchAndFiltersProps> = ({
         title: "Busca Avançada Premium",
         description: "Desbloqueie a busca avançada para encontrar empresas e setores específicos para seu negócio.",
         featureType: 'search',
-        planType: 'pro'
+        planType: 'pro',
+        showPaymentOptions: true
       });
       setShowPremiumBanner(true);
       
@@ -296,7 +300,8 @@ const SearchAndFilters: React.FC<SearchAndFiltersProps> = ({
         title: "Filtros Premium",
         description: "Desbloqueie filtros avançados e encontre leads específicos para seu negócio.",
         featureType: 'filter',
-        planType: 'pro'
+        planType: 'pro',
+        showPaymentOptions: true
       });
       setShowPremiumBanner(true);
       

@@ -23,7 +23,8 @@ const BulkSelectionBar: React.FC<BulkSelectionBarProps> = ({
     title: '',
     description: '',
     featureType: 'action' as 'search' | 'filter' | 'recommendation' | 'action' | 'navigation',
-    planType: 'pro' as 'plus' | 'pro' | 'ultra'
+    planType: 'plus' as 'plus' | 'pro' | 'ultra',
+    showPaymentOptions: false
   });
   const { user } = useAuth();
   
@@ -34,7 +35,8 @@ const BulkSelectionBar: React.FC<BulkSelectionBarProps> = ({
         title: "WhatsApp em Massa - Plano Pro",
         description: "Envie mensagens para centenas de leads ao mesmo tempo e economize 5h por dia de trabalho manual. Aumente suas taxas de resposta em 5x com templates personalizados e sequências automatizadas. Pare de perder tempo com prospecção manual!",
         featureType: 'action',
-        planType: 'pro'
+        planType: 'pro',
+        showPaymentOptions: false
       });
       setShowPremiumBanner(true);
       
@@ -50,7 +52,8 @@ const BulkSelectionBar: React.FC<BulkSelectionBarProps> = ({
       title: "WhatsApp em Massa - Plano Pro",
       description: "Envie mensagens para centenas de leads ao mesmo tempo e economize 5h por dia. Multiplique sua produtividade por 10x e fale com mais clientes em menos tempo. Utilize nossos templates com 70% de taxa de resposta e aumente suas vendas já no primeiro dia.",
       featureType: 'action',
-      planType: 'pro'
+      planType: 'pro',
+      showPaymentOptions: false
     });
     setShowPremiumBanner(true);
     
@@ -65,7 +68,8 @@ const BulkSelectionBar: React.FC<BulkSelectionBarProps> = ({
         title: "Organize seus Leads Favoritos",
         description: "Marque leads como favoritos para acompanhamento rápido e eficiente. Crie uma conta para começar a organizar suas oportunidades!",
         featureType: 'action',
-        planType: 'plus'
+        planType: 'plus',
+        showPaymentOptions: false
       });
       setShowPremiumBanner(true);
       
@@ -137,6 +141,7 @@ const BulkSelectionBar: React.FC<BulkSelectionBarProps> = ({
         showLogin={!user}
         featureType={premiumFeature.featureType}
         planType={premiumFeature.planType}
+        showPaymentOptions={premiumFeature.showPaymentOptions}
       />
     </>
   );
