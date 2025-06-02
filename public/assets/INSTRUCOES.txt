@@ -1,0 +1,19 @@
+INSTRUÇÕES PARA CONFIGURAR IMAGEM DE COMPARTILHAMENTO PERSONALIZADA
+
+Para ter uma imagem personalizada do LeadPilot ao compartilhar no Facebook e outras redes sociais, siga estes passos:
+
+1. Crie uma imagem com o tamanho 1200x630 pixels com o logo e texto do LeadPilot
+2. Salve esta imagem como "opengraph-image.jpg" ou "opengraph-image.png"
+3. Faça upload desta imagem para a pasta "public/assets/"
+4. Atualize o index.html para apontar para esta imagem
+
+Atualmente, o index.html está usando uma imagem temporária do Imgur.
+Para usar sua própria imagem hospedada no GitHub Pages, modifique as meta tags para:
+
+<meta property="og:image" content="https://heroncosmo.github.io/10teste/assets/opengraph-image.jpg" />
+<meta name="twitter:image" content="https://heroncosmo.github.io/10teste/assets/opengraph-image.jpg" />
+
+Observação: O Facebook armazena em cache as imagens. Para forçar uma atualização:
+- Use o Facebook Sharing Debugger: https://developers.facebook.com/tools/debug/
+- Insira a URL do seu site e clique em "Depurar"
+- Em seguida, clique em "Raspar novamente" para atualizar o cache 
